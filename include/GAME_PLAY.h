@@ -7,56 +7,43 @@
 
 #include "DISPARO.h"
 
-#include"GESTOR_DISPAROS.h"
+#include "GESTOR_DISPAROS.h"
 
-/*
-#include"Shoot_Fire.h"
-#include"Shoot_Green.h"
-#include"Shoot_Super_Green.h"
-#include"Shoot_Ice.h"
-#include"Shoot_Brain.h"
-*/
+#include "Prize.h"
 
-/*
-#include"Plant_Fire.h"
-#include"Plant_Ice.h"
-#include"Plant_Green.h"
-#include"Plant_Super_Green.h"
-*/
+#include "Lifebar.h"
+
+
 class GAME_PLAY
 {
 public:
     GAME_PLAY();
     virtual ~GAME_PLAY();
     void draw(sf::RenderWindow& window);
-    void update();
     void cmd();
     void check_collision_platform();
+    void updatePlants();
+    void updateShootAndLife(sf::RenderTarget& window);
+    void updatePrize();
+    void update(sf::RenderTarget& window);
 
 protected:
 
 private:
     ZOMBIE Z1;
-    /*
-    Plant_Fire planta1;
-    Plant_Green planta2;
-    Plant_Ice planta3;
-    Plant_Super_Green planta4;
-    */
-    std::vector<Planta*>    _array_plantas;
-    //std::vector<Disparo*>   _array_disparos;
+
+    std::vector<Planta*> _array_plantas;
+
+    Prize* _prize=nullptr;
+    sf::Clock _prize_timer;
+    bool _prize_generated;
+
+    Lifebar _life_bar;
 
     GESTOR_DISPAROS _shoot_manager;
 
+    bool _is_dead;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
 
-
-    /*
-    Shoot_Fire shoot1;
-    Shoot_Green shoot2;
-    Shoot_Ice shoot3;
-    Shoot_Super_Green shoot4;
-    Shoot_Brain shoot5;
-    */
 
     PLATAFORMA Plats[30];
 

@@ -196,18 +196,14 @@ void Disparo::update()
 
 }
 
-void Disparo::checkWindowBounds()
+bool Disparo::checkWindowBounds(sf::RenderTarget& target)
 {
-
+    if((_shoot_sprite.getPosition().x < 0) || (_shoot_sprite.getPosition().x > target.getSize().x))
+        return true;
+    else
+        return false;
 }
 
 
 
-/*
-void Disparo::checkCollision()
-{
-    //checkWindowBounds();
-    //checkZombieCollision();
-}
-*/
 

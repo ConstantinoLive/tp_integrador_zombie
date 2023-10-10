@@ -36,7 +36,7 @@ void Juego()
                 window.close();
         }
 
-        gp.update();
+        gp.update(window);
         gp.cmd();
 
 

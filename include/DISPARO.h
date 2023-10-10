@@ -31,7 +31,7 @@ class Disparo : public Colisionable, public sf::Drawable
 
         void updateMovement();
         void updateAnimation();
-        void checkWindowBounds();
+        bool checkWindowBounds(sf::RenderTarget& target);
         //void checkZombieCollision();
         //void checkCollision();
         void update();

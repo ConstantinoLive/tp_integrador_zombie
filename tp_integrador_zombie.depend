@@ -1068,3 +1068,1181 @@
 1696773836 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\trabajo_practico\tp_integrador_zombie\include\shootmanager.h
 	"DISPARO.h"
 
+1696903346 source:c:\users\54911\documents\github\tp_integrador_zombie\main.cpp
+	<SFML/Graphics.hpp>
+	"MENU_PRINCIPAL.h"
+	"Funciones.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/VertexBuffer.hpp>
+	<SFML/Graphics/View.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\utf.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\string.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\thread.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\threadlocalptr.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\vector2.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\system\vector3.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\contextsettings.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\window\windowstyle.hpp
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\rect.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\primitivetype.hpp
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/ContextSettings.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glsl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\glsl.hpp
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Graphics/Glsl.inl>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\glsl.inl
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\sfml\include\sfml\graphics\vertexbuffer.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\menu_principal.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\funciones.h
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\colisionable.cpp
+	"Colisionable.h"
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\colisionable.h
+	<SFML/Graphics.hpp>
+
+1696907612 source:c:\users\54911\documents\github\tp_integrador_zombie\src\disparo.cpp
+	"DISPARO.h"
+
+1696907612 c:\users\54911\documents\github\tp_integrador_zombie\include\disparo.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+
+1696908467 source:c:\users\54911\documents\github\tp_integrador_zombie\src\game_play.cpp
+	"GAME_PLAY.h"
+	<iostream>
+
+1696908226 c:\users\54911\documents\github\tp_integrador_zombie\include\game_play.h
+	"ZOMBIE.h"
+	"PLATAFORMA.h"
+	"PLANTA.h"
+	"DISPARO.h"
+	"GESTOR_DISPAROS.h"
+	"Prize.h"
+	"Lifebar.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\zombie.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plataforma.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\planta.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+	"DISPARO.h"
+	"GESTOR_DISPAROS.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\gestor_disparos.h
+	"DISPARO.h"
+	<vector>
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\gestor_disparos.cpp
+	"GESTOR_DISPAROS.h"
+	<vector>
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\gestor_plantas.cpp
+	"GESTOR_PLANTAS.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\gestor_plantas.h
+
+1696907701 source:c:\users\54911\documents\github\tp_integrador_zombie\src\juego.cpp
+	"Funciones.h"
+	<SFML/Graphics.hpp>
+	"MENU_PRINCIPAL.h"
+	"SubMenu.h"
+	"Player.h"
+	<iostream>
+	"GAME_PLAY.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\submenu.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\player.h
+	<string.h>
+	<cstdlib>
+	<string>
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plant_fire.cpp
+	"Plant_Fire.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plant_fire.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plant_green.cpp
+	"Plant_Green.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plant_green.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plant_ice.cpp
+	"Plant_Ice.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plant_ice.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plant_super_green.cpp
+	"Plant_Super_Green.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plant_super_green.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\planta.cpp
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plantmanager.cpp
+	"PlantManager.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\plantmanager.h
+	<vector>
+	"Plant_Fire.h"
+	"Plant_Green.h"
+	"Plant_Ice.h"
+	"Plant_Super_Green.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\plataforma.cpp
+	"PLATAFORMA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\player.cpp
+	"Player.h"
+	<iostream>
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_brain.cpp
+	"Shoot_Brain.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_brain.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_fire.cpp
+	"Shoot_Fire.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_fire.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_fire_prueba.cpp
+	"Shoot_Fire_Prueba.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_fire_prueba.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_green.cpp
+	"Shoot_Green.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_green.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_ice.cpp
+	"Shoot_Ice.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_ice.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shoot_super_green.cpp
+	"Shoot_Super_Green.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shoot_super_green.h
+	"DISPARO.h"
+	"Colisionable.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\shootmanager.cpp
+	"ShootManager.h"
+
+1696870043 c:\users\54911\documents\github\tp_integrador_zombie\include\shootmanager.h
+	"DISPARO.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\submenu.cpp
+	"SubMenu.h"
+	<iostream>
+	"Funciones.h"
+	"MENU_PRINCIPAL.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_integrador_zombie\src\zombie.cpp
+	"ZOMBIE.h"
+	<iostream>
+
+1696899996 source:c:\users\54911\documents\github\tp_integrador_zombie\src\menu_principal.cpp
+	"MENU_PRINCIPAL.h"
+	"SubMenu.h"
+	<iostream>
+
+1696908529 source:c:\users\54911\documents\github\tp_integrador_zombie\src\prize.cpp
+	"Prize.h"
+
+1696902518 c:\users\54911\documents\github\tp_integrador_zombie\include\prize.h
+	"Colisionable.h"
+	<cstdlib>
+
+1696906180 c:\users\54911\documents\github\tp_integrador_zombie\include\lifebar.h
+	<SFML/Graphics.hpp>
+
+1696907818 source:c:\users\54911\documents\github\tp_integrador_zombie\src\lifebar.cpp
+	"Lifebar.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\colisionable.cpp
+	"Colisionable.h"
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\colisionable.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/VertexBuffer.hpp>
+	<SFML/Graphics/View.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\utf.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\string.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\thread.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\threadlocalptr.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\vector2.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\system\vector3.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\contextsettings.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\window\windowstyle.hpp
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\rect.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\primitivetype.hpp
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/ContextSettings.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glsl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\glsl.hpp
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Graphics/Glsl.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\glsl.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\graphics\vertexbuffer.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1696907612 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\disparo.cpp
+	"DISPARO.h"
+
+1696907612 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\disparo.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+
+1696908467 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\game_play.cpp
+	"GAME_PLAY.h"
+	<iostream>
+
+1696908226 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\game_play.h
+	"ZOMBIE.h"
+	"PLATAFORMA.h"
+	"PLANTA.h"
+	"DISPARO.h"
+	"GESTOR_DISPAROS.h"
+	"Prize.h"
+	"Lifebar.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\zombie.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plataforma.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\planta.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+	"DISPARO.h"
+	"GESTOR_DISPAROS.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_disparos.h
+	"DISPARO.h"
+	<vector>
+
+1696902518 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\prize.h
+	"Colisionable.h"
+	<cstdlib>
+
+1696906180 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\lifebar.h
+	<SFML/Graphics.hpp>
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_disparos.cpp
+	"GESTOR_DISPAROS.h"
+	<vector>
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_plantas.cpp
+	"GESTOR_PLANTAS.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_plantas.h
+
+1696907701 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\juego.cpp
+	"Funciones.h"
+	<SFML/Graphics.hpp>
+	"MENU_PRINCIPAL.h"
+	"SubMenu.h"
+	"Player.h"
+	<iostream>
+	"GAME_PLAY.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\funciones.h
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\menu_principal.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\submenu.h
+	<SFML/Graphics.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\player.h
+	<string.h>
+	<cstdlib>
+	<string>
+
+1696907818 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\lifebar.cpp
+	"Lifebar.h"
+
+1696899996 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\menu_principal.cpp
+	"MENU_PRINCIPAL.h"
+	"SubMenu.h"
+	<iostream>
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\planta.cpp
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plantmanager.cpp
+	"PlantManager.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plantmanager.h
+	<vector>
+	"Plant_Fire.h"
+	"Plant_Green.h"
+	"Plant_Ice.h"
+	"Plant_Super_Green.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plant_fire.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plant_green.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plant_ice.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plant_super_green.h
+	"Colisionable.h"
+	"PLANTA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plataforma.cpp
+	"PLATAFORMA.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\player.cpp
+	"Player.h"
+	<iostream>
+
+1696908529 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\prize.cpp
+	"Prize.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\shootmanager.cpp
+	"ShootManager.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\shootmanager.h
+	"DISPARO.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\submenu.cpp
+	"SubMenu.h"
+	<iostream>
+	"Funciones.h"
+	"MENU_PRINCIPAL.h"
+
+1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\zombie.cpp
+	"ZOMBIE.h"
+	<iostream>
+
+1696935706 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\main.cpp
+	<SFML/Graphics.hpp>
+	"MENU_PRINCIPAL.h"
+	"Funciones.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+
