@@ -1,7 +1,7 @@
 #include "GAME_PLAY.h"
 #include <iostream>
 
-GAME_PLAY::GAME_PLAY()
+GAME_PLAY::GAME_PLAY() : Z1(_shoot_manager)
 {
     _estado=ESTADOS_GAME_PLAY::ACTION;
 
@@ -49,16 +49,16 @@ GAME_PLAY::GAME_PLAY()
 
 
 
-    _array_plantas.push_back(new Planta(SUPER_GREEN,{400,500},LEFT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(GREEN,{800,500},RIGHT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(ICE,{400,200},LEFT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(FIRE,{800,200},RIGHT,_shoot_manager));   //prueba posicion
+    _array_plantas.push_back(new Planta(SUPER_GREEN, {400,500},LEFT,_shoot_manager));  //prueba posicion
+    _array_plantas.push_back(new Planta(GREEN, {800,500},RIGHT,_shoot_manager));  //prueba posicion
+    _array_plantas.push_back(new Planta(ICE, {400,200},LEFT,_shoot_manager));  //prueba posicion
+    _array_plantas.push_back(new Planta(FIRE, {800,200},RIGHT,_shoot_manager));  //prueba posicion
 
     _prize_timer.restart(); //inicializo el timer de premio
     _prize_generated=false;
 
     _is_dead=false;
-
+    disparoZombie = new Disparo(TIPO::BRAIN, {400,400}, false);
 }
 
 GAME_PLAY::~GAME_PLAY()
@@ -99,6 +99,7 @@ void GAME_PLAY::draw(sf::RenderWindow& window)
 
 void GAME_PLAY::cmd()
 {
+
     if(_estado==ESTADOS_GAME_PLAY::ACTION)//SE EJECUTA SI EL JUEGO NO ESTÁ EN PAUSA
     {
         Z1.mobility();
@@ -132,6 +133,8 @@ void GAME_PLAY::cmd()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))
         {
             _estado=ESTADOS_GAME_PLAY::ACTION;
+            _text_pause.setString("             ");
+            _text_pause.setPosition(480,228.50);
         }
     }
 }
@@ -144,7 +147,7 @@ void GAME_PLAY::check_collision_platform()
         if(Z1.getDraw().getGlobalBounds().intersects(Plat_1.getDraw().getGlobalBounds())&&Z1.getjump_force()<0)
         {
             //std::cout<<"Colision"<<std::endl;
-            Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-80); //80 es la altura del Sprite
+            Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-70); //80 es la altura del Sprite
         }
     }
 
@@ -162,7 +165,7 @@ void GAME_PLAY::updatePlants()
             _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
 
             delete planta;                  //libera memoria del objeto planta, pero ojo! el puntero planta aun tiene la direccion
-                                            //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
+            //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
             it=_array_plantas.erase(it);    //con esto elimino completamente de la lista y el iterador IT queda apuntando al siguiente elemento
 
         }
@@ -178,13 +181,18 @@ void GAME_PLAY::updatePlants()
 
 void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
 {
-    for(auto it=_shoot_manager._array_disparos.begin();it!=_shoot_manager._array_disparos.end();)
+    for(auto it=_shoot_manager._array_disparos.begin(); it!=_shoot_manager._array_disparos.end();)
     {
+
         Disparo* disp = *it;
+
+        tipoDisparo = disp->getTipo(); // con esto le asignamos el tipo de disparo a la variable para poder validar las colisiones
         disp->update();
-        if(Z1.isCollision(*disp) || disp->checkWindowBounds(window))        //Para borrar el disparo, pregunto si el zombie lo toca o si sale fuera de pantalla
+
+        //Para borrar el disparo, pregunto si el zombie lo toca o si sale fuera de pantalla
+        if(Z1.isCollision(*disp)&& tipoDisparo !=TIPO::BRAIN || disp->checkWindowBounds(window))
         {
-            if(Z1.isCollision(*disp))
+            if(Z1.isCollision(*disp)&& tipoDisparo != TIPO::BRAIN)
             {
                 _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
             }
@@ -197,17 +205,49 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
         {
             ++it;
         }
+        //validacion de lifebar
+        if(_life_bar.getLifePoints()>5)
+        {
+            _life_bar.setLifePoints(5);
+        }
+        else if(_life_bar.getLifePoints() <= 0)
+        {
+            _life_bar.setLifePoints(0);
+            _is_dead=true;  //se quedo sin puntos de vida
+        }
     }
+    for (auto itPlanta = _array_plantas.begin(); itPlanta != _array_plantas.end();)
+    {
+        Planta* planta = *itPlanta;
+        planta->update();
+        colisionPlanta = false;
+        for(auto itDisparo = _shoot_manager._array_disparos.begin(); itDisparo != _shoot_manager._array_disparos.end();)
+        {
+            Disparo* disp = *itDisparo;
+            disp->update();
 
-    //validacion de lifebar
-    if(_life_bar.getLifePoints()>5)
-    {
-        _life_bar.setLifePoints(5);
-    }
-    else if(_life_bar.getLifePoints() <= 0)
-    {
-        _life_bar.setLifePoints(0);
-        _is_dead=true;  //se quedo sin puntos de vida
+            tipoDisparo = disp->getTipo();
+            if(disp->isCollision(*planta)&& tipoDisparo==TIPO::BRAIN)
+            {
+                colisionPlanta = true;
+                itDisparo = _shoot_manager._array_disparos.erase(itDisparo);
+                delete disp;
+            }
+            else
+            {
+                itDisparo++;
+            }
+        }
+        if(colisionPlanta)
+        {
+
+            itPlanta = _array_plantas.erase(itPlanta);
+            delete planta;
+        }
+        else
+        {
+            itPlanta++;
+        }
     }
 }
 
@@ -257,9 +297,9 @@ void GAME_PLAY::update(sf::RenderTarget& window)
         updateShootAndLife(window);
 
 
-        if(Z1.getDraw().getPosition().y>485) //Suelo... limite de caida
+        if(Z1.getDraw().getPosition().y>490) //485 Suelo... limite de caida
         {
-            Z1.suelo(Z1.getDraw().getPosition().x,485);
+            Z1.suelo(Z1.getDraw().getPosition().x,490);
         }
 
         for(PLATAFORMA& Plat_1: Plats)      //Recorro las plataformas ya creadas y no hago copias

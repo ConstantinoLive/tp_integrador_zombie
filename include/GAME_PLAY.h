@@ -2,15 +2,11 @@
 #define GAME_PLAY_H
 #include "ZOMBIE.h"
 #include "PLATAFORMA.h"
-
+#include "Colisionable.h"
 #include "PLANTA.h"
-
 #include "DISPARO.h"
-
 #include "GESTOR_DISPAROS.h"
-
 #include "Prize.h"
-
 #include "Lifebar.h"
 
 
@@ -30,17 +26,21 @@ public:
 protected:
 
 private:
+    GESTOR_DISPAROS _shoot_manager;
     ZOMBIE Z1;
+    Disparo* disparoZombie;
+
+
+    TIPO tipoDisparo;
 
     std::vector<Planta*> _array_plantas;
 
     Prize* _prize=nullptr;
     sf::Clock _prize_timer;
     bool _prize_generated;
-
+    bool colisionPlanta ;
     Lifebar _life_bar;
 
-    GESTOR_DISPAROS _shoot_manager;
 
     bool _is_dead;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
 

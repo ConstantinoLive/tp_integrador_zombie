@@ -35,6 +35,12 @@ class Disparo : public Colisionable, public sf::Drawable
         //void checkZombieCollision();
         //void checkCollision();
         void update();
+        int getTipoPlanta();
+        int getTipoZombie();
+        int _tipoDisparoPlanta;
+        int _tipoDisparoZombie;
+        TIPO getTipo();
+        TIPO esTipo;
 
 
     protected:
@@ -52,7 +58,6 @@ class Disparo : public Colisionable, public sf::Drawable
         sf::Vector2f _start_position;           //posicion que se va a spawnear el disparo
         int _damage_shoot;
         sf::Clock _animationTimer;
-
         void initVariables();
         void initTexture();
         void initAnimation();
