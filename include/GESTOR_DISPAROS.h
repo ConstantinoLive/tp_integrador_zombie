@@ -13,7 +13,7 @@ class GESTOR_DISPAROS
 
 
 
-    // esto deberia de ser privado y tener un getter porque para el setter ya se hizo el agregar disparo
+        //esto deberia de ser privado y tener un getter porque para el setter ya se hizo el agregar disparo
         std::vector<Disparo*> _array_disparos;
 
 };

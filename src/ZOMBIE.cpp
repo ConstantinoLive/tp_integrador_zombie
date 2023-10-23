@@ -108,7 +108,9 @@ float ZOMBIE::getjump_force()
     return _jump_force;
 }
 
+
 sf::FloatRect ZOMBIE::getBounds()const
 {
     return _sprite_zombie.getGlobalBounds();
 }
+

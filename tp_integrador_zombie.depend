@@ -2100,58 +2100,63 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1696907612 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\disparo.cpp
+1697043587 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\disparo.cpp
 	"DISPARO.h"
 
 1696907612 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\disparo.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 
-1696908467 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\game_play.cpp
+1698077879 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\game_play.cpp
 	"GAME_PLAY.h"
 	<iostream>
+	<SFML/Graphics.hpp>
 
-1696908226 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\game_play.h
+1698077243 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\game_play.h
+	<random>
 	"ZOMBIE.h"
 	"PLATAFORMA.h"
 	"PLANTA.h"
 	"DISPARO.h"
 	"GESTOR_DISPAROS.h"
+	"GESTOR_PLANTAS.h"
 	"Prize.h"
 	"Lifebar.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\zombie.h
+1697039263 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\zombie.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 
 1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plataforma.h
 	<SFML/Graphics.hpp>
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\planta.h
+1698032539 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\planta.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 	"DISPARO.h"
 	"GESTOR_DISPAROS.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_disparos.h
+1698025208 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_disparos.h
 	"DISPARO.h"
 	<vector>
 
-1696902518 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\prize.h
+1698077816 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\prize.h
 	"Colisionable.h"
 	<cstdlib>
 
-1696906180 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\lifebar.h
+1696940947 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\lifebar.h
 	<SFML/Graphics.hpp>
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_disparos.cpp
 	"GESTOR_DISPAROS.h"
 	<vector>
 
-1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_plantas.cpp
+1698025207 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_plantas.cpp
 	"GESTOR_PLANTAS.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_plantas.h
+1698025208 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_plantas.h
+	"PLANTA.h"
+	<vector>
 
 1696907701 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\juego.cpp
 	"Funciones.h"
@@ -2183,7 +2188,7 @@
 	"SubMenu.h"
 	<iostream>
 
-1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\planta.cpp
+1697040484 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\planta.cpp
 	"PLANTA.h"
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plantmanager.cpp
@@ -2219,7 +2224,7 @@
 	"Player.h"
 	<iostream>
 
-1696908529 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\prize.cpp
+1698077822 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\prize.cpp
 	"Prize.h"
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\shootmanager.cpp
@@ -2234,7 +2239,7 @@
 	"Funciones.h"
 	"MENU_PRINCIPAL.h"
 
-1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\zombie.cpp
+1697039263 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\zombie.cpp
 	"ZOMBIE.h"
 	<iostream>
 

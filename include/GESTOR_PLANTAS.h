@@ -1,6 +1,7 @@
 #ifndef GESTOR_PLANTAS_H
 #define GESTOR_PLANTAS_H
-
+#include"PLANTA.h"
+#include<vector>
 
 class GESTOR_PLANTAS
 {
@@ -8,9 +9,10 @@ class GESTOR_PLANTAS
         GESTOR_PLANTAS();
         virtual ~GESTOR_PLANTAS();
 
-    protected:
+        void agregarPlanta(Planta* p);
 
-    private:
+        std::vector<Planta*>  _array_plantas;
+
 };
 
 #endif // GESTOR_PLANTAS_H

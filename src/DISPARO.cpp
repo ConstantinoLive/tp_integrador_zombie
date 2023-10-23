@@ -137,27 +137,6 @@ void Disparo::updateMovement()
     else if(!_direction)
         _speed.x=1.f;
 
-
-    //Este bloque es para mover los disparos por teclado, se utiliza para pruebas
-    /*
-    _speed={0.f,0.f};
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
-    {
-        _speed.x = -4.f;
-        //_estate=GOING_LEFT;
-    }
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
-    {
-        _speed.x = 4.f;
-        //_estate=GOING_RIGHT;
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
-        _speed.y = 4.f;
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-        _speed.y = -4.f;
-
-    */
-
     _shoot_sprite.move(_speed);
 }
 

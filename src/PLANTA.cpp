@@ -179,7 +179,7 @@ void Planta::updateShooting()
         /////////////////////////////////////////////////////////////
 
 
-        _gestor_disparos.agregarDisparo(new Disparo(_type,{position_shoot_x,position_shoot_y},_looking_left));   //disparo en 200;100 para pruebas
+        _gestor_disparos.agregarDisparo(new Disparo(_type,{position_shoot_x,position_shoot_y},_looking_left));
         _spawn_shoot_timer.restart();
     }
 }

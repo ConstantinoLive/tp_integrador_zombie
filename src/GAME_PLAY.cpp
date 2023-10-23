@@ -1,6 +1,8 @@
 #include "GAME_PLAY.h"
 #include <iostream>
 
+#include <SFML/Graphics.hpp>
+
 GAME_PLAY::GAME_PLAY()
 {
     _estado=ESTADOS_GAME_PLAY::ACTION;
@@ -48,16 +50,23 @@ GAME_PLAY::GAME_PLAY()
 
 
 
-
-    _array_plantas.push_back(new Planta(SUPER_GREEN,{400,500},LEFT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(GREEN,{800,500},RIGHT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(ICE,{400,200},LEFT,_shoot_manager));   //prueba posicion
-    _array_plantas.push_back(new Planta(FIRE,{800,200},RIGHT,_shoot_manager));   //prueba posicion
-
+    /*
+    _array_plantas.push_back(new Planta(SUPER_GREEN,{400,500},LEFT,_shoot_manager));    //prueba posicion
+    _array_plantas.push_back(new Planta(GREEN,{800,500},RIGHT,_shoot_manager));         //prueba posicion
+    _array_plantas.push_back(new Planta(ICE,{400,200},LEFT,_shoot_manager));            //prueba posicion
+    _array_plantas.push_back(new Planta(FIRE,{800,200},RIGHT,_shoot_manager));          //prueba posicion
+    */
     _prize_timer.restart(); //inicializo el timer de premio
     _prize_generated=false;
 
     _is_dead=false;
+
+    //inicio los valores aleatorios del generador y mezclo el vector de posiciones
+    std::mt19937 g(rand());
+
+    std::shuffle(_position.begin(), _position.end(), g);
+
+    _plant_spawn_timer.restart();
 
 }
 
@@ -70,11 +79,15 @@ void GAME_PLAY::draw(sf::RenderWindow& window)
 {
     window.draw(Z1.getDraw());
 
-
+    for(auto p : _plant_manager._array_plantas)
+    {
+        window.draw(*p);
+    }
+    /*
     for(auto plant : _array_plantas)
     {
         window.draw(*plant);
-    }
+    }*/
 
     for(auto disparo : _shoot_manager._array_disparos)
     {
@@ -139,15 +152,14 @@ void GAME_PLAY::cmd()
 void GAME_PLAY::check_collision_platform()
 {
 
-    for(auto Plat_1: Plats)
+    for(PLATAFORMA& Plat_1: Plats)
     {
-        if(Z1.getDraw().getGlobalBounds().intersects(Plat_1.getDraw().getGlobalBounds())&&Z1.getjump_force()<0)
+        if(Z1.getDraw().getGlobalBounds().intersects(Plat_1.getDraw().getGlobalBounds()) && Z1.getjump_force()<0)
         {
             //std::cout<<"Colision"<<std::endl;
             Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-80); //80 es la altura del Sprite
         }
     }
-
 }
 ///////////////////////////////////////
 void GAME_PLAY::updatePlants()
@@ -170,7 +182,6 @@ void GAME_PLAY::updatePlants()
         {
             ++it;                           //Si no se elimina el enemigo, avanza al siguiente elemento
         }
-
     }
 }
 
@@ -216,11 +227,12 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
 
 void GAME_PLAY::updatePrize()
 {
+
     if(!_prize_generated)   //pregunto y entro si no hay premio generado
     {
         if(_prize_timer.getElapsedTime().asSeconds() >= 5) //pregunto si llego al tiempo de spawn de premio
         {
-            _prize= new Prize({600,300});
+            _prize= new Prize((sf::Vector2f)getRandomPosition());     //Prueba posicion!!!
             _prize_generated=true;
             _prize_timer.restart();
         }
@@ -252,7 +264,7 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 
         _life_bar.update();
 
-        updatePlants();
+        updatePlants2();
 
         updateShootAndLife(window);
 
@@ -272,3 +284,60 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 
     }
 }
+
+void GAME_PLAY::updatePlants2()
+{
+    updatePlantGeneration();
+    updatePlantDeletion();
+}
+
+void GAME_PLAY::updatePlantGeneration()
+{
+    ///GENERACION DE PLANTAS
+    _random_type=TIPO(rand() % 4);   //Genero un tipo aleatorio, casteo a TIPO
+    bool look=rand()% 2;
+
+    if(_plant_manager._array_plantas.size() <= 4)   //spawneo maximo 4 plantas
+    {
+        if(_plant_spawn_timer.getElapsedTime().asSeconds() >= 3)    //spawneo cada 3 seg
+        {
+            _plant_manager.agregarPlanta(new Planta(_random_type,getRandomPosition(),look,_shoot_manager));
+            _plant_spawn_timer.restart();
+        }
+    }
+}
+
+void GAME_PLAY::updatePlantDeletion()
+{
+    ///DELETEO DE PLANTAS
+    ////recorro el array de plantas del gestor y deleteo plantas si corresponde////
+    for(auto it=_plant_manager._array_plantas.begin(); it!=_plant_manager._array_plantas.end();)   //inicio el iterador IT en el principio del array y recorro hasta el final de array
+    {
+        Planta* planta = *it;       //defino el puntero a PLANTA llamado planta y apunta igual que IT, sera el objeto a actualizar y/o borrar
+        planta->update();
+        //chequeo colision zombie-planta
+        if(Z1.isCollision(*planta))
+        {
+            _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
+
+            delete planta;                  //libera memoria del objeto planta, pero ojo! el puntero planta aun tiene la direccion
+                                            //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
+            _plant_spawn_timer.restart();           //Tanto para la generacion como para el deleteo de plantas, reseteo el timer
+            it=_plant_manager._array_plantas.erase(it);    //con esto elimino completamente de la lista y el iterador IT queda apuntando al siguiente elemento
+        }
+        else
+        {
+            ++it;                           //Si no se elimina el enemigo, avanza al siguiente elemento
+        }
+    }
+}
+
+
+sf::Vector2i GAME_PLAY::getRandomPosition()
+{
+    sf::Vector2i pos = _position.back();             //elemento que me interesa, el ultimo elemento del vector
+    _position.insert(_position.begin(),pos);         //pongo al principio del vector el elemento que me interesa
+    _position.pop_back();                            //saco el ultimo elemento del array
+    return pos;
+}
+

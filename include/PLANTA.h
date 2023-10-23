@@ -19,6 +19,7 @@ enum TIPO
 
 #define LEFT    true
 #define RIGHT   false
+
 class Planta: public Colisionable, public sf::Drawable
 {
     public:
