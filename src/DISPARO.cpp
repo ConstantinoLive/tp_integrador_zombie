@@ -1,5 +1,6 @@
 #include "DISPARO.h"
 
+
 Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct)
 {
     _start_position=pos;
@@ -47,6 +48,7 @@ void Disparo::initVariables()
             _damage_shoot=3;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::FIRE;
             break;
         case GREEN:
             _width_texture=15;
@@ -56,6 +58,7 @@ void Disparo::initVariables()
             _damage_shoot=1;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::GREEN;
             break;
         case ICE:
             _width_texture=20;
@@ -65,6 +68,7 @@ void Disparo::initVariables()
             _damage_shoot=2;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::ICE;
             break;
         case SUPER_GREEN:
             _width_texture=22;
@@ -74,6 +78,7 @@ void Disparo::initVariables()
             _damage_shoot=5;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::SUPER_GREEN;
             break;
         case BRAIN:
                 _width_texture=30;
@@ -83,6 +88,7 @@ void Disparo::initVariables()
             _damage_shoot=1;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::BRAIN;
             break;
         default:
             _width_texture=15;
@@ -92,6 +98,7 @@ void Disparo::initVariables()
             _damage_shoot=1;
             _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
+            esTipo = TIPO::GREEN;
             break;
     }
 
@@ -133,9 +140,9 @@ void Disparo::movement(float x, float y)
 void Disparo::updateMovement()
 {
     if(_direction)
-        _speed.x=-1.f;
+        _speed.x=-4.5;
     else if(!_direction)
-        _speed.x=1.f;
+        _speed.x=4.5;
 
     _shoot_sprite.move(_speed);
 }
@@ -183,6 +190,9 @@ bool Disparo::checkWindowBounds(sf::RenderTarget& target)
         return false;
 }
 
-
+TIPO Disparo::getTipo()
+{
+    return esTipo;
+}
 
 

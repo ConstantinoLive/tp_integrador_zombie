@@ -199,6 +199,7 @@ void Planta::initTexture()
     _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
     _plant_sprite.setTextureRect(_current_frame);
     _plant_sprite.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
+   // _plant_sprite.setOrigin(_width_texture/2, _plant_sprite.getGlobalBounds().height/11);   //desplazo el origen al medio del sprite para que al rotar quede ok
     _plant_sprite.setScale(0.11,0.11); //0.11
 }
 
