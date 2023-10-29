@@ -438,11 +438,11 @@
 
 1694398986 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\funciones.cpp
 
-1698519178 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
+1698585478 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
 	"GAME_PLAY.h"
 	<iostream>
 
-1698258902 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
+1698584796 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
 	"ZOMBIE.h"
 	"PLATAFORMA.h"
 	"Colisionable.h"
@@ -452,6 +452,7 @@
 	"Prize.h"
 	"Lifebar.h"
 	"Seleccion_de_zombie.h"
+	<iostream>
 
 1698102056 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\planta.cpp
 	"PLANTA.h"
@@ -480,7 +481,9 @@
 	"Funciones.h"
 	"Lifebar.h"
 
-1698063118 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\funciones.h
+1698584660 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\funciones.h
+	<iostream>
+	<cstring>
 
 1698063236 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego.cpp
 	"Funciones.h"
@@ -2365,7 +2368,7 @@
 1698059750 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\seleccion_de_zombie.cpp
 	"Seleccion_de_zombie.h"
 
-1698009106 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ingreso_de_nombre.cpp
+1698585240 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ingreso_de_nombre.cpp
 	"Funciones.h"
 	<SFML/Graphics.hpp>
 	"MENU_PRINCIPAL.h"

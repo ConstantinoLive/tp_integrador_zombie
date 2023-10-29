@@ -9,6 +9,7 @@
 #include "Prize.h"
 #include "Lifebar.h"
 #include "Seleccion_de_zombie.h"
+#include <iostream>
 
 
 class GAME_PLAY
@@ -31,7 +32,8 @@ private:
     ZOMBIE Z1;
     Seleccion_de_zombie selec_zom;
     Disparo* disparoZombie;
-
+    std::string _namePlayer;
+    int puntaje = 0;
 
     TIPO tipoDisparo;
 
@@ -58,6 +60,11 @@ private:
     ESTADOS_GAME_PLAY _estado;
     sf::Font _font_pause;
     sf::Text _text_pause;
+    sf::Font _fontPlayer;
+    sf::Text _textPlayer;
+    sf::Font _fontPuntaje;
+    sf::Text _textPuntaje;
+
 
 };
 

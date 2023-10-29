@@ -4,7 +4,7 @@
 #include "SubMenu.h"
 #include "Player.h"
 
-
+std::string _nombrePlayer = "Player";
 void ingresoNombre()
 {
     sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
@@ -58,7 +58,8 @@ void ingresoNombre()
         window.draw(texto);
         window.display();
         if (event.key.code == sf::Keyboard::Enter) {
-            player.setNombre(entrada);
+            _nombrePlayer= entrada;
+            //player.setNombre(entrada);
             window.close();
             sub_menu.Opciones();
 
@@ -67,5 +68,14 @@ void ingresoNombre()
     }
 
 
+}
+
+std::string setNombre(std::string nombre)
+{
+    _nombrePlayer = nombre;
+}
+std::string getNombre()
+{
+    return _nombrePlayer;
 }
 

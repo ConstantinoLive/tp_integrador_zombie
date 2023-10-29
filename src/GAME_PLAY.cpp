@@ -59,6 +59,30 @@ GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager)//: Z
 
     _is_dead=false;
     disparoZombie = new Disparo(TIPO::BRAIN, {400,400}, false);
+
+    /*****************NOMBRE DE JUGADOR   **************/
+    _namePlayer = getNombre();
+    if (!_fontPlayer.loadFromFile("font/BITWA___.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    std::cout<<_namePlayer<<std::endl;
+    _textPlayer.setFont(_fontPlayer);
+    _textPlayer.setString(_namePlayer);
+    _textPlayer.setColor(sf::Color::Red);
+    _textPlayer.setPosition(400,710);
+    /*****************PUNTAJE**************************/
+    puntaje = 0 ;
+    if (!_fontPuntaje.loadFromFile("font/BITWA___.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    std::cout<<puntaje<<std::endl;
+    _textPuntaje.setFont(_fontPuntaje);
+    _textPuntaje.setString(std::to_string(puntaje));
+    _textPuntaje.setColor(sf::Color::Red);
+    _textPuntaje.setPosition(500,740);
+
 }
 
 GAME_PLAY::~GAME_PLAY()
@@ -93,6 +117,10 @@ void GAME_PLAY::draw(sf::RenderWindow& window)
     window.draw(_life_bar);
 
     window.draw(_text_pause);
+
+    window.draw(_textPlayer);
+    window.draw(_textPuntaje);
+
 
 }
 
@@ -232,6 +260,7 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
             if(disp->isCollision(*planta)&& tipoDisparo==TIPO::BRAIN)
             {
                 colisionPlanta = true;
+                puntaje += 45;
                 itDisparo = _shoot_manager._array_disparos.erase(itDisparo);
                 delete disp;
             }
@@ -334,7 +363,7 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 
         updateShootAndLife(window);
 
-
+        _textPuntaje.setString(std::to_string(puntaje));
 
 
         if(Z1.getDraw().getPosition().y>490) //485 Suelo... limite de caida
