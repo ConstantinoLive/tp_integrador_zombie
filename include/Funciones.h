@@ -3,6 +3,10 @@
 
 void Juego();
 void ingresoNombre();
+extern int numeroZombie;
+int seleccionZombie(int numero);
+int getZombie();
+
 
 
 #endif // FUNCIONES_H_INCLUDED

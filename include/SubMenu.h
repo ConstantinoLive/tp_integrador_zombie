@@ -2,6 +2,10 @@
 #define SUBMENU_H
 #define SFML_NO_DEPRECATED_WARNINGS
 #include <SFML/Graphics.hpp>
+#include<iostream>
+#include "Funciones.h"
+#include "MENU_PRINCIPAL.h"
+#include "Seleccion_de_zombie.h"
 
 #define Item 5
 

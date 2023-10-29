@@ -8,6 +8,7 @@
 #include "GESTOR_DISPAROS.h"
 #include "Prize.h"
 #include "Lifebar.h"
+#include "Seleccion_de_zombie.h"
 
 
 class GAME_PLAY
@@ -28,6 +29,7 @@ protected:
 private:
     GESTOR_DISPAROS _shoot_manager;
     ZOMBIE Z1;
+    Seleccion_de_zombie selec_zom;
     Disparo* disparoZombie;
 
 
@@ -37,12 +39,13 @@ private:
 
     Prize* _prize=nullptr;
     sf::Clock _prize_timer;
+    sf::Clock _dead;
     bool _prize_generated;
     bool colisionPlanta ;
     Lifebar _life_bar;
 
 
-    bool _is_dead;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
+    bool _is_dead=false;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
 
 
     PLATAFORMA Plats[30];

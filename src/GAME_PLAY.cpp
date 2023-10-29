@@ -1,7 +1,7 @@
 #include "GAME_PLAY.h"
 #include <iostream>
 
-GAME_PLAY::GAME_PLAY() : Z1(_shoot_manager)
+GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager)//: Z1(_shoot_manager)
 {
     _estado=ESTADOS_GAME_PLAY::ACTION;
 
@@ -103,6 +103,7 @@ void GAME_PLAY::cmd()
     if(_estado==ESTADOS_GAME_PLAY::ACTION)//SE EJECUTA SI EL JUEGO NO ESTÁ EN PAUSA
     {
         Z1.mobility();
+
 
         for(auto Plat_1: Plats)
         {
@@ -213,7 +214,8 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
         else if(_life_bar.getLifePoints() <= 0)
         {
             _life_bar.setLifePoints(0);
-            _is_dead=true;  //se quedo sin puntos de vida
+
+            //_is_dead=true;  //se quedo sin puntos de vida
         }
     }
     for (auto itPlanta = _array_plantas.begin(); itPlanta != _array_plantas.end();)
@@ -286,7 +288,43 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 {
     if(_estado==ESTADOS_GAME_PLAY::ACTION) //SE EJECUTA SI EL JUEGO NO ESTÁ EN PAUSA
     {
-        Z1.update();
+        if(_is_dead==false&&_dead.getElapsedTime().asSeconds()>0.01)
+        {
+            if(_life_bar.getLifePoints()<=5&&_life_bar.getLifePoints()>=1)
+            {
+                std::cout<<_life_bar.getLifePoints()<<std::endl;
+                Z1.update();
+            }
+            else
+            {
+                if(_is_dead==false)
+                {
+                    _dead.restart();
+                }
+                if(_life_bar.getLifePoints()==0&&_dead.getElapsedTime().asSeconds()<1.5)
+                {
+                    std::cout<<_life_bar.getLifePoints()<<std::endl;
+                    Z1.update_muriendo();
+                    _is_dead=true;
+
+                }
+
+                if(_is_dead==true&&_dead.getElapsedTime().asSeconds()>1.5)
+                {
+
+                    _dead.restart();
+
+                }
+            }
+
+        }
+        if(_is_dead==true&&_life_bar.getLifePoints()==0&&_dead.getElapsedTime().asSeconds()>1.5)
+        {
+            _is_dead=false;
+            _life_bar.setLifePoints(5);
+            _dead.restart();
+
+        }
 
         updatePrize();
 
@@ -295,6 +333,8 @@ void GAME_PLAY::update(sf::RenderTarget& window)
         updatePlants();
 
         updateShootAndLife(window);
+
+
 
 
         if(Z1.getDraw().getPosition().y>490) //485 Suelo... limite de caida

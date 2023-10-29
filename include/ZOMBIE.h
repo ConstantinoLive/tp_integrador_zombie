@@ -5,14 +5,17 @@
 #include "DISPARO.h"
 #include "GESTOR_DISPAROS.h"
 #include <iostream>
+#include "Funciones.h"
+#include "Lifebar.h"
 
 
 class ZOMBIE: public Colisionable//: public sf::Drawable
 {
 public:
-    ZOMBIE(GESTOR_DISPAROS& gestorv);
+    ZOMBIE(int opc, GESTOR_DISPAROS& gestor);
     enum ESTADOS
     {
+        NACIMIENTO,
         QUIETO,
         QUIETO_IZQ,
         IZQ,
@@ -21,22 +24,35 @@ public:
         SALTANDO,
         CAMINANDO_DER_SALTANDO,
         CAMINANDO_IZQ_SALTANDO,
-        DISPARANDO
+        DISPARANDO,
+        MURIENDO,
 
     };
     virtual ~ZOMBIE();
     void update();
-    //void draw(sf::RenderTarget&target,sf::RenderStates states)const override;
     void mobility();
     sf::Sprite& getDraw();
     void suelo(float x, float y);
     Disparo* _disparo;
+    Lifebar lb;
     float getjump_force();
     sf::FloatRect getBounds() const override;
     bool isZPressed = false;
     bool yaDisparo = false;
     bool zombieIzquierda;
     sf::Vector2f getPositionPrev();
+    void initAnimation();
+    void updateAnimation();
+    void update_muriendo();
+    void setOpcion(int opc)
+    {
+        _opcion=opc;
+
+    }
+    int getOpcion()
+    {
+        return _opcion;
+    }
 
 protected:
     GESTOR_DISPAROS& _gestor_disparos;
@@ -52,10 +68,11 @@ private:
     sf::Clock _energiaRegen;
     float _frame;
     sf::Vector2f _prevPos;
+    sf::Clock _animationTimer;
     sf::Clock _spawn_shoot_timer;
-    int _vida;
+    //int _vida;
     int _energia = 100;
-
+    int _opcion;
 
 
 };

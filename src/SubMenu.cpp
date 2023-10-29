@@ -1,8 +1,6 @@
-#define SFML_NO_DEPRECATED_WARNINGS
+//#define SFML_NO_DEPRECATED_WARNINGS
 #include "SubMenu.h"
-#include<iostream>
-#include "Funciones.h"
-#include "MENU_PRINCIPAL.h"
+
 using namespace std;
 
 SubMenu::SubMenu(float width, float height)
@@ -89,6 +87,7 @@ void SubMenu::Opciones() {
     // *******************Menu************************
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
     SubMenu sub_menu(window.getSize().x, window.getSize().y);
+    Seleccion_de_zombie selec_z(window.getSize().x, window.getSize().y);
     // *******************Titulo**********************
     sf::Font font;
 
@@ -136,6 +135,8 @@ void SubMenu::Opciones() {
                         break;
                     case 2:
                         cout << "SELECCIONAR ZOMBIE" << endl;
+                         window.close();
+                         selec_z.Opciones();
                         break;
                     case 3:
                         cout << "CARGAR PARTIDA" << endl;

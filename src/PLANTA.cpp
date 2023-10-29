@@ -161,7 +161,7 @@ void Planta::updateAnimation()
 void Planta::updateShooting()
 {
 
-    if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 3 )            //spawneo disparos cada 3 segundos
+    if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 6 )            //spawneo disparos cada 3 segundos
     {
         //// Corrijo que el disparo salga de la boca de la planta///
         float position_shoot_x = _plant_sprite.getPosition().x;
