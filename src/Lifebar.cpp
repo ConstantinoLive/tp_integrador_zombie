@@ -4,7 +4,7 @@ Lifebar::Lifebar()
 {
     _life_points=5;     //Dado por el sprite, ya que es de 5 puntos posibles. Podria, eventualmente, hacer que cada disparo quite 0.5 de daño
     initTexture();
-    _life_bar_sprite.setPosition(0.f,700.f);
+    _life_bar_sprite.setPosition(0.f,720.f);
 }
 
 Lifebar::~Lifebar()
