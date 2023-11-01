@@ -14,7 +14,7 @@ class Lifebar : public sf::Drawable
         void draw(sf::RenderTarget& target,sf::RenderStates states) const override;   //reescribimos el metodo DRAW por haberlo heredado de DRAWABLE
 
         void initTexture();
-        int getLifePoints()const;
+        int getLifePoints();
         void setLifePoints(int points);
         void update();
 

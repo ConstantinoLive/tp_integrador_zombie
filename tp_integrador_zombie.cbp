@@ -43,6 +43,7 @@
 		</Linker>
 		<Unit filename="include/Colisionable.h" />
 		<Unit filename="include/DISPARO.h" />
+		<Unit filename="include/EnergyBar.h" />
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/GAME_PLAY.h" />
 		<Unit filename="include/GESTOR_DISPAROS.h" />
@@ -54,15 +55,18 @@
 		<Unit filename="include/PlantManager.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Prize.h" />
+		<Unit filename="include/Seleccion_de_zombie.h" />
 		<Unit filename="include/ShootManager.h" />
 		<Unit filename="include/SubMenu.h" />
 		<Unit filename="include/ZOMBIE.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Colisionable.cpp" />
 		<Unit filename="src/DISPARO.cpp" />
+		<Unit filename="src/EnergyBar.cpp" />
 		<Unit filename="src/GAME_PLAY.cpp" />
 		<Unit filename="src/GESTOR_DISPAROS.cpp" />
 		<Unit filename="src/GESTOR_PLANTAS.cpp" />
+		<Unit filename="src/Ingreso_de_nombre.cpp" />
 		<Unit filename="src/Juego.cpp" />
 		<Unit filename="src/Lifebar.cpp" />
 		<Unit filename="src/MENU_PRINCIPAL.cpp" />
@@ -71,6 +75,7 @@
 		<Unit filename="src/PlantManager.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Prize.cpp" />
+		<Unit filename="src/Seleccion_de_zombie.cpp" />
 		<Unit filename="src/ShootManager.cpp" />
 		<Unit filename="src/SubMenu.cpp" />
 		<Unit filename="src/ZOMBIE.cpp" />

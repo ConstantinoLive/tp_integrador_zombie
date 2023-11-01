@@ -1,19 +1,18 @@
 #ifndef GAME_PLAY_H
 #define GAME_PLAY_H
-
-
-//#include <algorithm>
-//#include <iterator>
-#include <random>
-
 #include "ZOMBIE.h"
+#include <random>
 #include "PLATAFORMA.h"
+#include "Colisionable.h"
 #include "PLANTA.h"
 #include "DISPARO.h"
 #include "GESTOR_DISPAROS.h"
 #include "GESTOR_PLANTAS.h"
 #include "Prize.h"
 #include "Lifebar.h"
+#include "Seleccion_de_zombie.h"
+#include <iostream>
+#include "EnergyBar.h"
 
 
 class GAME_PLAY
@@ -24,17 +23,16 @@ public:
     void draw(sf::RenderWindow& window);
     void cmd();
     void check_collision_platform();
-    void updatePlants();
-    void updatePlants2();
-    void updatePlantGeneration();
-    void updatePlantDeletion();
-    sf::Vector2i getRandomPosition();
+    //void updatePlants();
     void updateShootAndLife(sf::RenderTarget& window);
     void updatePrize();
     void update(sf::RenderTarget& window);
 
+    void updatePlants2();
+    void updatePlantGeneration();
+    void updatePlantDeletion();
+    sf::Vector2i getRandomPosition();
 
-    /////
     std::vector<sf::Vector2i> _position=
     {
         {30,80},
@@ -87,27 +85,33 @@ public:
         //11
     };
 
-
-
 protected:
 
 private:
-
+    GESTOR_DISPAROS _shoot_manager;
     ZOMBIE Z1;
+    Seleccion_de_zombie selec_zom;
+    EnergyBar _energy_bar;
+    Disparo* disparoZombie;
+    std::string _namePlayer;
+    int puntaje = 0;
+
+    TIPO tipoDisparo;
 
     std::vector<Planta*> _array_plantas;
     GESTOR_PLANTAS _plant_manager;
     sf::Clock _plant_spawn_timer;
 
+
     Prize* _prize=nullptr;
     sf::Clock _prize_timer;
+    sf::Clock _dead;
     bool _prize_generated;
-
+    bool colisionPlanta ;
     Lifebar _life_bar;
 
-    GESTOR_DISPAROS _shoot_manager;
 
-    bool _is_dead;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
+    bool _is_dead=false;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
     TIPO _random_type;
 
     PLATAFORMA Plats[30];
@@ -120,6 +124,11 @@ private:
     ESTADOS_GAME_PLAY _estado;
     sf::Font _font_pause;
     sf::Text _text_pause;
+    sf::Font _fontPlayer;
+    sf::Text _textPlayer;
+    sf::Font _fontPuntaje;
+    sf::Text _textPuntaje;
+
 
 };
 
