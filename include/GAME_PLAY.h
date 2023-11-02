@@ -15,6 +15,7 @@
 #include "EnergyBar.h"
 
 
+
 class GAME_PLAY
 {
 public:
@@ -27,7 +28,10 @@ public:
     void updateShootAndLife(sf::RenderTarget& window);
     void updatePrize();
     void update(sf::RenderTarget& window);
-
+    bool getGameOver()
+    {
+        return _game_over;
+    }
     void updatePlants2();
     void updatePlantGeneration();
     void updatePlantDeletion();
@@ -95,6 +99,8 @@ private:
     Disparo* disparoZombie;
     std::string _namePlayer;
     int puntaje = 0;
+    int vidas;
+    int cant_enemigos=0;
 
     TIPO tipoDisparo;
 
@@ -112,9 +118,11 @@ private:
 
 
     bool _is_dead=false;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
+    bool _game_over=false;
     TIPO _random_type;
 
     PLATAFORMA Plats[30];
+
 
     enum ESTADOS_GAME_PLAY{
         ACTION,
@@ -128,6 +136,9 @@ private:
     sf::Text _textPlayer;
     sf::Font _fontPuntaje;
     sf::Text _textPuntaje;
+    sf::Text _textvidas;
+    sf::Text _cantvidas;
+
 
 
 };

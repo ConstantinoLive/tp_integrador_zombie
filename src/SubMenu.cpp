@@ -31,14 +31,11 @@ SubMenu::SubMenu(float width, float height)
     _subMenu[2].setPosition(sf::Vector2f(width / 6, height / 3.5 * 2));
 
     _subMenu[3].setFont(_fontItem);
-    _subMenu[3].setString("CARGAR PARTIDA");
+    _subMenu[3].setString("VOLVER AL MENU ANTERIOR");
     _subMenu[3].setColor(sf::Color(0,0,0));
     _subMenu[3].setPosition(sf::Vector2f(width / 6, height / 3.5 * 2.5));
 
-    _subMenu[4].setFont(_fontItem);
-    _subMenu[4].setString("VOLVER AL MENU ANTERIOR");
-    _subMenu[4].setColor(sf::Color(0,0,0));
-    _subMenu[4].setPosition(sf::Vector2f(width / 6, height / 3.5 * 3));
+
 
     _seleccionItem = 0;
 
@@ -138,10 +135,8 @@ void SubMenu::Opciones() {
                          window.close();
                          selec_z.Opciones();
                         break;
+
                     case 3:
-                        cout << "CARGAR PARTIDA" << endl;
-                        break;
-                    case 4:
                         cout << "VOLVER AL MENU ANTERIOR" << endl;
                         window.close();
                         menu_p.Opciones();

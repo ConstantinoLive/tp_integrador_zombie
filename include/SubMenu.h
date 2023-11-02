@@ -7,7 +7,7 @@
 #include "MENU_PRINCIPAL.h"
 #include "Seleccion_de_zombie.h"
 
-#define Item 5
+#define Item 4
 
 
 class SubMenu : public sf::Drawable

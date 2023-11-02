@@ -5,6 +5,8 @@
 #include "Player.h"
 #include <iostream>
 #include "GAME_PLAY.h"
+#include "Menu_game_over.h"
+
 
 
 int numeroZombie = 0;
@@ -24,6 +26,8 @@ void Juego()
     fondo.setTexture(_fondo);
 
     GAME_PLAY gp;
+    Menu_game_over menu_GO(1220,800);
+
 
     while (window.isOpen())
     {
@@ -33,20 +37,32 @@ void Juego()
 
 
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
-        gp.update(window);
-        gp.cmd();
+        if(gp.getGameOver()==false)
+        {
+            gp.update(window);
+            gp.cmd();
 
 
-        window.clear(sf::Color::Black);
+            window.clear(sf::Color::Black);
 
-        window.draw(fondo);
-        gp.draw(window);
+            window.draw(fondo);
+            gp.draw(window);
 
 
-        window.display();
+            window.display();
+        }
+        else
+        {
+            window.close();
+            menu_GO.Opciones();
+
+        }
+
     }
 }
 

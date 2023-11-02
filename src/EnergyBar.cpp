@@ -39,27 +39,27 @@ void EnergyBar::update()
 {
     switch(_energy_points)
     {
-        case 5:
-            _current_frame=sf::IntRect(0,0,433,175);
-            break;
-        case 4:
-            _current_frame=sf::IntRect(0,175,433,175);
-            break;
-        case 3:
-            _current_frame=sf::IntRect(0,350,433,175);
-            break;
-        case 2:
-            _current_frame=sf::IntRect(0,525,433,175);
-            break;
-        case 1:
-            _current_frame=sf::IntRect(0,700,433,175);
-            break;
-        case 0:
-            _current_frame=sf::IntRect(0,875,433,175);
-            break;
-        default:
-            _current_frame=sf::IntRect(0,875,433,175);
-            break;
+    case 5:
+        _current_frame=sf::IntRect(0,0,433,175);
+        break;
+    case 4:
+        _current_frame=sf::IntRect(0,175,433,175);
+        break;
+    case 3:
+        _current_frame=sf::IntRect(0,350,433,175);
+        break;
+    case 2:
+        _current_frame=sf::IntRect(0,525,433,175);
+        break;
+    case 1:
+        _current_frame=sf::IntRect(0,700,433,175);
+        break;
+    case 0:
+        _current_frame=sf::IntRect(0,875,433,175);
+        break;
+    default:
+        _current_frame=sf::IntRect(0,875,433,175);
+        break;
     }
     _energy_bar_sprite.setTextureRect(_current_frame);
     _energy_bar_sprite.setScale(0.4,0.4);

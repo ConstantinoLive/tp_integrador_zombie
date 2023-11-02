@@ -1,6 +1,5 @@
 #include "MENU_PRINCIPAL.h"
-#include "SubMenu.h"
-#include<iostream>
+
 
 MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
 {
@@ -86,6 +85,7 @@ void MENU_PRINCIPAL::Opciones()
     // *******************Menu************************
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
     SubMenu sub_menu(window.getSize().x, window.getSize().y);
+    Creditos creditos(window.getSize().x, window.getSize().y);
     // *******************Titulo**********************
     sf::Font font;
 
@@ -136,6 +136,8 @@ void MENU_PRINCIPAL::Opciones()
                         break;
                     case 4:
                         std::cout << "CRÉDITO" << std::endl;
+                        window.close();
+                        creditos.Opciones();
                         break;
                     }
                     break;

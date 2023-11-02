@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Funciones.h"
 #include "Lifebar.h"
+#include "EnergyBar.h"
 
 
 class ZOMBIE: public Colisionable//: public sf::Drawable
@@ -44,6 +45,16 @@ public:
     void initAnimation();
     void updateAnimation();
     void update_muriendo();
+    float gettimeshoot();
+    void settimeshoot(sf::Time);
+   /* void setvida(int v)
+    {
+        _vida=-v;
+    }*/
+    int getvida()
+    {
+        return _vida;
+    }
     void setOpcion(int opc)
     {
         _opcion=opc;
@@ -61,6 +72,7 @@ private:
 
     sf::Sprite _sprite_zombie;
     sf::Texture _texture_zombie;
+
     ESTADOS _estado;
     int _xtexture=0;
     float _jump_force;
@@ -70,9 +82,16 @@ private:
     sf::Vector2f _prevPos;
     sf::Clock _animationTimer;
     sf::Clock _spawn_shoot_timer;
-    //int _vida;
+    sf::Time segundos;
+    sf::Time _time_shoot;
+    int _vida=3;
     int _energia = 100;
     int _opcion;
+    //float _time_shoot;
+
+
+
+
 
 
 };

@@ -4,7 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include"Colisionable.h"
 #include"DISPARO.h"
+#include "PLATAFORMA.h"
 #include"GESTOR_DISPAROS.h"
+#include <iostream>
 
 
 /*  //esto lo meto en la clase disparo directamente
@@ -26,6 +28,7 @@ class Planta: public Colisionable, public sf::Drawable
         virtual ~Planta();
 
         void draw(sf::RenderTarget& target,sf::RenderStates states) const override;   //reescribimos el metodo DRAW por haberlo heredado de DRAWABLE
+        //sf::Sprite& getDraw();
         sf::FloatRect getBounds() const override;                                     //reescribimos el metodo getBounds por haberlo heredado de COLISIONABLE
         void escala(float esc);
         void movement(float x,float y);
@@ -34,6 +37,8 @@ class Planta: public Colisionable, public sf::Drawable
         void updateMovement();
         void updateAnimation();
         void update();
+
+
 
 
     protected:
@@ -57,7 +62,7 @@ class Planta: public Colisionable, public sf::Drawable
 
         GESTOR_DISPAROS& _gestor_disparos;      //es una referencia al gestor disparos que gestionara todos los disparos generados por las plantas
 
-
+        PLATAFORMA plataform;
 
 
         //funciones privadas

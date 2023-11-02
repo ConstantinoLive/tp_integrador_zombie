@@ -2,6 +2,9 @@
 #define MENU_PRINCIPAL_H
 
 #include <SFML/Graphics.hpp>
+#include "SubMenu.h"
+#include<iostream>
+#include "Creditos.h"
 
 #define Item 5
 
