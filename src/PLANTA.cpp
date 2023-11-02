@@ -263,4 +263,3 @@ void Planta::initShooting()
 {
     _spawn_shoot_timer.restart();
 }
-

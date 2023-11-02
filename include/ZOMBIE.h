@@ -1,6 +1,7 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include"Colisionable.h"
 #include "DISPARO.h"
 #include "GESTOR_DISPAROS.h"
@@ -8,6 +9,8 @@
 #include "Funciones.h"
 #include "Lifebar.h"
 #include "EnergyBar.h"
+#include "Audio.h"
+
 
 
 class ZOMBIE: public Colisionable//: public sf::Drawable
@@ -36,6 +39,8 @@ public:
     void suelo(float x, float y);
     Disparo* _disparo;
     Lifebar lb;
+    Audio sound_2;
+    Audio Sound_6;
     float getjump_force();
     sf::FloatRect getBounds() const override;
     bool isZPressed = false;

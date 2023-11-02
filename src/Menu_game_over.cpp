@@ -48,6 +48,7 @@ Menu_game_over::~Menu_game_over()
 
 void Menu_game_over::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
+
     target.draw(fondo,states);
     target.draw(GO,states);
     for(int x=0; x<Item; x++)
@@ -59,20 +60,24 @@ void Menu_game_over::draw(sf::RenderTarget& target, sf::RenderStates states)cons
 
 void Menu_game_over::left()
 {
+
     if(seleccion_item-1>=0)
     {
         menu_GO[seleccion_item].setColor(sf::Color(255,255,255,80));
         seleccion_item--;
+
         menu_GO[seleccion_item].setColor(sf::Color::Green);
     }
 }
 
 void Menu_game_over::right()
 {
+
     if(seleccion_item+1<Item)
     {
         menu_GO[seleccion_item].setColor(sf::Color(255,255,255,80));
         seleccion_item++;
+
         menu_GO[seleccion_item].setColor(sf::Color::Green);
     }
 }
@@ -85,12 +90,13 @@ void Menu_game_over::Opciones()
     // *******************Menu************************
     Menu_game_over mgo(window.getSize().x, window.getSize().y);
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
-
+Audio Sound_3d(3);
     // ***********************************************
 
-
+ Sound_3d.audioON();
     while (window.isOpen())
     {
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -100,9 +106,11 @@ void Menu_game_over::Opciones()
                 switch (event.key.code)
                 {
                 case sf::Keyboard::Left:
+
                     mgo.left();
                     break;
                 case sf::Keyboard::Right:
+
                     mgo.right();
                     break;
                 case sf::Keyboard::Return:
@@ -117,6 +125,7 @@ void Menu_game_over::Opciones()
                         std::cout << "Menu principal" << std::endl;
                         window.close();
                         menu_p.Opciones();
+
                         break;
                     }
                     break;

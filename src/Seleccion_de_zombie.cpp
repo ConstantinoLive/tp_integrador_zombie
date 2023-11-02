@@ -62,6 +62,7 @@ Seleccion_de_zombie::Seleccion_de_zombie(float width, float height)
 
 
 
+
     //_seleccionItem = 0;
 }
 
@@ -72,6 +73,7 @@ Seleccion_de_zombie::~Seleccion_de_zombie()
 
 void Seleccion_de_zombie::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
+
     target.draw(_sprite_fondo,states);
     for (int x = 0; x < Item; x++)
     {
@@ -85,6 +87,7 @@ void Seleccion_de_zombie::draw(sf::RenderTarget& target, sf::RenderStates states
 
 void Seleccion_de_zombie::up()
 {
+
     sf::Color color_opaco(255,255,255,80); //opacidad
     sf::Color color_brillante(255,255,255,255);
 
@@ -93,6 +96,7 @@ void Seleccion_de_zombie::up()
         _nombre_zombie[_seleccionItem].setColor(sf::Color(255,255,255,80));
         //_sprite_Z[_seleccionItem].setColor(color_opaco);
         _seleccionItem--;
+
         std::cout << _seleccionItem << std::endl;
         _nombre_zombie[_seleccionItem].setColor(sf::Color::Green);
         //_sprite_Z[_seleccionItem].setColor(color_brillante);
@@ -101,6 +105,7 @@ void Seleccion_de_zombie::up()
 
 void Seleccion_de_zombie::down()
 {
+
     sf::Color color_opaco(255,255,255,80); //opacidad
     sf::Color color_brillante(255,255,255,255);
 
@@ -109,6 +114,7 @@ void Seleccion_de_zombie::down()
         _nombre_zombie[_seleccionItem].setColor(sf::Color(255,255,255,80));
         //_sprite_Z[_seleccionItem].setColor(color_opaco);
         _seleccionItem++;
+
         std::cout << _seleccionItem << std::endl;
         _nombre_zombie[_seleccionItem].setColor(sf::Color::Green);
         //_sprite_Z[_seleccionItem].setColor(color_brillante);
@@ -126,9 +132,10 @@ void Seleccion_de_zombie::Opciones()
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
     Seleccion_de_zombie selec_z(window.getSize().x, window.getSize().y);
     SubMenu sub_menu(window.getSize().x, window.getSize().y);
-
+Audio Sound_3e(3);
     // *******************Titulo**********************
     sf::Font font;
+
 
     if (!font.loadFromFile("Font/Riot Act 2.otf"))
     {
@@ -140,6 +147,7 @@ void Seleccion_de_zombie::Opciones()
     Text.setPosition(sf::Vector2f(600 / 3.5, 40));
     Text.setCharacterSize(80);
 
+    Sound_3e.audioON();
     while (window.isOpen())
     {
         sf::Event event;
@@ -151,9 +159,11 @@ void Seleccion_de_zombie::Opciones()
                 switch (event.key.code)
                 {
                 case sf::Keyboard::Up:
+
                     selec_z.up();
                     break;
                 case sf::Keyboard::Down:
+
                     selec_z.down();
                     break;
                 case sf::Keyboard::Return:
@@ -182,11 +192,14 @@ void Seleccion_de_zombie::Opciones()
                         std::cout << "Menu anterior" <<std:: endl;
                         window.close();
                         sub_menu.Opciones();
+
                         break;
                     case 4:
                         std::cout << "Menu principal" <<std:: endl;
                         window.close();
+
                         menu_p.Opciones();
+
                         break;
                     }
                     break;

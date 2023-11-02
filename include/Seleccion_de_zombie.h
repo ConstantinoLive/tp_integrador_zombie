@@ -1,12 +1,14 @@
 #ifndef SELECCION_DE_ZOMBIE_H
 #define SELECCION_DE_ZOMBIE_H
-
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include<iostream>
 #include "Funciones.h"
 #include "MENU_PRINCIPAL.h"
+#include "Audio.h"
 #include "SubMenu.h"
 #include "ZOMBIE.h"
+
 
 #define Item 5
 
@@ -24,6 +26,7 @@ public:
         return _seleccionItem;
     }
     void Opciones();
+    // Audio Sound_3e;
 
 protected:
 
@@ -39,6 +42,7 @@ private:
     sf::Texture _texture_Igor;
     sf::Sprite _sprite_fondo;
     sf::Texture _texture_fondo;
+
 
 
 };

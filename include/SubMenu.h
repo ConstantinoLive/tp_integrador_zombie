@@ -2,7 +2,9 @@
 #define SUBMENU_H
 #define SFML_NO_DEPRECATED_WARNINGS
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include<iostream>
+#include "Audio.h"
 #include "Funciones.h"
 #include "MENU_PRINCIPAL.h"
 #include "Seleccion_de_zombie.h"
@@ -24,6 +26,7 @@ public:
         return _seleccionItem;
     }
     void Opciones();
+   // Audio Sound_3b;
 
 protected:
 
@@ -33,6 +36,9 @@ private:
     sf::Text _subMenu[Item];
     sf::Sprite _spriteSubMenu;
     sf::Texture _textureSubMenu;
+
+
+
 };
 
 

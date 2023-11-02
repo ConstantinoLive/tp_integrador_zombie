@@ -1,6 +1,6 @@
 #include "ZOMBIE.h"
 
-ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor)
+ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor), sound_2(2), Sound_6(6)
 {
     setOpcion(opc);
     std::cout << getOpcion()<< std::endl;
@@ -593,6 +593,7 @@ void ZOMBIE::update()
 void ZOMBIE::update_muriendo()
 {
     _vida--;
+    sound_2.audioON();
     if(getOpcion()==0)
     {
         if(zombieIzquierda==false)
@@ -700,7 +701,7 @@ void ZOMBIE::mobility()
             //std::cout<<"CEREBRO"<<std::endl;
             isZPressed = true;
             _estado = ESTADOS::DISPARANDO;
-
+            Sound_6.audioON();
 
 
         }
@@ -708,6 +709,7 @@ void ZOMBIE::mobility()
         {
             isZPressed =false;
             yaDisparo =false;
+
         }
 
     }

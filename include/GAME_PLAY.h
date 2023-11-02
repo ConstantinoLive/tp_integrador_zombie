@@ -13,6 +13,9 @@
 #include "Seleccion_de_zombie.h"
 #include <iostream>
 #include "EnergyBar.h"
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include "Audio.h"
 
 
 
@@ -100,7 +103,6 @@ private:
     std::string _namePlayer;
     int puntaje = 0;
     int vidas;
-    int cant_enemigos=0;
 
     TIPO tipoDisparo;
 
@@ -115,6 +117,10 @@ private:
     bool _prize_generated;
     bool colisionPlanta ;
     Lifebar _life_bar;
+ Audio Sound_4;
+ Audio Sound_5;
+Audio Sound_7;
+
 
 
     bool _is_dead=false;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()

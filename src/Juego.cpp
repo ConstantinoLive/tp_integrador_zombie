@@ -1,11 +1,13 @@
 #include "Funciones.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "MENU_PRINCIPAL.h"
 #include "SubMenu.h"
 #include "Player.h"
 #include <iostream>
 #include "GAME_PLAY.h"
 #include "Menu_game_over.h"
+#include "Audio.h"
 
 
 
@@ -18,6 +20,10 @@ void Juego()
     sf::Sprite fondo;
     sf::Texture _fondo;
 
+
+
+
+
     if (!_fondo.loadFromFile("img/background_zombie_1.png"))
     {
         std::cout << "Error al cargar la textura del fondo" << std::endl;
@@ -27,7 +33,10 @@ void Juego()
 
     GAME_PLAY gp;
     Menu_game_over menu_GO(1220,800);
+    Audio musica(1);
 
+
+    musica.audioON();
 
     while (window.isOpen())
     {
@@ -48,16 +57,19 @@ void Juego()
             gp.cmd();
 
 
+
             window.clear(sf::Color::Black);
 
             window.draw(fondo);
             gp.draw(window);
 
 
+
             window.display();
         }
         else
         {
+            musica.audioOFF();
             window.close();
             menu_GO.Opciones();
 

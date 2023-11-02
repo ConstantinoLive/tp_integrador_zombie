@@ -1,8 +1,9 @@
 #ifndef MENU_GAME_OVER_H
 #define MENU_GAME_OVER_H
-
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
+#include "Audio.h"
 #include "MENU_PRINCIPAL.h"
 
 #define Item 2
@@ -20,6 +21,7 @@ public:
         return seleccion_item;
     }
     void Opciones();
+   // Audio Sound_3d;
 
 protected:
 
@@ -30,6 +32,8 @@ private:
     sf::Sprite fondo;
     sf::Texture _fondo;
     sf::Text GO;
+
+
 
 
 };

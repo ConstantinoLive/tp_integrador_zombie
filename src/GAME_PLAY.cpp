@@ -1,7 +1,7 @@
 #include "GAME_PLAY.h"
 #include <iostream>
 
-GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager)//: Z1(_shoot_manager)
+GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager), Sound_4(4), Sound_5(5), Sound_7(7)//: Z1(_shoot_manager)
 {
     _estado=ESTADOS_GAME_PLAY::ACTION;
 
@@ -114,6 +114,7 @@ GAME_PLAY::~GAME_PLAY()
 
 void GAME_PLAY::draw(sf::RenderWindow& window)
 {
+
     window.draw(Z1.getDraw());
 
     for(auto p : _plant_manager._array_plantas)
@@ -137,7 +138,12 @@ void GAME_PLAY::draw(sf::RenderWindow& window)
     }
 
     if(_prize_generated)
+    {
         window.draw(*_prize);
+    }
+
+
+
 
 
     window.draw(_life_bar);
@@ -222,9 +228,8 @@ void GAME_PLAY::check_collision_platform()
             {
                 Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-70);
             }
-
-
         }
+
     }
 
 }
@@ -257,11 +262,13 @@ void GAME_PLAY::check_collision_platform()
 
 void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
 {
+
     for(auto it=_shoot_manager._array_disparos.begin(); it!=_shoot_manager._array_disparos.end();)
     {
         Disparo* disp = *it;
         tipoDisparo = disp->getTipo(); // con esto le asignamos el tipo de disparo a la variable para poder validar las colisiones
         disp->update();
+
 
         //Para borrar el disparo, pregunto si el zombie lo toca o si sale fuera de pantalla
         if(Z1.isCollision(*disp)&& tipoDisparo !=TIPO::BRAIN || disp->checkWindowBounds(window))
@@ -269,6 +276,7 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
             if(Z1.isCollision(*disp)&& tipoDisparo != TIPO::BRAIN)
             {
                 _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
+                Sound_5.audioON();
             }
 
             delete disp;
@@ -316,6 +324,7 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
         }
         if(colisionPlanta)
         {
+            Sound_7.audioON();
             it =_plant_manager._array_plantas.erase(it);
             delete planta;
         }
@@ -349,6 +358,7 @@ void GAME_PLAY::updatePrize()
             {
                 _life_bar.setLifePoints(_life_bar.getLifePoints() + 1);
                 puntaje+=500;
+                Sound_4.audioON();
             }
             _prize_generated=false;
             _prize_timer.restart();
@@ -371,7 +381,7 @@ void GAME_PLAY::update(sf::RenderTarget& window)
                 {
                     //std::cout<<_life_bar.getLifePoints()<<std::endl;
                     Z1.update();
-                    std::cout<<Z1.getvida()<<std::endl;
+                    //std::cout<<Z1.getvida()<<std::endl;
 
                 }
                 else
@@ -433,36 +443,30 @@ void GAME_PLAY::update(sf::RenderTarget& window)
                 if(Z1.gettimeshoot()>= 0.0&&Z1.gettimeshoot()< 0.4)
                 {
                     _energy_bar.setEnergyPoints(0);
-
-
                 }
                 else
                 {
                     if(Z1.gettimeshoot()> 0.4&&Z1.gettimeshoot()< 0.8)
                     {
                         _energy_bar.setEnergyPoints(1);
-
                     }
                     else
                     {
                         if(Z1.gettimeshoot() > 0.8&&Z1.gettimeshoot()< 1.2)
                         {
                             _energy_bar.setEnergyPoints(2);
-
                         }
                         else
                         {
                             if(Z1.gettimeshoot() > 1.2&&Z1.gettimeshoot()< 1.6)
                             {
                                 _energy_bar.setEnergyPoints(3);
-
                             }
                             else
                             {
                                 if(Z1.gettimeshoot() > 1.6&&Z1.gettimeshoot()< 2.0)
                                 {
                                     _energy_bar.setEnergyPoints(4);
-
                                 }
                             }
                         }
@@ -478,8 +482,6 @@ void GAME_PLAY::update(sf::RenderTarget& window)
             _textPuntaje.setString(std::to_string(puntaje));
             _cantvidas.setString(std::to_string(vidas));
 
-
-
             if(Z1.getDraw().getPosition().y>490) //485 Suelo... limite de caida
             {
                 Z1.suelo(Z1.getDraw().getPosition().x,490);
@@ -490,10 +492,8 @@ void GAME_PLAY::update(sf::RenderTarget& window)
                 Plat_1.update();
             }
 
-
             check_collision_platform();
         }
-
     }
     else
     {
@@ -522,6 +522,7 @@ void GAME_PLAY::updatePlantGeneration()
         {
             _plant_manager.agregarPlanta(new Planta(_random_type,getRandomPosition(),look,_shoot_manager));
             _plant_spawn_timer.restart();
+
         }
     }
 
@@ -540,6 +541,7 @@ void GAME_PLAY::updatePlantDeletion()
         if(Z1.isCollision(*planta))
         {
             _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
+            Sound_5.audioON();
 
             delete planta;                  //libera memoria del objeto planta, pero ojo! el puntero planta aun tiene la direccion
             //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
