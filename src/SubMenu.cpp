@@ -149,7 +149,6 @@ void SubMenu::Opciones() {
                         cout << "VOLVER AL MENU ANTERIOR" << endl;
                         window.close();
                         menu_p.Opciones();
-
                         break;
                     }
                     break;

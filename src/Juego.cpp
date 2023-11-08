@@ -8,6 +8,7 @@
 #include "GAME_PLAY.h"
 #include "Menu_game_over.h"
 #include "Audio.h"
+#include "Menu_winer.h"
 
 
 
@@ -21,9 +22,6 @@ void Juego()
     sf::Texture _fondo;
 
 
-
-
-
     if (!_fondo.loadFromFile("img/background_zombie_1.png"))
     {
         std::cout << "Error al cargar la textura del fondo" << std::endl;
@@ -34,6 +32,7 @@ void Juego()
     GAME_PLAY gp;
     Menu_game_over menu_GO(1220,800);
     Audio musica(1);
+    Menu_winer menu_win(1220,800);
 
 
     musica.audioON();
@@ -51,7 +50,7 @@ void Juego()
             }
         }
 
-        if(gp.getGameOver()==false)
+        if(gp.getGameOver()==false&&gp.getEnemigos_eliminados()<21)
         {
             gp.update(window);
             gp.cmd();
@@ -69,9 +68,22 @@ void Juego()
         }
         else
         {
-            musica.audioOFF();
-            window.close();
-            menu_GO.Opciones();
+            if(gp.getGameOver()==false&&gp.getEnemigos_eliminados()==21)
+            {
+                musica.audioOFF();
+                window.close();
+                menu_win.Opciones();
+            }
+            else
+            {
+                if(gp.getGameOver()==true&&gp.getEnemigos_eliminados()<=21)
+                {
+                    musica.audioOFF();
+                    window.close();
+                    menu_GO.Opciones();
+                }
+            }
+
 
         }
 

@@ -2,7 +2,7 @@
 
 PLATAFORMA::PLATAFORMA()
 {
-    _texture_bloque.loadFromFile("img/Plataforma_ind.png");
+    _texture_bloque.loadFromFile("img/Plataforma_ind1.png");
     _sprite_bloque.setTexture(_texture_bloque);
    // _sprite_bloque.setPosition(x,y);
 }

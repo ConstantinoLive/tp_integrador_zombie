@@ -57,6 +57,7 @@
 		<Unit filename="include/Lifebar.h" />
 		<Unit filename="include/MENU_PRINCIPAL.h" />
 		<Unit filename="include/Menu_game_over.h" />
+		<Unit filename="include/Menu_winer.h" />
 		<Unit filename="include/PLANTA.h" />
 		<Unit filename="include/PLATAFORMA.h" />
 		<Unit filename="include/PlantManager.h" />
@@ -80,6 +81,7 @@
 		<Unit filename="src/Lifebar.cpp" />
 		<Unit filename="src/MENU_PRINCIPAL.cpp" />
 		<Unit filename="src/Menu_game_over.cpp" />
+		<Unit filename="src/Menu_winer.cpp" />
 		<Unit filename="src/PLANTA.cpp" />
 		<Unit filename="src/PLATAFORMA.cpp" />
 		<Unit filename="src/PlantManager.cpp" />

@@ -18,13 +18,18 @@ GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager), Sou
 
     //2do nivel plats
 
-    Plats[7].getDraw().setPosition(190,270);    //1era
+    /*Plats[7].getDraw().setPosition(190,270);    //1era
     Plats[8].getDraw().setPosition(370,270);    //2da
     Plats[9].getDraw().setPosition(430,270);    //2da
-    Plats[10].getDraw().setPosition(680,270);   //3ra
-    Plats[11].getDraw().setPosition(740,270);   //3ra
-    Plats[12].getDraw().setPosition(750,270);   //3ra
-    Plats[13].getDraw().setPosition(900,270);   //4ta
+    Plats[10].getDraw().setPosition(680,270);*/   //3ra
+   // Plats[11].getDraw().setPosition(710,270);   //3ra
+    Plats[7].getDraw().setPosition(70,270);    //1era
+    Plats[8].getDraw().setPosition(240,270);    //2da
+    Plats[9].getDraw().setPosition(300,270);    //2da
+    Plats[10].getDraw().setPosition(470,270);   //3ra
+    Plats[11].getDraw().setPosition(530,270);   //3ra
+    Plats[12].getDraw().setPosition(700,270);   //3ra
+    Plats[13].getDraw().setPosition(870,270);   //4ta
     Plats[14].getDraw().setPosition(1040,270);  //5ta
     Plats[15].getDraw().setPosition(1100,270);  //5ta
     Plats[16].getDraw().setPosition(1160,270);  //5ta
@@ -122,10 +127,10 @@ void GAME_PLAY::draw(sf::RenderWindow& window)
         window.draw(*p);
     }
 
-    /*for(auto plant : _array_plantas)
-    {
-        window.draw(*plant);
-    }*/
+    /* for(auto p : _plant_manager._array_plantas)
+     {
+         window.draw(p.getDraw());
+     }*/
 
     for(auto disparo : _shoot_manager._array_disparos)
     {
@@ -222,7 +227,7 @@ void GAME_PLAY::check_collision_platform()
         {
             if(numeroZombie==0||numeroZombie==1)
             {
-                Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-80); //80 es la altura del Sprite
+                Z1.suelo(Z1.getDraw().getPosition().x,Plat_1.getDraw().getGlobalBounds().top-70); //80 es la altura del Sprite
             }
             else if(numeroZombie==2)
             {
@@ -325,6 +330,7 @@ void GAME_PLAY::updateShootAndLife(sf::RenderTarget& window)
         if(colisionPlanta)
         {
             Sound_7.audioON();
+            enemigos_eliminados++;
             it =_plant_manager._array_plantas.erase(it);
             delete planta;
         }
@@ -505,7 +511,9 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 
 void GAME_PLAY::updatePlants2()
 {
+
     updatePlantGeneration();
+
     updatePlantDeletion();
 }
 
@@ -516,16 +524,18 @@ void GAME_PLAY::updatePlantGeneration()
     _random_type=TIPO(rand() % 4);   //Genero un tipo aleatorio, casteo a TIPO
     bool look=rand()% 2;
 
-    if(_plant_manager._array_plantas.size() <= 4)   //spawneo maximo 4 plantas
+    if(_plant_manager._array_plantas.size() <= 6&& enemigos<=20)   //spawneo maximo 4 plantas
     {
+
         if(_plant_spawn_timer.getElapsedTime().asSeconds() >= 1.5)    //spawneo cada 3 seg
         {
             _plant_manager.agregarPlanta(new Planta(_random_type,getRandomPosition(),look,_shoot_manager));
+            enemigos++;
             _plant_spawn_timer.restart();
 
         }
-    }
 
+    }
 
 }
 
@@ -541,6 +551,7 @@ void GAME_PLAY::updatePlantDeletion()
         if(Z1.isCollision(*planta))
         {
             _life_bar.setLifePoints(_life_bar.getLifePoints() - 1);
+            enemigos_eliminados++;
             Sound_5.audioON();
 
             delete planta;                  //libera memoria del objeto planta, pero ojo! el puntero planta aun tiene la direccion

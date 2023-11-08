@@ -23,19 +23,19 @@ MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
     menu_p[1].setPosition(sf::Vector2f(width/2.3,height/5*1.7));
 
     menu_p[2].setFont(font_item);
-    menu_p[2].setString("OPCIONES");
+    menu_p[2].setString("REGLAMENTO");
     menu_p[2].setColor(sf::Color(255,255,255,80));
-    menu_p[2].setPosition(sf::Vector2f(width/2.2,height/5*2.2));
+    menu_p[2].setPosition(sf::Vector2f(width/2.25,height/5*2.2));
 
     menu_p[3].setFont(font_item);
-    menu_p[3].setString("REGLAMENTO");
+    menu_p[3].setString("CREDITOS");
     menu_p[3].setColor(sf::Color(255,255,255,80));
-    menu_p[3].setPosition(sf::Vector2f(width/2.25,height/5*2.7));
+    menu_p[3].setPosition(sf::Vector2f(width/2.17,height/5*2.7));
 
     menu_p[4].setFont(font_item);
-    menu_p[4].setString("CREDITOS");
+    menu_p[4].setString("SALIR");
     menu_p[4].setColor(sf::Color(255,255,255,80));
-    menu_p[4].setPosition(sf::Vector2f(width/2.17,height/5*3.2));
+    menu_p[4].setPosition(sf::Vector2f(width/2.07,height/5*3.2));
 
 
     seleccion_item=0;
@@ -121,11 +121,9 @@ void MENU_PRINCIPAL::Opciones()
                 switch (event.key.code)
                 {
                 case sf::Keyboard::Up:
-
                     menu_p.up();
                     break;
                 case sf::Keyboard::Down:
-
                     menu_p.down();
                     break;
                 case sf::Keyboard::Return:
@@ -135,29 +133,26 @@ void MENU_PRINCIPAL::Opciones()
                         std::cout << "INICIO" << std::endl;
                         window.close();
                         sub_menu.Opciones();
-
                         break;
                     case 1:
                         std::cout << "ESTADISTICA" << std::endl;
 
                         break;
                     case 2:
-                        std::cout << "OPCIONES" << std::endl;
-
-                        break;
-                    case 3:
                         std::cout << "REGLAMENTO" << std::endl;
 
                         break;
-                    case 4:
+                    case 3:
                         std::cout << "CRÉDITO" << std::endl;
                         window.close();
                         creditos.Opciones();
-
+                        break;
+                    case 4:
+                        std::cout << "SALIR" << std::endl;
+                        window.close();
                         break;
                     }
                     break;
-
                 }
                 break;
 
