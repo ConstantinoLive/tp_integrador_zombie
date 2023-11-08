@@ -1,12 +1,11 @@
 #include "MENU_PRINCIPAL.h"
-#include "SubMenu.h"
-#include<iostream>
+
 
 MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
 {
     if (!font_item.loadFromFile("font/Come With Us.ttf"))
     {
-         std::cout<<"Error al cargar texto"<<std::endl;
+        std::cout<<"Error al cargar texto"<<std::endl;
     }
 
     _texture_menu.loadFromFile("img/tumba.png");
@@ -38,6 +37,7 @@ MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
     menu_p[4].setColor(sf::Color(255,255,255,80));
     menu_p[4].setPosition(sf::Vector2f(width/2.17,height/5*3.2));
 
+
     seleccion_item=0;
 
 }
@@ -50,6 +50,7 @@ MENU_PRINCIPAL::~MENU_PRINCIPAL()
 
 void MENU_PRINCIPAL::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
+
     target.draw(_fondo_menu,states);
     for(int x=0; x<Item; x++)
     {
@@ -60,20 +61,24 @@ void MENU_PRINCIPAL::draw(sf::RenderTarget& target, sf::RenderStates states)cons
 
 void MENU_PRINCIPAL::up()
 {
+
     if(seleccion_item-1>=0)
     {
         menu_p[seleccion_item].setColor(sf::Color(255,255,255,80));
         seleccion_item--;
+
         menu_p[seleccion_item].setColor(sf::Color::Green);
     }
 }
 
 void MENU_PRINCIPAL::down()
 {
+
     if(seleccion_item+1<Item)
     {
         menu_p[seleccion_item].setColor(sf::Color(255,255,255,80));
         seleccion_item++;
+
         menu_p[seleccion_item].setColor(sf::Color::Green);
     }
 }
@@ -86,8 +91,13 @@ void MENU_PRINCIPAL::Opciones()
     // *******************Menu************************
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
     SubMenu sub_menu(window.getSize().x, window.getSize().y);
+    Creditos creditos(window.getSize().x, window.getSize().y);
+    Audio Sound_3c(3);
     // *******************Titulo**********************
     sf::Font font;
+
+
+
 
     if (!font.loadFromFile("Font/Riot Act 2.otf"))
     {
@@ -98,8 +108,10 @@ void MENU_PRINCIPAL::Opciones()
     Text.setPosition(sf::Vector2f(600 / 3.5, 40));
     Text.setCharacterSize(80);
 
+    Sound_3c.audioON();
     while (window.isOpen())
     {
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -109,33 +121,39 @@ void MENU_PRINCIPAL::Opciones()
                 switch (event.key.code)
                 {
                 case sf::Keyboard::Up:
+
                     menu_p.up();
                     break;
                 case sf::Keyboard::Down:
+
                     menu_p.down();
                     break;
                 case sf::Keyboard::Return:
                     switch (menu_p.GetPressedItem())
                     {
                     case 0:
-                       std::cout << "INICIO" << std::endl;
+                        std::cout << "INICIO" << std::endl;
                         window.close();
                         sub_menu.Opciones();
-
-
 
                         break;
                     case 1:
                         std::cout << "ESTADISTICA" << std::endl;
+
                         break;
                     case 2:
                         std::cout << "OPCIONES" << std::endl;
+
                         break;
                     case 3:
                         std::cout << "REGLAMENTO" << std::endl;
+
                         break;
                     case 4:
                         std::cout << "CRÉDITO" << std::endl;
+                        window.close();
+                        creditos.Opciones();
+
                         break;
                     }
                     break;

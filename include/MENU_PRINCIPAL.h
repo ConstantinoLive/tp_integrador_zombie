@@ -1,7 +1,11 @@
 #ifndef MENU_PRINCIPAL_H
 #define MENU_PRINCIPAL_H
-
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include "SubMenu.h"
+#include "Audio.h"
+#include<iostream>
+#include "Creditos.h"
 
 #define Item 5
 
@@ -20,6 +24,7 @@ public:
         return seleccion_item;
     }
      void Opciones();
+     //Audio Sound_3c;
 
 protected:
 
@@ -29,6 +34,8 @@ private:
     sf::Text menu_p[Item];
     sf::Sprite _fondo_menu;
     sf::Texture _texture_menu;
+
+
 };
 
 #endif // MENU_PRINCIPAL_H

@@ -2,6 +2,8 @@
 #define DISPARO_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include "Audio.h"
 #include"Colisionable.h"
 
 enum TIPO
@@ -41,6 +43,7 @@ class Disparo : public Colisionable, public sf::Drawable
         int _tipoDisparoZombie;
         TIPO getTipo();
         TIPO esTipo;
+        Audio Sound_8;
 
 
     protected:

@@ -1,12 +1,16 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include"Colisionable.h"
 #include "DISPARO.h"
 #include "GESTOR_DISPAROS.h"
 #include <iostream>
 #include "Funciones.h"
 #include "Lifebar.h"
+#include "EnergyBar.h"
+#include "Audio.h"
+
 
 
 class ZOMBIE: public Colisionable//: public sf::Drawable
@@ -35,6 +39,8 @@ public:
     void suelo(float x, float y);
     Disparo* _disparo;
     Lifebar lb;
+    Audio sound_2;
+    Audio Sound_6;
     float getjump_force();
     sf::FloatRect getBounds() const override;
     bool isZPressed = false;
@@ -44,6 +50,16 @@ public:
     void initAnimation();
     void updateAnimation();
     void update_muriendo();
+    float gettimeshoot();
+    void settimeshoot(sf::Time);
+   /* void setvida(int v)
+    {
+        _vida=-v;
+    }*/
+    int getvida()
+    {
+        return _vida;
+    }
     void setOpcion(int opc)
     {
         _opcion=opc;
@@ -61,6 +77,7 @@ private:
 
     sf::Sprite _sprite_zombie;
     sf::Texture _texture_zombie;
+
     ESTADOS _estado;
     int _xtexture=0;
     float _jump_force;
@@ -70,9 +87,16 @@ private:
     sf::Vector2f _prevPos;
     sf::Clock _animationTimer;
     sf::Clock _spawn_shoot_timer;
-    //int _vida;
+    sf::Time segundos;
+    sf::Time _time_shoot;
+    int _vida=3;
     int _energia = 100;
     int _opcion;
+    //float _time_shoot;
+
+
+
+
 
 
 };

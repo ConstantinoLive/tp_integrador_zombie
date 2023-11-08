@@ -39,9 +39,15 @@
 			<Add library="SFML/lib/libsfml-graphics.a" />
 			<Add library="SFML/lib/libsfml-system.a" />
 			<Add library="SFML/lib/libsfml-window.a" />
+			<Add library="SFML/lib/libsfml-audio.a" />
+			<Add library="SFML/lib/libsfml-audio-d.a" />
+			<Add library="SFML/lib/libsfml-audio-s.a" />
+			<Add library="SFML/lib/libsfml-audio-s-d.a" />
 			<Add directory="SFML/lib" />
 		</Linker>
+		<Unit filename="include/Audio.h" />
 		<Unit filename="include/Colisionable.h" />
+		<Unit filename="include/Creditos.h" />
 		<Unit filename="include/DISPARO.h" />
 		<Unit filename="include/EnergyBar.h" />
 		<Unit filename="include/Funciones.h" />
@@ -50,6 +56,7 @@
 		<Unit filename="include/GESTOR_PLANTAS.h" />
 		<Unit filename="include/Lifebar.h" />
 		<Unit filename="include/MENU_PRINCIPAL.h" />
+		<Unit filename="include/Menu_game_over.h" />
 		<Unit filename="include/PLANTA.h" />
 		<Unit filename="include/PLATAFORMA.h" />
 		<Unit filename="include/PlantManager.h" />
@@ -60,7 +67,9 @@
 		<Unit filename="include/SubMenu.h" />
 		<Unit filename="include/ZOMBIE.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Audio.cpp" />
 		<Unit filename="src/Colisionable.cpp" />
+		<Unit filename="src/Creditos.cpp" />
 		<Unit filename="src/DISPARO.cpp" />
 		<Unit filename="src/EnergyBar.cpp" />
 		<Unit filename="src/GAME_PLAY.cpp" />
@@ -70,6 +79,7 @@
 		<Unit filename="src/Juego.cpp" />
 		<Unit filename="src/Lifebar.cpp" />
 		<Unit filename="src/MENU_PRINCIPAL.cpp" />
+		<Unit filename="src/Menu_game_over.cpp" />
 		<Unit filename="src/PLANTA.cpp" />
 		<Unit filename="src/PLATAFORMA.cpp" />
 		<Unit filename="src/PlantManager.cpp" />

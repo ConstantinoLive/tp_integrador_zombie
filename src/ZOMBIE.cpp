@@ -1,10 +1,10 @@
 #include "ZOMBIE.h"
 
-ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor)
+ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor), sound_2(2), Sound_6(6)
 {
     setOpcion(opc);
     std::cout << getOpcion()<< std::endl;
-
+    segundos=sf::seconds(1.f);
     if(getOpcion()==0)
     {
         _texture_zombie.loadFromFile("img/zombie_DI5.png");
@@ -13,6 +13,7 @@ ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor)
         //initAnimation();
         _estado=ESTADOS::NACIMIENTO; //estado inicial
         _jump_force=0; //Fuerza de salto inicial
+
     }
     else
     {
@@ -48,6 +49,8 @@ ZOMBIE::~ZOMBIE()
 
 void ZOMBIE::update()
 {
+      //float t;
+    _time_shoot=_spawn_shoot_timer.getElapsedTime();
     if(getOpcion()==0)
     {
         //*********************MORTY*********************************
@@ -87,9 +90,9 @@ void ZOMBIE::update()
         case CAMINANDO_DER: //desplazamiento a la derecha y animacion
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 8;
-            _xtexture = _xtexture*58;
+            _xtexture = _xtexture*58;//58
             //std::cout<<_xtexture<<std::endl;
-            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,58,94.75));
+            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,58,94.75));//_xtexture,189.50,58,94.75
             _sprite_zombie.move(4,0);
             zombieIzquierda = false;
             _estado=ESTADOS::QUIETO;
@@ -181,8 +184,11 @@ void ZOMBIE::update()
         case DISPARANDO:
             if(!yaDisparo)
             {
-                if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
+                //if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
+                if(_time_shoot.asSeconds() >= 2 )
                 {
+                   //_time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                    settimeshoot(_time_shoot);
                     float positionX = _sprite_zombie.getPosition().x;
                     float positionY = _sprite_zombie.getPosition().y;
 
@@ -191,7 +197,9 @@ void ZOMBIE::update()
                         positionX -= 30;
                         _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, zombieIzquierda);
                         _gestor_disparos.agregarDisparo(_disparo);
-                        _spawn_shoot_timer.restart();
+                       _spawn_shoot_timer.restart();
+                      // _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                                settimeshoot(_time_shoot);
                         _xtexture = (int)_sprite_zombie.getPosition().x % 7;
                         _xtexture = _xtexture*57.14;
                         //std::cout<<_xtexture<<std::endl;
@@ -212,6 +220,8 @@ void ZOMBIE::update()
                         _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                         _gestor_disparos.agregarDisparo(_disparo);
                         _spawn_shoot_timer.restart();
+                      //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                                settimeshoot(_time_shoot);
                         _xtexture = (int)_sprite_zombie.getPosition().x % 7;
                         _xtexture = _xtexture*57.14;
                         //std::cout<<_xtexture<<std::endl;
@@ -361,8 +371,11 @@ void ZOMBIE::update()
             case DISPARANDO:
                 if(!yaDisparo)
                 {
-                    if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
+                    //if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
+                    if(_time_shoot.asSeconds() >= 2 )
                     {
+                      //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                            settimeshoot(_time_shoot);
                         float positionX = _sprite_zombie.getPosition().x;
                         float positionY = _sprite_zombie.getPosition().y;
 
@@ -372,6 +385,8 @@ void ZOMBIE::update()
                             _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, zombieIzquierda);
                             _gestor_disparos.agregarDisparo(_disparo);
                             _spawn_shoot_timer.restart();
+                          //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                                settimeshoot(_time_shoot);
                             _xtexture = (int)_sprite_zombie.getPosition().x % 4;
                             _xtexture = _xtexture*95.25;
                             //std::cout<<_xtexture<<std::endl;
@@ -392,6 +407,8 @@ void ZOMBIE::update()
                             _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                             _gestor_disparos.agregarDisparo(_disparo);
                             _spawn_shoot_timer.restart();
+                           // _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
+                                settimeshoot(_time_shoot);
                             _xtexture = (int)_sprite_zombie.getPosition().x % 4;
                             _xtexture = _xtexture*95.25;
                             //std::cout<<_xtexture<<std::endl;
@@ -531,8 +548,10 @@ void ZOMBIE::update()
                 case DISPARANDO:
                     if(!yaDisparo)
                     {
-                        if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
+
+                        if(_time_shoot.asSeconds() >= 2 )
                         {
+                            settimeshoot(_time_shoot);
                             float positionX = _sprite_zombie.getPosition().x;
                             float positionY = _sprite_zombie.getPosition().y;
 
@@ -542,6 +561,7 @@ void ZOMBIE::update()
                                 _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, zombieIzquierda);
                                 _gestor_disparos.agregarDisparo(_disparo);
                                 _spawn_shoot_timer.restart();
+                               settimeshoot(_time_shoot);
                                 _estado = ESTADOS::QUIETO_IZQ;
                                 yaDisparo = true;
                             }
@@ -556,6 +576,7 @@ void ZOMBIE::update()
                                 _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                                 _gestor_disparos.agregarDisparo(_disparo);
                                 _spawn_shoot_timer.restart();
+                                settimeshoot(_time_shoot);
                                 _estado = ESTADOS::QUIETO;
                                 yaDisparo = true;
                             }
@@ -571,6 +592,8 @@ void ZOMBIE::update()
 
 void ZOMBIE::update_muriendo()
 {
+    _vida--;
+    sound_2.audioON();
     if(getOpcion()==0)
     {
         if(zombieIzquierda==false)
@@ -678,7 +701,7 @@ void ZOMBIE::mobility()
             //std::cout<<"CEREBRO"<<std::endl;
             isZPressed = true;
             _estado = ESTADOS::DISPARANDO;
-
+            Sound_6.audioON();
 
 
         }
@@ -686,11 +709,17 @@ void ZOMBIE::mobility()
         {
             isZPressed =false;
             yaDisparo =false;
+
         }
 
     }
     //*******************Validacion para que el zombie no salga de la pantalla***************
+
     if(_sprite_zombie.getPosition().x<0)
+    {
+        _sprite_zombie.setPosition(0,_sprite_zombie.getPosition().y);
+    }
+    if(_sprite_zombie.getPosition().x+_sprite_zombie.getGlobalBounds().width<0)
     {
         _sprite_zombie.setPosition(0,_sprite_zombie.getPosition().y);
     }
@@ -698,10 +727,7 @@ void ZOMBIE::mobility()
     {
         _sprite_zombie.setPosition(1220-_sprite_zombie.getGlobalBounds().width,_sprite_zombie.getPosition().y);
     }
-    if(_sprite_zombie.getPosition().y<0)
-    {
-        _sprite_zombie.setPosition(_sprite_zombie.getPosition().x,0);
-    }
+
 
 
 }
@@ -741,4 +767,15 @@ float ZOMBIE::getjump_force()
 sf::FloatRect ZOMBIE::getBounds()const
 {
     return _sprite_zombie.getGlobalBounds();
+}
+
+float ZOMBIE::gettimeshoot()
+{
+    return _time_shoot.asSeconds();
+}
+
+void ZOMBIE::settimeshoot(sf::Time time)
+{
+    _time_shoot=time;
+
 }
