@@ -29,7 +29,8 @@ public:
     void cmd();
     void check_collision_platform();
     //void updatePlants();
-    void updateShootAndLife(sf::RenderTarget& window);
+
+    void updateShoot(sf::RenderTarget& window);
     void updatePrize();
     void update(sf::RenderTarget& window);
     bool getGameOver()
@@ -51,6 +52,8 @@ public:
     void updatePlants2();
     void updatePlantGeneration();
     void updatePlantDeletion();
+    void updatePlantsSelfMovement();
+    PLATAFORMA findPlatform(Planta plantita);
     sf::Vector2i getRandomPosition();
 
     std::vector<sf::Vector2i> _position=
@@ -91,7 +94,7 @@ public:
         {820,340},
         {850,340},
         //9
-        {100,500},
+        {100,500},  //estas son del suelo
         {200,500},
         {300,500},
         {400,500},
@@ -122,7 +125,7 @@ private:
 
     TIPO tipoDisparo;
 
-    std::vector<Planta*> _array_plantas;
+    //std::vector<Planta*> _array_plantas;
     GESTOR_PLANTAS _plant_manager;
     sf::Clock _plant_spawn_timer;
 
@@ -133,9 +136,9 @@ private:
     bool _prize_generated;
     bool colisionPlanta ;
     Lifebar _life_bar;
- Audio Sound_4;
- Audio Sound_5;
-Audio Sound_7;
+    Audio Sound_4;
+    Audio Sound_5;
+    Audio Sound_7;
 
 
 

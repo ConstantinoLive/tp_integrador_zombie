@@ -17,6 +17,7 @@ class Lifebar : public sf::Drawable
         int getLifePoints();
         void setLifePoints(int points);
         void update();
+        void validation();
 
     private:
         int _life_points;     //Segun spritesheet son 5 puntos

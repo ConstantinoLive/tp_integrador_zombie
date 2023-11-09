@@ -28,6 +28,7 @@ void Planta::initVariables()
     _height_texture=760;
     _end_of_frames_sheet=2600;
     _speed={0.f,0.f};
+    _can_move=true;
     //_looking_left=true;     //por default  arranca en izquierda por el sprite
     switch (_type)
     {
@@ -93,10 +94,29 @@ bool Planta::isLookingLeft()
     return _looking_left;
 }
 
+void Planta::setLookingLeft(bool look)
+{
+    _looking_left=look;
+}
+
+void Planta::setCanMove(bool m)
+{
+    _can_move=m;
+}
+
 
 void Planta::updateMovement()
 {
+    if(_can_move)
+    {
+        if(_looking_left)
+            _speed.x=-1.f;
+        else
+            _speed.x=1.f;
 
+        _plant_sprite.move(_speed);
+    }
+    /*
     _speed={0.f,0.f};
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
@@ -119,8 +139,14 @@ void Planta::updateMovement()
     //actualizo posicion para el shooting
     //_position.x=_plant_sprite.getPosition().x;
     //_position.y=_plant_sprite.getPosition().y;
-
+    */
 }
+
+sf::Vector2f Planta::getPosition()
+{
+    return _plant_sprite.getPosition();
+}
+
 
 void Planta::updateAnimation()
 {
@@ -186,7 +212,7 @@ void Planta::updateShooting()
 
 void Planta::update()
 {
-    //updateMovement();
+    updateMovement();
     updateAnimation();
     updateShooting();   //se encarga de spawnear disparos y pasarselos al gestor de disparos
 }

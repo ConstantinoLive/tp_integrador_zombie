@@ -32,11 +32,6 @@ class Audio
         sf::Music _audio_menu;
 
 
-
-
-
-
-
 };
 
 #endif // AUDIO_H

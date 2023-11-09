@@ -35,8 +35,23 @@ void Lifebar::setLifePoints(int points)
     _life_points=points;
 }
 
+void Lifebar::validation()
+{
+    //validacion de lifebar
+    if(_life_points>5)
+    {
+        _life_points=5;
+    }
+    else if(_life_points <= 0)
+    {
+        _life_points=0;
+    }
+}
+
+
 void Lifebar::update()
 {
+    validation();
     switch(_life_points)
     {
         case 5:

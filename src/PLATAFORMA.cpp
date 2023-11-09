@@ -27,7 +27,7 @@ void PLATAFORMA::mobility()
 
 }
 
-sf::FloatRect PLATAFORMA::getBounds()
+sf::FloatRect PLATAFORMA::getBounds()const
 {
     return _sprite_bloque.getGlobalBounds();
 }

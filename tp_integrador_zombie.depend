@@ -2149,41 +2149,61 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1697043587 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\disparo.cpp
+1699505972 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\disparo.cpp
 	"DISPARO.h"
 
-1696907612 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\disparo.h
+1699468764 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\disparo.h
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Audio.h"
 	"Colisionable.h"
 
-1698077879 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\game_play.cpp
+1699509423 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\game_play.cpp
 	"GAME_PLAY.h"
 	<iostream>
-	<SFML/Graphics.hpp>
 
-1698077243 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\game_play.h
-	<random>
+1699509133 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\game_play.h
 	"ZOMBIE.h"
+	<random>
 	"PLATAFORMA.h"
+	"Colisionable.h"
 	"PLANTA.h"
 	"DISPARO.h"
 	"GESTOR_DISPAROS.h"
 	"GESTOR_PLANTAS.h"
 	"Prize.h"
 	"Lifebar.h"
-
-1697039263 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\zombie.h
+	"Seleccion_de_zombie.h"
+	<iostream>
+	"EnergyBar.h"
 	<SFML/Graphics.hpp>
-	"Colisionable.h"
+	<SFML/Audio.hpp>
+	"Audio.h"
+	"Menu_winer.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plataforma.h
+1699468764 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\zombie.h
 	<SFML/Graphics.hpp>
-
-1698032539 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\planta.h
-	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	"Colisionable.h"
 	"DISPARO.h"
 	"GESTOR_DISPAROS.h"
+	<iostream>
+	"Funciones.h"
+	"Lifebar.h"
+	"EnergyBar.h"
+	"Audio.h"
+
+1699505671 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\plataforma.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+
+1699509324 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\planta.h
+	<SFML/Graphics.hpp>
+	"Colisionable.h"
+	"DISPARO.h"
+	"PLATAFORMA.h"
+	"GESTOR_DISPAROS.h"
+	<iostream>
 
 1698025208 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\gestor_disparos.h
 	"DISPARO.h"
@@ -2193,7 +2213,7 @@
 	"Colisionable.h"
 	<cstdlib>
 
-1696940947 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\lifebar.h
+1699502237 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\lifebar.h
 	<SFML/Graphics.hpp>
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\gestor_disparos.cpp
@@ -2207,37 +2227,52 @@
 	"PLANTA.h"
 	<vector>
 
-1696907701 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\juego.cpp
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\juego.cpp
 	"Funciones.h"
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	"MENU_PRINCIPAL.h"
 	"SubMenu.h"
 	"Player.h"
 	<iostream>
 	"GAME_PLAY.h"
+	"Menu_game_over.h"
+	"Audio.h"
+	"Menu_winer.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\funciones.h
+1698802421 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\funciones.h
+	<iostream>
+	<cstring>
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\menu_principal.h
+1699468764 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\menu_principal.h
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"SubMenu.h"
+	"Audio.h"
+	<iostream>
+	"Creditos.h"
 
-1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\submenu.h
+1699499028 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\submenu.h
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	"Audio.h"
+	"Funciones.h"
+	"MENU_PRINCIPAL.h"
+	"Seleccion_de_zombie.h"
 
 1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\player.h
 	<string.h>
 	<cstdlib>
 	<string>
 
-1696907818 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\lifebar.cpp
+1699502586 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\lifebar.cpp
 	"Lifebar.h"
 
-1696899996 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\menu_principal.cpp
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\menu_principal.cpp
 	"MENU_PRINCIPAL.h"
-	"SubMenu.h"
-	<iostream>
 
-1697040484 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\planta.cpp
+1699509390 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\planta.cpp
 	"PLANTA.h"
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plantmanager.cpp
@@ -2266,7 +2301,7 @@
 	"Colisionable.h"
 	"PLANTA.h"
 
-1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plataforma.cpp
+1699505626 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\plataforma.cpp
 	"PLATAFORMA.h"
 
 1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\player.cpp
@@ -2282,17 +2317,13 @@
 1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\shootmanager.h
 	"DISPARO.h"
 
-1696870043 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\submenu.cpp
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\submenu.cpp
 	"SubMenu.h"
-	<iostream>
-	"Funciones.h"
-	"MENU_PRINCIPAL.h"
 
-1697039263 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\zombie.cpp
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\zombie.cpp
 	"ZOMBIE.h"
-	<iostream>
 
-1696935706 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\main.cpp
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\main.cpp
 	<SFML/Graphics.hpp>
 	"MENU_PRINCIPAL.h"
 	"Funciones.h"
@@ -2554,4 +2585,167 @@
 
 1699103598 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\menu_winer.cpp
 	"Menu_winer.h"
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundfilefactory.inl
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1696870043 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1699499028 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\audio.h
+	<SFML/Audio.hpp>
+	<iostream>
+
+1699468764 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\seleccion_de_zombie.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	"Funciones.h"
+	"MENU_PRINCIPAL.h"
+	"Audio.h"
+	"SubMenu.h"
+	"ZOMBIE.h"
+
+1698802421 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\energybar.h
+	<SFML/Graphics.hpp>
+
+1699468764 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\creditos.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"MENU_PRINCIPAL.h"
+
+1699498292 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\menu_winer.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	"MENU_PRINCIPAL.h"
+
+1698802421 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\ingreso_de_nombre.cpp
+	"Funciones.h"
+	<SFML/Graphics.hpp>
+	"MENU_PRINCIPAL.h"
+	"SubMenu.h"
+	"Player.h"
+
+1699498292 c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\include\menu_game_over.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	"MENU_PRINCIPAL.h"
+
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\menu_game_over.cpp
+	"Menu_game_over.h"
+
+1699498292 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\menu_winer.cpp
+	"Menu_winer.h"
+
+1699468765 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\seleccion_de_zombie.cpp
+	"Seleccion_de_zombie.h"
+
+1699468765 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\audio.cpp
+	"Audio.h"
+
+1699468765 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\energybar.cpp
+	"EnergyBar.h"
+
+1699468765 source:c:\users\54911\documents\github\tp_version_gonzo\tp_integrador_zombie\src\creditos.cpp
+	"Creditos.h"
 

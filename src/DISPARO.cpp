@@ -140,9 +140,9 @@ void Disparo::movement(float x, float y)
 void Disparo::updateMovement()
 {
     if(_direction)
-        _speed.x=-4.5;
+        _speed.x=-1;//1.5
     else if(!_direction)
-        _speed.x=4.5;
+        _speed.x=1;
 
     _shoot_sprite.move(_speed);
 }
@@ -179,7 +179,6 @@ void Disparo::update()
 {
     updateMovement();
     updateAnimation();
-
 }
 
 bool Disparo::checkWindowBounds(sf::RenderTarget& target)

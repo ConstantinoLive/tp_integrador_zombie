@@ -34,6 +34,9 @@ public:
     void escala(float esc);
     void movement(float x,float y);
     bool isLookingLeft();               //devuelve true si la planta mira a la izquierda
+    void setLookingLeft(bool look);
+    void setCanMove(bool m);
+    sf::Vector2f getPosition();
     void updateShooting();
     void updateMovement();
     void updateAnimation();
@@ -48,7 +51,7 @@ protected:
     sf::IntRect _current_frame;
     sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo
     int _end_of_frames_sheet;               //me sirve para saber hasta donde va cada sprite en los distintos tipos de disparos
-    float _frame;                           //es un multiplicador que me permite pasar de cuadro a cuadro para la animacion
+    //float _frame;                           //es un multiplicador que me permite pasar de cuadro a cuadro para la animacion
 
     int _width_texture;
     int _height_texture;
@@ -57,14 +60,14 @@ protected:
     sf::Vector2i _position;
     bool _looking_left;                     //booleano que indica si la planta mira a la izquierda o derecha(default:izq)
     TIPO _type;
+    bool _can_move;
     sf::Clock _animationTimer;
     sf::Clock _spawn_shoot_timer;
 
 
-
     GESTOR_DISPAROS& _gestor_disparos;      //es una referencia al gestor disparos que gestionara todos los disparos generados por las plantas
 
-    PLATAFORMA plataform;
+    //PLATAFORMA plataform;
 
 
     //funciones privadas
