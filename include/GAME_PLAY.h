@@ -16,6 +16,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "Audio.h"
+#include "Menu_winer.h"
 
 
 
@@ -34,6 +35,18 @@ public:
     bool getGameOver()
     {
         return _game_over;
+    }
+    int getEnemigos()
+    {
+        return enemigos;
+    }
+    int getEnemigos_eliminados()
+    {
+        return enemigos_eliminados;
+    }
+    int getPuntaje()
+    {
+        return puntaje;
     }
     void updatePlants2();
     void updatePlantGeneration();
@@ -103,6 +116,9 @@ private:
     std::string _namePlayer;
     int puntaje = 0;
     int vidas;
+    int enemigos=0;
+    int enemigos_eliminados=0;
+
 
     TIPO tipoDisparo;
 

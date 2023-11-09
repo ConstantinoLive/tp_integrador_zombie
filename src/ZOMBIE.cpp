@@ -7,10 +7,10 @@ ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor), soun
     segundos=sf::seconds(1.f);
     if(getOpcion()==0)
     {
-        _texture_zombie.loadFromFile("img/zombie_DI5.png");
+        _texture_zombie.loadFromFile("img/zombie_DI6.png");
         _sprite_zombie.setTexture(_texture_zombie);
         _sprite_zombie.setPosition(0,485); // posicion inicial
-        //initAnimation();
+       //initAnimation();
         _estado=ESTADOS::NACIMIENTO; //estado inicial
         _jump_force=0; //Fuerza de salto inicial
 
@@ -19,8 +19,9 @@ ZOMBIE::ZOMBIE(int opc, GESTOR_DISPAROS& gestor): _gestor_disparos(gestor), soun
     {
         if (getOpcion()==1)
         {
-            _texture_zombie.loadFromFile("img/zombie_girl_DI5.png");
+            _texture_zombie.loadFromFile("img/zombie_girl_DI6.png");
             _sprite_zombie.setTexture(_texture_zombie);
+            _sprite_zombie.setScale(0.8,0.8);
             _sprite_zombie.setPosition(0,485); // posicion inicial
             _estado=ESTADOS::QUIETO; //estado inicial
             _jump_force=0; //Fuerza de salto inicial
@@ -67,7 +68,7 @@ void ZOMBIE::update()
             break;
         case QUIETO:
 
-            _sprite_zombie.setTextureRect(sf::IntRect(0,189.50,65,94.75)); //Textura quieto.... x,y,
+            _sprite_zombie.setTextureRect(sf::IntRect(0,204,51,82)); //_sprite_zombie.setTextureRect(sf::IntRect(0,189.50,65,94.75));
             if (_energiaRegen.getElapsedTime().asSeconds()>=5)
             {
                 if(_energia <=95)
@@ -78,7 +79,7 @@ void ZOMBIE::update()
             break;
         case QUIETO_IZQ:
 
-            _sprite_zombie.setTextureRect(sf::IntRect(401,284.25,65.55,94.75));
+            _sprite_zombie.setTextureRect(sf::IntRect(0,311,51,80));//_sprite_zombie.setTextureRect(sf::IntRect(401,284.25,65.55,94.75));
             if (_energiaRegen.getElapsedTime().asSeconds()>=5)
             {
                 if(_energia <=95)
@@ -89,10 +90,10 @@ void ZOMBIE::update()
             break;
         case CAMINANDO_DER: //desplazamiento a la derecha y animacion
 
-            _xtexture = (int)_sprite_zombie.getPosition().x/10 % 8;
-            _xtexture = _xtexture*58;//58
+            _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
+            _xtexture = _xtexture*55.28;//58
             //std::cout<<_xtexture<<std::endl;
-            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,58,94.75));//_xtexture,189.50,58,94.75
+            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,209,55.28,73));//_sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,58,94.75));
             _sprite_zombie.move(4,0);
             zombieIzquierda = false;
             _estado=ESTADOS::QUIETO;
@@ -101,10 +102,10 @@ void ZOMBIE::update()
 
         case CAMINANDO_IZQ: //desplazamiento a la izquierda y animacion
 
-            _xtexture = (int)_sprite_zombie.getPosition().x/10 % 8;
-            _xtexture = _xtexture*56.60;
+            _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
+            _xtexture = _xtexture*55.71;//56.6
             //std::cout<<_xtexture<<std::endl;
-            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,284.25,56.55,94.75));
+            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,311,55.71,76));//_sprite_zombie.setTextureRect(sf::IntRect(_xtexture,284.25,56.55,94.75));
             _sprite_zombie.move(-4,0);
             zombieIzquierda = true;
             _estado=ESTADOS::QUIETO_IZQ;
@@ -278,10 +279,10 @@ void ZOMBIE::update()
             case CAMINANDO_DER: //desplazamiento a la derecha y animacion
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 9;
-                _xtexture = _xtexture*96.88;
+                _xtexture = _xtexture*72;
                 //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,0,96.88,114));
-                _sprite_zombie.move(4,0);
+                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,11,72,93));
+                _sprite_zombie.move(3,0);
                 zombieIzquierda = false;
                 _estado=ESTADOS::QUIETO;
 
@@ -290,10 +291,10 @@ void ZOMBIE::update()
             case CAMINANDO_IZQ: //desplazamiento a la izquierda y animacion
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 9;
-                _xtexture = _xtexture*96.88;
+                _xtexture = _xtexture*72;
                 //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,114,96.88,114));
-                _sprite_zombie.move(-4,0);
+                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,129,72,93));
+                _sprite_zombie.move(-3,0);
                 zombieIzquierda = true;
                 _estado=ESTADOS::QUIETO_IZQ;
 
@@ -594,6 +595,7 @@ void ZOMBIE::update_muriendo()
 {
     _vida--;
     sound_2.audioON();
+    _jump_force -= 1.8;
     if(getOpcion()==0)
     {
         if(zombieIzquierda==false)
@@ -602,7 +604,7 @@ void ZOMBIE::update_muriendo()
             _xtexture = _xtexture*92;
             //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,558,92,80));
-            _sprite_zombie.move(0.05,0);
+            _sprite_zombie.move(0.05,-_jump_force);
             zombieIzquierda = false;
             //_animationTimer.restart();
             _estado=ESTADOS::NACIMIENTO;
@@ -613,7 +615,7 @@ void ZOMBIE::update_muriendo()
             _xtexture = _xtexture*92;
             //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,478,92,80));
-            _sprite_zombie.move(0.05,0);
+            _sprite_zombie.move(0.05,-_jump_force);
             zombieIzquierda = true;
             //_animationTimer.restart();
             _estado=ESTADOS::NACIMIENTO;
@@ -629,7 +631,7 @@ void ZOMBIE::update_muriendo()
                 _xtexture = _xtexture*105.77;
                 //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,245,105.77,102));
-                _sprite_zombie.move(0.05,0);
+                _sprite_zombie.move(0.05,-_jump_force);
                 zombieIzquierda = false;
                 //_animationTimer.restart();
                 _estado=ESTADOS::NACIMIENTO;
@@ -640,7 +642,7 @@ void ZOMBIE::update_muriendo()
                 _xtexture = _xtexture*100;
                 //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,371,100,102));
-                _sprite_zombie.move(0.05,0);
+                _sprite_zombie.move(0.05,-_jump_force);
                 zombieIzquierda = true;
                 _estado=ESTADOS::NACIMIENTO;
             }

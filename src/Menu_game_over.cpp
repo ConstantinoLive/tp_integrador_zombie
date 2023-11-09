@@ -15,10 +15,10 @@ Menu_game_over::Menu_game_over(float width, float height)
     }
 
     GO.setFont(font_item);
-    GO.setString("GAME    OVER");
+    GO.setString("GAME       OVER");
     GO.setColor(sf::Color(255,255,255,80));
     GO.setCharacterSize(150);
-    GO.setPosition(sf::Vector2f(150,400));
+    GO.setPosition(sf::Vector2f(100,400));
 
     menu_GO[0].setFont(font_item);
     menu_GO[0].setFillColor(sf::Color::Green);
@@ -118,6 +118,7 @@ Audio Sound_3d(3);
                     {
                     case 0:
                        std::cout << "Salir" << std::endl;
+                        Sound_3d.audioOFF();
                         window.close();
 
                         break;

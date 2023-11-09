@@ -3,7 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
-#include "Audio.h"
 #include "MENU_PRINCIPAL.h"
 
 #define Item 2
@@ -21,7 +20,7 @@ public:
         return seleccion_item;
     }
     void Opciones();
-   // Audio Sound_3d;
+
 
 protected:
 
