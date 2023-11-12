@@ -32,6 +32,7 @@ protected:
 
 private:
     int _seleccionItem;
+    sf::Text _text_box;
     sf::Font _fontItem;
     sf::Text _subMenu[Item];
     sf::Sprite _spriteSubMenu;

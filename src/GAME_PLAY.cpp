@@ -22,7 +22,7 @@ GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager), Sou
     Plats[8].getDraw().setPosition(370,270);    //2da
     Plats[9].getDraw().setPosition(430,270);    //2da
     Plats[10].getDraw().setPosition(680,270);*/   //3ra
-   // Plats[11].getDraw().setPosition(710,270);   //3ra
+    // Plats[11].getDraw().setPosition(710,270);   //3ra
     Plats[7].getDraw().setPosition(70,270);    //1era
     Plats[8].getDraw().setPosition(240,270);    //2da
     Plats[9].getDraw().setPosition(300,270);    //2da
@@ -59,6 +59,7 @@ GAME_PLAY::GAME_PLAY() :selec_zom(1220,800), Z1(getZombie(),_shoot_manager), Sou
     std::mt19937 g(rand());
 
     std::shuffle(_position.begin(), _position.end(), g);
+
 
     _plant_spawn_timer.restart();
 
@@ -397,7 +398,7 @@ void GAME_PLAY::update(sf::RenderTarget& window)
 
             }
 
-        //////////////////////////
+            //////////////////////////
 
             //std::cout<<Z1.gettimeshoot()<<std::endl;
             if(Z1.gettimeshoot() > 2.0)
@@ -520,7 +521,7 @@ void GAME_PLAY::updatePlantDeletion()
             Sound_5.audioON();
 
             delete planta;                                  //libera memoria del objeto planta, pero ojo! el puntero planta aun tiene la direccion
-                                                            //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
+            //de memoria del objeto eliminado, es decir, el objeto esta en la lista pero no es valido.
             _plant_spawn_timer.restart();                   //Tanto para la generacion como para el deleteo de plantas, reseteo el timer
             it=_plant_manager._array_plantas.erase(it);    //con esto elimino completamente de la lista y el iterador IT queda apuntando al siguiente elemento
         }
@@ -533,7 +534,70 @@ void GAME_PLAY::updatePlantDeletion()
 
 void GAME_PLAY::updatePlantsSelfMovement()
 {
+
+    sf::FloatRect bounds = Z1.getDraw().getGlobalBounds();
     PLATAFORMA plataformita;
+    for(Planta* plantita : _plant_manager._array_plantas)  //recorro todas las plantas
+    {
+        //float tiempo_disparo=plantita->gettime_shoot();
+
+        plataformita=findPlatform(*plantita);
+        if(plantita->getPosition().y==500&&plantita->getPosition().x>bounds.left)   //pregunto si esta en el suelo no se mueve y ya
+        {
+            plantita->setCanMove(false);
+            plantita->setLookingLeft(true);
+        }
+        else
+        {
+            if(plantita->getPosition().y==500&&plantita->getPosition().x<bounds.left)   //pregunto si esta en el suelo no se mueve y ya
+            {
+                plantita->setCanMove(false);
+                plantita->setLookingLeft(false);
+            }
+            else
+            {
+                if(!plantita->isCollision(plataformita))                     //pregunto por si deja de chocar con la plataforma
+                {
+                    plantita->setLookingLeft(!plantita->isLookingLeft());     //invierto el sentido
+                }
+            }
+
+        }
+        if(plantita->getPosition().x>bounds.left&&bounds.left+150>plantita->getPosition().x&&plantita->getPosition().y<bounds.top+20&&plantita->getPosition().y>bounds.top-20&&plantita->getPosition().y!=500)   //pregunto si esta en el suelo no se mueve y ya
+        {
+            plantita->setCanMove(false);
+            plantita->setLookingLeft(true);
+            //tiempo_disparo=3.0;
+            //plantita->settime_shoot();
+            plantita->updateShooting();
+
+        }
+        else
+        {
+            if(plantita->getPosition().x<bounds.left&&bounds.left-150<plantita->getPosition().x&&plantita->getPosition().y<bounds.top+20&&plantita->getPosition().y>bounds.top-20&&plantita->getPosition().y!=500)   //pregunto si esta en el suelo no se mueve y ya
+            {
+                plantita->setCanMove(false);
+                plantita->setLookingLeft(false);
+                //tiempo_disparo=3.0;
+                //plantita->settime_shoot();
+                plantita->updateShooting();
+
+            }
+            else
+            {
+                if(plantita->getPosition().y!=500)
+                {
+                    plantita->setCanMove(true);
+                }
+
+            }
+        }
+
+
+    }
+
+
+    /*PLATAFORMA plataformita;
     for(Planta* plantita : _plant_manager._array_plantas)  //recorro todas las plantas
     {
         plataformita=findPlatform(*plantita);
@@ -541,7 +605,7 @@ void GAME_PLAY::updatePlantsSelfMovement()
             plantita->setCanMove(false);
         else if(!plantita->isCollision(plataformita))                     //pregunto por si deja de chocar con la plataforma
             plantita->setLookingLeft(!plantita->isLookingLeft());     //invierto el sentido
-    }
+    }*/
 }
 
 
@@ -549,8 +613,15 @@ PLATAFORMA GAME_PLAY::findPlatform(Planta plantita)
 {
     for(PLATAFORMA& plat: Plats)
     {
-        if(plantita.isCollision(plat))
+        sf::FloatRect bounds = plat.getDraw().getGlobalBounds();
+
+        if (plantita.getPosition().x >= bounds.left && plantita.getPosition().x <= bounds.left + bounds.width &&
+                plantita.isCollision(plat))
+        {
             return plat;
+        }
+        /*if(plantita.isCollision(plat))
+            return plat;*/
     }
     return Plats[0];
 }
@@ -560,6 +631,7 @@ PLATAFORMA GAME_PLAY::findPlatform(Planta plantita)
 sf::Vector2i GAME_PLAY::getRandomPosition()
 {
     sf::Vector2i pos = _position.back();             //elemento que me interesa, el ultimo elemento del vector
+
     _position.insert(_position.begin(),pos);         //pongo al principio del vector el elemento que me interesa
     _position.pop_back();                            //saco el ultimo elemento del array
 

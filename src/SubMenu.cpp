@@ -39,6 +39,7 @@ SubMenu::SubMenu(float width, float height)
 
     _seleccionItem = 0;
 
+
 }
 
 
@@ -136,8 +137,9 @@ void SubMenu::Opciones() {
                         break;
                     case 1:
                         cout << "INGRESAR NOMBRE" << endl;
-                        window.close();
+                        //window.close();
                         ingresoNombre();
+
                         break;
                     case 2:
                         cout << "SELECCIONAR ZOMBIE" << endl;
@@ -168,6 +170,7 @@ void SubMenu::Opciones() {
         Text.setColor(sf::Color::Black);
 
         window.draw(sub_menu);
+
         window.draw(Text);
 
 

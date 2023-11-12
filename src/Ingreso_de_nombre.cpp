@@ -7,8 +7,9 @@
 std::string _nombrePlayer = "Player";
 void ingresoNombre()
 {
-    sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
+    sf::RenderWindow window(sf::VideoMode(300, 50),"", sf::Style::None);
     window.setFramerateLimit(60);
+    window.setPosition(sf::Vector2i(1000,510));
 
     // *******************Menu************************
     MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
@@ -16,19 +17,19 @@ void ingresoNombre()
     // *******************Titulo**********************
     sf::Font font;
 
-    if (!font.loadFromFile("Font/Riot Act 2.otf"))
+    if (!font.loadFromFile("Font/TT Interphases Pro Trial Black.ttf"))
     {
         // error...
     }
     sf::Text Text;
     Text.setFont(font);
-    Text.setPosition(sf::Vector2f(600 / 3.5, 40));
-    Text.setCharacterSize(80);
+    //Text.setPosition(sf::Vector2f(600 / 3.5, 40));
+    Text.setCharacterSize(40);
     sf::Text texto;
     texto.setFont(font);
-    texto.setPosition(sf::Vector2f(600 / 3.5, 40));
-    texto.setCharacterSize(80);
-    texto.setFillColor(sf::Color::Red);
+    //texto.setPosition(sf::Vector2f(600 / 3.5, 40));
+    texto.setCharacterSize(40);
+    texto.setFillColor(sf::Color::White);
 
     std::string entrada = ""; // Aquí se almacenará el texto ingresado
     Player player(0, entrada);
@@ -61,7 +62,7 @@ void ingresoNombre()
             _nombrePlayer= entrada;
             //player.setNombre(entrada);
             window.close();
-            sub_menu.Opciones();
+            //sub_menu.Opciones();
 
 
         }

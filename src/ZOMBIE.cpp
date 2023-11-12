@@ -163,7 +163,7 @@ void ZOMBIE::update()
             //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,88,56.55,94.75));
             _sprite_zombie.move(4,0);
-            _jump_force -= 2.2;
+            _jump_force -= 3.2;
             _sprite_zombie.move(0, -_jump_force);
             zombieIzquierda = false;
             _estado=ESTADOS::QUIETO;
@@ -176,7 +176,7 @@ void ZOMBIE::update()
             //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,0,56.55,94.75));
             _sprite_zombie.move(-4,0);
-            _jump_force -= 2.2;
+            _jump_force -= 3.2;
             _sprite_zombie.move(0, -_jump_force);
             zombieIzquierda = true;
             _estado=ESTADOS::QUIETO_IZQ;
@@ -350,7 +350,7 @@ void ZOMBIE::update()
                 //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,498,91.8,96));
                 _sprite_zombie.move(4,0);
-                _jump_force -= 2.2;
+                _jump_force -= 3.2;
                 _sprite_zombie.move(0, -_jump_force);
                 zombieIzquierda = false;
                 _estado=ESTADOS::QUIETO;
@@ -363,7 +363,7 @@ void ZOMBIE::update()
                 //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,623,91.8,96));
                 _sprite_zombie.move(-4,0);
-                _jump_force -= 2.2;
+                _jump_force -= 3.2;
                 _sprite_zombie.move(0, -_jump_force);
                 zombieIzquierda = true;
                 _estado=ESTADOS::QUIETO_IZQ;
@@ -514,7 +514,7 @@ void ZOMBIE::update()
                     if(zombieIzquierda)
                     {
                         _sprite_zombie.setScale(-0.095,0.095);
-                        _jump_force -= 1.8;
+                        _jump_force -= 2.8;
                         _sprite_zombie.setTextureRect({ 0 + int(_frame) * 590,885,590,885 });
                         _sprite_zombie.move(0, -_jump_force);
 
@@ -522,7 +522,7 @@ void ZOMBIE::update()
                     else
                     {
                         _sprite_zombie.setScale(0.095,0.095);
-                        _jump_force -= 1.8;
+                        _jump_force -= 2.8;
                         _sprite_zombie.setTextureRect({ 0 + int(_frame) * 590,885,590,885 });
                         _sprite_zombie.move(0, -_jump_force);
                     }
@@ -530,7 +530,7 @@ void ZOMBIE::update()
                 case CAMINANDO_DER_SALTANDO:
                     _sprite_zombie.move(3, 0);
                     _sprite_zombie.setScale(0.095,0.095);
-                    _jump_force -= 2.2;
+                    _jump_force -= 3.2;
                     _sprite_zombie.setTextureRect({ 0 +  int(_frame) * 590,885,590,885 });
                     _sprite_zombie.move(0, -_jump_force);
                     zombieIzquierda = false;
@@ -540,7 +540,7 @@ void ZOMBIE::update()
                     _sprite_zombie.move(-3, 0);
                     _sprite_zombie.setScale(-0.095,0.095);
                     _sprite_zombie.setTextureRect({ 0 + int(_frame) * 590,885,590,885 });
-                    _jump_force -= 2.2;
+                    _jump_force -= 3.2;
                     _sprite_zombie.move(0, -_jump_force);
                     zombieIzquierda = true;
                     break;

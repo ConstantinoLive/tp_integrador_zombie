@@ -31,8 +31,8 @@ public:
     void draw(sf::RenderTarget& target,sf::RenderStates states) const override;   //reescribimos el metodo DRAW por haberlo heredado de DRAWABLE
     //sf::Sprite& getDraw();
     sf::FloatRect getBounds() const override;                                     //reescribimos el metodo getBounds por haberlo heredado de COLISIONABLE
-    void escala(float esc);
-    void movement(float x,float y);
+   // void escala(float esc);
+   // void movement(float x,float y);
     bool isLookingLeft();               //devuelve true si la planta mira a la izquierda
     void setLookingLeft(bool look);
     void setCanMove(bool m);
@@ -41,7 +41,6 @@ public:
     void updateMovement();
     void updateAnimation();
     void update();
-
 
 
 
@@ -76,7 +75,7 @@ protected:
     void initVariables();
     void initTexture();
     void initAnimation();
-    void initShooting();
+    //void initShooting();
 
 
 };

@@ -18,9 +18,9 @@ MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
     menu_p[0].setPosition(sf::Vector2f(width/2.08,height/5*1.2));
 
     menu_p[1].setFont(font_item);
-    menu_p[1].setString("ESTADISTICA");
+    menu_p[1].setString("RANCKING");
     menu_p[1].setColor(sf::Color(255,255,255,80));
-    menu_p[1].setPosition(sf::Vector2f(width/2.3,height/5*1.7));
+    menu_p[1].setPosition(sf::Vector2f(width/2.17,height/5*1.7));
 
     menu_p[2].setFont(font_item);
     menu_p[2].setString("REGLAMENTO");
@@ -135,7 +135,7 @@ void MENU_PRINCIPAL::Opciones()
                         sub_menu.Opciones();
                         break;
                     case 1:
-                        std::cout << "ESTADISTICA" << std::endl;
+                        std::cout << "RANCKING" << std::endl;
 
                         break;
                     case 2:
