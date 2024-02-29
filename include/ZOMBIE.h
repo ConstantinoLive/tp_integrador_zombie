@@ -1,22 +1,24 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
+
+#include <iostream>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include"Colisionable.h"
-#include "DISPARO.h"
-#include "GESTOR_DISPAROS.h"
-#include <iostream>
-#include "Funciones.h"
+
+#include "Colisionable.h"
+#include "Disparo.h"
+#include "Gestor_disparos.h"
 #include "Lifebar.h"
 #include "EnergyBar.h"
 #include "Audio.h"
 
 
 
-class ZOMBIE: public Colisionable//: public sf::Drawable
+class Zombie: public Colisionable//: public sf::Drawable
 {
 public:
-    ZOMBIE(int opc, GESTOR_DISPAROS& gestor);
+    Zombie(int opc, Gestor_disparos& gestor);
     enum ESTADOS
     {
         NACIMIENTO,
@@ -32,7 +34,7 @@ public:
         MURIENDO,
 
     };
-    virtual ~ZOMBIE();
+    virtual ~Zombie();
     void update();
     void mobility();
     sf::Sprite& getDraw();
@@ -46,9 +48,11 @@ public:
     bool isZPressed = false;
     bool yaDisparo = false;
     bool zombieIzquierda;
-    sf::Vector2f getPositionPrev();
+   // sf::Vector2f getPositionPrev();
     void initAnimation();
     void updateAnimation();
+    void initTexture();
+    void initVariables();
     void update_muriendo();
     float gettimeshoot();
     void settimeshoot(sf::Time);
@@ -71,7 +75,7 @@ public:
     }
 
 protected:
-    GESTOR_DISPAROS& _gestor_disparos;
+    Gestor_disparos& _gestor_disparos;
 private:
 
 
@@ -80,6 +84,7 @@ private:
 
     ESTADOS _estado;
     int _xtexture=0;
+
     float _jump_force;
     bool _delaySalto;
     sf::Clock _energiaRegen;
@@ -94,9 +99,11 @@ private:
     int _opcion;
     //float _time_shoot;
 
-
-
-
+    sf::IntRect _current_frame;
+    sf::IntRect _first_frame_of_sheet;
+    int _end_of_frames_sheet;
+    int _width_texture;
+    int _height_texture;
 
 
 };

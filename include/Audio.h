@@ -1,7 +1,9 @@
 #ifndef AUDIO_H
 #define AUDIO_H
-#include <SFML/Audio.hpp>
+
 #include <iostream>
+
+#include <SFML/Audio.hpp>
 
 class Audio
 {

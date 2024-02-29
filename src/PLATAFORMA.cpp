@@ -1,33 +1,33 @@
-#include "PLATAFORMA.h"
+#include "Plataforma.h"
 
-PLATAFORMA::PLATAFORMA()
+Plataforma::Plataforma()
 {
     _texture_bloque.loadFromFile("img/Plataforma_ind1.png");
     _sprite_bloque.setTexture(_texture_bloque);
    // _sprite_bloque.setPosition(x,y);
 }
 
-PLATAFORMA::~PLATAFORMA()
+Plataforma::~Plataforma()
 {
     //dtor
 }
 
-void PLATAFORMA::update()
+void Plataforma::update()
 {
 
 }
 
-sf::Sprite& PLATAFORMA::getDraw()
+sf::Sprite& Plataforma::getDraw()
 {
     return _sprite_bloque;
 }
 
-void PLATAFORMA::mobility()
+void Plataforma::mobility()
 {
 
 }
 
-sf::FloatRect PLATAFORMA::getBounds()const
+sf::FloatRect Plataforma::getBounds()const
 {
     return _sprite_bloque.getGlobalBounds();
 }

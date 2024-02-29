@@ -1,13 +1,15 @@
 #ifndef GESTOR_PLANTAS_H
 #define GESTOR_PLANTAS_H
-#include"PLANTA.h"
-#include<vector>
 
-class GESTOR_PLANTAS
+#include <vector>
+
+#include "PLANTA.h"
+
+class Gestor_plantas
 {
     public:
-        GESTOR_PLANTAS();
-        virtual ~GESTOR_PLANTAS();
+        Gestor_plantas();
+        virtual ~Gestor_plantas();
 
         void agregarPlanta(Planta* p);
 

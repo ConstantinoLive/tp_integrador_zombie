@@ -1,22 +1,24 @@
 #include <SFML/Graphics.hpp>
-#include "MENU_PRINCIPAL.h"
-#include "Funciones.h"
+//#include "MENU_PRINCIPAL.h"
+//#include "Funciones.h"
 #include <iostream>
 #include<cstdlib>       //para rand y srand
 #include <ctime>        //para time
 
+#include "Menu.h"
+#include "GAME_PLAY.h"
+#include "Juego2.h"
 
-using namespace std;
+
+//using namespace std;
 
 int main()
 {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));  //inicio semilla para rand
 
-    MENU_PRINCIPAL menu(1220,800);
+    Juego2 zombies_vs_plantas;
 
-
-    menu.Opciones();
-
+    zombies_vs_plantas.run();
     return 0;
 }
 

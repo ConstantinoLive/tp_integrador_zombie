@@ -1,15 +1,17 @@
 #ifndef PLATAFORMA_H
 #define PLATAFORMA_H
+
 #include <SFML/Graphics.hpp>
+
 #include "Colisionable.h"
 
 
 
-class PLATAFORMA : public Colisionable//: public sf::Drawable
+class Plataforma : public Colisionable//: public sf::Drawable
 {
 public:
-    PLATAFORMA();
-    virtual ~PLATAFORMA();
+    Plataforma();
+    virtual ~Plataforma();
     void update();
     void mobility();
     //void draw(sf::RenderTarget&target,sf::RenderStates states)const override;

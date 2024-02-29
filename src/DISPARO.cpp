@@ -1,4 +1,4 @@
-#include "DISPARO.h"
+#include "Disparo.h"
 
 
 Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct): Sound_8(8)

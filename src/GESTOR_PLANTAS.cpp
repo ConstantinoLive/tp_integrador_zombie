@@ -1,16 +1,16 @@
-#include "GESTOR_PLANTAS.h"
+#include "Gestor_plantas.h"
 
-GESTOR_PLANTAS::GESTOR_PLANTAS()
+Gestor_plantas::Gestor_plantas()
 {
     //ctor
 }
 
-GESTOR_PLANTAS::~GESTOR_PLANTAS()
+Gestor_plantas::~Gestor_plantas()
 {
     //dtor
 }
 
-void GESTOR_PLANTAS::agregarPlanta(Planta* p)
+void Gestor_plantas::agregarPlanta(Planta* p)
 {
     _array_plantas.push_back(p);
 }

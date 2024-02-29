@@ -1,18 +1,18 @@
-#include "GESTOR_DISPAROS.h"
+#include "Gestor_disparos.h"
 #include<vector>
 
-GESTOR_DISPAROS::GESTOR_DISPAROS()
+Gestor_disparos::Gestor_disparos()
 {
     //ctor
 }
 
-GESTOR_DISPAROS::~GESTOR_DISPAROS()
+Gestor_disparos::~Gestor_disparos()
 {
     //dtor
 }
 
 
-void GESTOR_DISPAROS::agregarDisparo(Disparo* disp)
+void Gestor_disparos::agregarDisparo(Disparo* disp)
 {
     _array_disparos.push_back(disp);
 

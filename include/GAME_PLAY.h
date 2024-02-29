@@ -1,30 +1,32 @@
 #ifndef GAME_PLAY_H
 #define GAME_PLAY_H
-#include "ZOMBIE.h"
+
 #include <random>
-#include "PLATAFORMA.h"
-#include "Colisionable.h"
-#include "PLANTA.h"
-#include "DISPARO.h"
-#include "GESTOR_DISPAROS.h"
-#include "GESTOR_PLANTAS.h"
-#include "Prize.h"
-#include "Lifebar.h"
-#include "Seleccion_de_zombie.h"
 #include <iostream>
-#include "EnergyBar.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+
+#include "Zombie.h"
+#include "Plataforma.h"
+#include "Colisionable.h"
+#include "Planta.h"
+#include "Disparo.h"
+#include "Gestor_disparos.h"
+#include "Gestor_plantas.h"
+#include "Prize.h"
+#include "Lifebar.h"
+
+#include "EnergyBar.h"
 #include "Audio.h"
-#include "Menu_winer.h"
+#include "Player.h"
 
 
 
-class GAME_PLAY
+class Game_play
 {
 public:
-    GAME_PLAY();
-    virtual ~GAME_PLAY();
+    Game_play(Player& player, int numeroZombie,sf::RenderWindow& window);
+    virtual ~Game_play();
     void draw(sf::RenderWindow& window);
     void cmd();
     void check_collision_platform();
@@ -33,28 +35,20 @@ public:
     void updateShoot(sf::RenderTarget& window);
     void updatePrize();
     void update(sf::RenderTarget& window);
-    bool getGameOver()
-    {
-        return _game_over;
-    }
-    int getEnemigos()
-    {
-        return enemigos;
-    }
-    int getEnemigos_eliminados()
-    {
-        return enemigos_eliminados;
-    }
-    int getPuntaje()
-    {
-        return puntaje;
-    }
+
+    bool getGameOver(){return _game_over;}
+    int getEnemigos(){return enemigos;}
+    int getEnemigos_eliminados(){return enemigos_eliminados;}
+    int getPuntaje(){return puntaje;}
+
     void updatePlants2();
     void updatePlantGeneration();
     void updatePlantDeletion();
     void updatePlantsSelfMovement();
-    PLATAFORMA findPlatform(Planta plantita);
+    Plataforma findPlatform(Planta plantita);
     sf::Vector2i getRandomPosition();
+    void setNombrePlayer(std::string nombre);
+    bool getWinner();
 
     std::vector<sf::Vector2i> _position=
     {
@@ -111,22 +105,25 @@ public:
 protected:
 
 private:
-    GESTOR_DISPAROS _shoot_manager;
-    ZOMBIE Z1;
-    Seleccion_de_zombie selec_zom;
+    Gestor_disparos _shoot_manager;
+    Zombie* Z1;
+    //Seleccion_de_zombie selec_zom;
+    int numeroZombie;
     EnergyBar _energy_bar;
     Disparo* disparoZombie;
     std::string _namePlayer;
+
     int puntaje = 0;
     int vidas;
     int enemigos=0;
     int enemigos_eliminados=0;
+    bool _winner = false;
 
 
     TIPO tipoDisparo;
 
     //std::vector<Planta*> _array_plantas;
-    GESTOR_PLANTAS _plant_manager;
+    Gestor_plantas _plant_manager;
     sf::Clock _plant_spawn_timer;
 
 
@@ -144,9 +141,10 @@ private:
 
     bool _is_dead=false;      //bandera para ver si la vida llego al final,puede servir, revisar posible getter()
     bool _game_over=false;
+
     TIPO _random_type;
 
-    PLATAFORMA Plats[30];
+    Plataforma Plats[30];
 
 
     enum ESTADOS_GAME_PLAY{
@@ -163,8 +161,6 @@ private:
     sf::Text _textPuntaje;
     sf::Text _textvidas;
     sf::Text _cantvidas;
-
-
 
 };
 

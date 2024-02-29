@@ -1,6 +1,6 @@
-#include "PLANTA.h"
+#include "Planta.h"
 
-Planta::Planta(TIPO tipo,sf::Vector2i pos,bool look,GESTOR_DISPAROS& gestor): _gestor_disparos(gestor)
+Planta::Planta(TIPO tipo,sf::Vector2i pos,bool look,Gestor_disparos& gestor): _gestor_disparos(gestor)
 {
     //inicializo el gestor de disparos, es una condicion necesaria al haber declarado la referencia al gestor
     _type=tipo;
@@ -10,7 +10,7 @@ Planta::Planta(TIPO tipo,sf::Vector2i pos,bool look,GESTOR_DISPAROS& gestor): _g
     initVariables();
     initTexture();
     initAnimation();
-  // initShooting();
+    //initShooting();
 
 }
 

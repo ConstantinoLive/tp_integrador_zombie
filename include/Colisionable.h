@@ -1,5 +1,6 @@
 #ifndef COLISIONABLE_H
 #define COLISIONABLE_H
+
 #include<SFML/Graphics.hpp>
 
 class Colisionable     //Clase abstracta para ser heredada por players,enemies,shoot,platform,etc

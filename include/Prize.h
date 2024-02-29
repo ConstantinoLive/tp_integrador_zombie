@@ -1,8 +1,9 @@
 #ifndef PRIZE_H
 #define PRIZE_H
 
-#include"Colisionable.h"
 #include<cstdlib>
+
+#include"Colisionable.h"
 
 
 

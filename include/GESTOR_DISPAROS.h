@@ -1,13 +1,15 @@
 #ifndef GESTOR_DISPAROS_H
 #define GESTOR_DISPAROS_H
-#include"DISPARO.h"
-#include<vector>
 
-class GESTOR_DISPAROS
+#include <vector>
+
+#include "DISPARO.h"
+
+class Gestor_disparos
 {
     public:
-        GESTOR_DISPAROS();
-        virtual ~GESTOR_DISPAROS();
+        Gestor_disparos();
+        virtual ~Gestor_disparos();
 
         void agregarDisparo(Disparo* disp);
 
