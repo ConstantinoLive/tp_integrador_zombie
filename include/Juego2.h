@@ -2,6 +2,7 @@
 #define JUEGO2_H
 
 #include <SFML/Graphics.hpp>
+//#include <SFML/Audio.hpp>
 
 #include "Menu.h"
 #include "Player.h"
@@ -43,6 +44,7 @@ class Juego2
         TIPO_MENU aJugarHijo(Player& player,int num_zombie,sf::RenderWindow& window);
 
 
+
     private:
         int _n_zombie;
 
@@ -55,8 +57,6 @@ class Juego2
         Menu* _menu_seleccion_zombie;
         Menu* _menu_game_over;
         Menu* _menu_winner;
-
-        Zombie* _ZRule;
 
         Player* _player;
         //Partida* _partida;

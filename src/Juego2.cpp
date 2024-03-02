@@ -192,7 +192,6 @@ TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
     }
 }
 
-
 TIPO_MENU Juego2::creditos(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::CREDITOS;
@@ -284,7 +283,6 @@ TIPO_MENU Juego2::reglamento(sf::RenderWindow& window)
 
         window.clear(sf::Color::Black);
         window.draw(*_menu_reglamento);   ///dibujo el contendido , que es un menu dibujable :)
-        showStart(window);
         showRule(window);
         window.display();
         return t;
@@ -514,13 +512,30 @@ void Juego2::showStart(sf::RenderWindow& window)
 {
     sf::Text text;
     sf::Font font;
+    sf::Texture _texture_morty;
+    sf::Sprite _sprite_morty;
+    sf::Texture _texture_planta;
+    sf::Sprite _sprite_planta;
 
     font.loadFromFile("Font/Lethal Slime.ttf");
 
     text=sf::Text("ZOMBIES VS. PLANTAZ",font,30);
     text.setFillColor(sf::Color(255,255,255,180));
     text.setPosition(350,40);
+
+    _texture_morty.loadFromFile("img/Morty.png");
+    _sprite_morty.setTexture(_texture_morty);
+    _sprite_morty.scale(0.5,0.5);
+    _sprite_morty.setPosition(150,450);
+
+    _texture_planta.loadFromFile("img/Planta.png");
+    _sprite_planta.setTexture(_texture_planta);
+    _sprite_planta.scale(0.4,0.4);
+    _sprite_planta.setPosition(900,450);
+
     window.draw(text);
+    window.draw(_sprite_morty);
+    window.draw(_sprite_planta);
 }
 
 void Juego2::showBestTeam(sf::RenderWindow& window)
@@ -621,6 +636,14 @@ void Juego2::showRule(sf::RenderWindow& window)
     sf::Text Izq;
     sf::Text P;
     sf::Font font;
+    sf::Text nombre_text;
+    sf::Font nombre_font;
+
+    nombre_font.loadFromFile("Font/Lethal Slime.ttf");
+
+    nombre_text=sf::Text("ZOMBIES VS. PLANTAZ",nombre_font,30);
+    nombre_text.setFillColor(sf::Color(255,255,255,180));
+    nombre_text.setPosition(350,40);
 
     font.loadFromFile("Font/TT Interphases Pro Trial Black.ttf");
 
@@ -674,6 +697,7 @@ void Juego2::showRule(sf::RenderWindow& window)
     P.setFillColor(sf::Color(255,255,255,180));
     P.setPosition(930,600);
 
+    window.draw(nombre_text);
     window.draw(_sprite_morty);
     window.draw(_sprite_historia);
     window.draw(sprite_X);
@@ -712,6 +736,28 @@ void Juego2::showLoserText(sf::RenderWindow& window)
     text.setFillColor(sf::Color(255,255,255,80));
     text.setPosition(100,400);
     window.draw(text);
+}
+
+void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
+{
+    Partida* p=ranking.getRanking();
+
+    sf::Text text[10];
+    sf::Font font;
+    font.loadFromFile("font/TT Interphases Pro Trial Black.ttf");
+
+    for(int i=0; i<10; i++)
+    {
+        text[i].setFont(font);
+        text[i].setCharacterSize(20);
+        text[i].setColor(sf::Color(255,255,255,180));
+        text[i].setPosition(450, 100 + i* 45);
+        text[i].setString("Puesto n°:  "+ std::to_string(i+1)+ "  " +p[i].getName()+ " con " +std::to_string(p[i].getPuntos())+ " puntos");
+
+
+
+        window.draw(text[i]);
+    }
 }
 
 
@@ -774,26 +820,5 @@ TIPO_MENU Juego2::aJugarHijo(Player& player, int num_zombie,sf::RenderWindow& wi
     }
 }
 
-void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
-{
-    Partida* p=ranking.getRanking();
-
-    sf::Text text[10];
-    sf::Font font;
-    font.loadFromFile("font/TT Interphases Pro Trial Black.ttf");
-
-    for(int i=0; i<10; i++)
-    {
-        text[i].setFont(font);
-        text[i].setCharacterSize(20);
-        text[i].setColor(sf::Color(255,255,255,180));
-        text[i].setPosition(450, 100 + i* 45);
-        text[i].setString("Puesto n°:  "+ std::to_string(i+1)+ "  " +p[i].getName()+ " con " +std::to_string(p[i].getPuntos())+ " puntos");
-
-
-
-        window.draw(text[i]);
-    }
-}
 
 

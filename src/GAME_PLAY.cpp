@@ -358,38 +358,38 @@ void Game_play::update(sf::RenderTarget& window)
                 vidas=Z1->getvida();
                 _game_over=false;
             }
-            else///POR ACA LAS PARTIDAS GONZOO, revisar!
+            else
             {
                 vidas=Z1->getvida();
                 Partida partida(puntaje, _namePlayer);
 
                 FILE *pPartida = fopen("Partidas.dat", "ab");
-                    if(pPartida == nullptr)
-                    {
-                        std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
-                    }
-                    fwrite(&partida, sizeof(Partida), 1, pPartida);
-                    fclose(pPartida);
-                    std::cout<< "Archivo creado correctamente"<<std::endl;
+                if(pPartida == nullptr)
+                {
+                    std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
+                }
+                fwrite(&partida, sizeof(Partida), 1, pPartida);
+                fclose(pPartida);
+                std::cout<< "Archivo creado correctamente"<<std::endl;
                 _game_over=true;
 
             }
-                //std::cout<<"enemi"<< getEnemigos_eliminados();
-                ///WIN CONDITION
+            //std::cout<<"enemi"<< getEnemigos_eliminados();
+            ///WIN CONDITION
             if(getEnemigos_eliminados() == 20)
             {
                 //std::cout<<"enemigos"<< getEnemigos_eliminados();
                 puntaje+=3000;
                 Partida partida(puntaje, _namePlayer);
                 FILE *pPartida = fopen("Partidas.dat", "ab");
-                    if(pPartida == nullptr)
-                    {
-                        std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
+                if(pPartida == nullptr)
+                {
+                    std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
 
-                    }
-                    fwrite(&partida, sizeof(Partida), 1, pPartida);
-                    fclose(pPartida);
-                    std::cout<< "Archivo creado correctamente"<<std::endl;
+                }
+                fwrite(&partida, sizeof(Partida), 1, pPartida);
+                fclose(pPartida);
+                std::cout<< "Archivo creado correctamente"<<std::endl;
                 _winner= true;
             }
 

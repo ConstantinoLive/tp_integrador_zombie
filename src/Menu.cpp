@@ -7,6 +7,7 @@ Menu::Menu(TIPO_MENU tipo)
     initBackground();
     initTextos();
     _selected_item=0;
+
 }
 
 Menu::~Menu()
@@ -107,6 +108,7 @@ void Menu::initBackground()
     case TIPO_MENU::PRINCIPAL:
         _texture_background.loadFromFile("img/tumba.png");
         scale= {0.23,0.2};
+
         break;
     case TIPO_MENU::RANKING:
         _texture_background.loadFromFile("img/background_subMenu.png");
@@ -262,5 +264,4 @@ void Menu::initTextosWinner()
 {
     initTextosGameOver();///son las mismas opciones al ganar o perder :)
 }
-
 

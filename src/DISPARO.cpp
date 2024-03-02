@@ -1,7 +1,7 @@
 #include "Disparo.h"
 
 
-Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct): Sound_8(8)
+Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct)//: Sound_8(8)
 {
     _start_position=pos;
     _type=tipo;
@@ -11,7 +11,7 @@ Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct): Sound_8(8)
     initAnimation();
 }
 
-Disparo::Disparo(): Sound_8(8)
+Disparo::Disparo()//: Sound_8(8)
 {
 
 }
@@ -37,7 +37,7 @@ void Disparo::initVariables()
 {
     //En este caso, y a diferencia del sprite sheet de las plantas, este sprite sheet esta mas desordenado
     //esta mas desordenado y por ende las variables son todas distintas en cada tipo de disparo
-Sound_8.audioON();
+//Sound_8.audioON();
     switch(_type)
     {
         case FIRE:

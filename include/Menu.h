@@ -86,6 +86,7 @@ class Menu : public sf::Drawable
         std::vector<sf::Text> _array_textos;
         sf::Sprite _background;
         sf::Texture _texture_background;
+
 };
 
 #endif // MENU_H
