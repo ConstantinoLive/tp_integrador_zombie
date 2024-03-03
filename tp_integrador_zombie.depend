@@ -444,12 +444,12 @@
 
 1694398986 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\funciones.cpp
 
-1709392696 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
+1709500496 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
 	<iostream>
 	"Game_play.h"
 	"Partida.h"
 
-1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
+1709498760 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
 	<random>
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -5789,7 +5789,7 @@
 	<SFML/Audio.hpp>
 	"Player.h"
 
-1709380996 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\juego2.h
+1709498036 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\juego2.h
 	<SFML/Graphics.hpp>
 	"Menu.h"
 	"Player.h"
@@ -5798,6 +5798,7 @@
 	"Ranking.h"
 	"Audio.h"
 	"Zombie.h"
+	"Partida.h"
 
 1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\ranking.h
 	<iostream>
@@ -5813,6 +5814,6 @@
 1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ranking.cpp
 	"Ranking.h"
 
-1709375214 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
+1709500496 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
 	"Juego2.h"
 

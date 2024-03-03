@@ -802,10 +802,20 @@ TIPO_MENU Juego2::aJugarHijo(Player& player, int num_zombie,sf::RenderWindow& wi
 
         ///Por aca ganaste!
         if(gp.getWinner()==true&&gp.getEnemigos_eliminados()==21)
-
         {
             musica.audioOFF();
             ///Por aca hay que mostrar pantalla winner GONZOO!!
+            gp.setPuntaje(3000);
+            Partida partida(gp.getPuntaje(), gp.getNombrePlayer());
+            FILE *pPartida = fopen("Partidas.dat", "ab");
+            if(pPartida == nullptr)
+            {
+                std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
+
+            }
+            fwrite(&partida, sizeof(Partida), 1, pPartida);
+            fclose(pPartida);
+            std::cout<< "Archivo creado correctamente"<<std::endl;
             return TIPO_MENU::WINNER;
         }
         else///Por aca perdiste!
@@ -814,6 +824,16 @@ TIPO_MENU Juego2::aJugarHijo(Player& player, int num_zombie,sf::RenderWindow& wi
             {
                 musica.audioOFF();
                 ///Por aca hay que mostrar pantalla GAMEOVER GONZOO!!
+                Partida partida(gp.getPuntaje(), gp.getNombrePlayer());
+
+                FILE *pPartida = fopen("Partidas.dat", "ab");
+                if(pPartida == nullptr)
+                {
+                    std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
+                }
+                fwrite(&partida, sizeof(Partida), 1, pPartida);
+                fclose(pPartida);
+                std::cout<< "Archivo creado correctamente"<<std::endl;
                 return TIPO_MENU::GAME_OVER;
             }
         }

@@ -40,6 +40,8 @@ public:
     int getEnemigos(){return enemigos;}
     int getEnemigos_eliminados(){return enemigos_eliminados;}
     int getPuntaje(){return puntaje;}
+    void setPuntaje(int n){puntaje=puntaje+n;}
+    std::string getNombrePlayer(){return _namePlayer;}
 
     void updatePlants2();
     void updatePlantGeneration();

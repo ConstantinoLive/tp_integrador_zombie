@@ -11,6 +11,7 @@
 #include "Ranking.h"
 #include "Audio.h"
 #include "Zombie.h"
+#include "Partida.h"
 
 
 

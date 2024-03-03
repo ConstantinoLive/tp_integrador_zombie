@@ -357,8 +357,19 @@ void Game_play::update(sf::RenderTarget& window)
             {
                 vidas=Z1->getvida();
                 _game_over=false;
+                _winner=true;
             }
             else
+            {
+                if(Z1->getvida()<1)
+                {
+                    _game_over=true;
+                    _winner=false;
+                }
+
+            }
+            //else
+            /*if(getEnemigos_eliminados()<21&& Z1->getvida()<1)
             {
                 vidas=Z1->getvida();
                 Partida partida(puntaje, _namePlayer);
@@ -374,9 +385,10 @@ void Game_play::update(sf::RenderTarget& window)
                 _game_over=true;
 
             }
+            else{
             //std::cout<<"enemi"<< getEnemigos_eliminados();
             ///WIN CONDITION
-            if(getEnemigos_eliminados() == 20)
+            if(getEnemigos_eliminados()> 20&&Z1->getvida()>=1)
             {
                 //std::cout<<"enemigos"<< getEnemigos_eliminados();
                 puntaje+=3000;
@@ -392,6 +404,7 @@ void Game_play::update(sf::RenderTarget& window)
                 std::cout<< "Archivo creado correctamente"<<std::endl;
                 _winner= true;
             }
+            }*/
 
             //////////////////////////
 
