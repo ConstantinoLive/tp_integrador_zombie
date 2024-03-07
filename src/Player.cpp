@@ -38,12 +38,7 @@ std::string Player::ingresarNombre()
 
     sf::Font font;
     font.loadFromFile("Font/TT Interphases Pro Trial Black.ttf");
-    /*
-    sf::Text Text;
 
-    Text.setFont(font);
-    Text.setCharacterSize(40);
-    */
     sf::Text texto;
     texto.setFont(font);
 

@@ -14,8 +14,6 @@ Juego2::Juego2()
 
     _player=new Player();
 
-    //_partida=new Partida();
-
     _tipo_menu=TIPO_MENU::PRINCIPAL;
 }
 
@@ -24,7 +22,7 @@ Juego2::~Juego2()
     //dtor
 }
 
-void Juego2::run()      ///Estructura principal de la aplicacion
+int Juego2::run()      ///Estructura principal de la aplicacion
 {
     sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
     window.setFramerateLimit(60);
@@ -47,6 +45,7 @@ void Juego2::run()      ///Estructura principal de la aplicacion
             break;
         case TIPO_MENU::EXIT:
             window.close();
+            return 0;
             break;
         case TIPO_MENU::SECUNDARIO:             ///aca esta el juego, o sea gameplay
             _tipo_menu=menuSecundario(window);
@@ -315,18 +314,11 @@ TIPO_MENU Juego2::menuSecundario(sf::RenderWindow& window)
                     case JUGAR:                            ///seria el 0, corresponde a jugar
                         std::cout << "JUGAR" << std::endl;
                         t=TIPO_MENU::SELECCION_ZOMBIE;
-                        //t=aJugarHijo(*_player,1,window);
                         break;
                     case INGRESAR_NOMBRE:
                         std::cout << "INGRESAR NOMBRE" << std::endl;
                         _player->setNombre(_player->ingresarNombre());
                         break;
-                    /*
-                    case SELEC_ZOMB:
-                        std::cout << "SELECCION DE ZOMBIE" << std::endl;
-                        t=TIPO_MENU::SELECCION_ZOMBIE;
-                        break;
-                    */
                     case VOLVER_PPAL:
                         std::cout << "VOLVER PRINCIPAL" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;

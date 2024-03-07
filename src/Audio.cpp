@@ -35,12 +35,6 @@ Audio::Audio(int opc)
                     std::cout << "Error al cargar sonido" << std::endl;
                     return;
                 }
-                /*if(!buffer8.loadFromFile("Audio/Audio_menu.wav"))
-                {
-                    std::cout << "Error al cargar sonido" << std::endl;
-                    return;
-                }
-                _audio_menu.setBuffer(buffer8);*/
             }
             else
             {

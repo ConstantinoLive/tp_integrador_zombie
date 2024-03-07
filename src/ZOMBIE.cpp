@@ -3,14 +3,12 @@
 Zombie::Zombie(int opc, Gestor_disparos& gestor): _gestor_disparos(gestor), sound_2(2), Sound_6(6)
 {
     setOpcion(opc);
-    std::cout << getOpcion()<< std::endl;
     segundos=sf::seconds(1.f);
     if(getOpcion()==0)
     {
         _texture_zombie.loadFromFile("img/zombie_DI6.png");
         _sprite_zombie.setTexture(_texture_zombie);
         _sprite_zombie.setPosition(0,485); // posicion inicial
-        //initAnimation();
         _estado=ESTADOS::NACIMIENTO; //estado inicial
         _jump_force=0; //Fuerza de salto inicial
 
@@ -31,7 +29,7 @@ Zombie::Zombie(int opc, Gestor_disparos& gestor): _gestor_disparos(gestor), soun
             if(getOpcion()==2)
             {
                 _frame = 0;
-                _texture_zombie.loadFromFile("img/protagonista.png");
+                _texture_zombie.loadFromFile("img/protagonista_2.png");
                 _sprite_zombie.setTexture(_texture_zombie);
                 _sprite_zombie.setTextureRect({0,0,378,890});
                 _sprite_zombie.setOrigin(_sprite_zombie.getGlobalBounds().width/2, _sprite_zombie.getGlobalBounds().height/11);
@@ -50,7 +48,6 @@ Zombie::~Zombie()
 
 void Zombie::update()
 {
-    //float t;
     _time_shoot=_spawn_shoot_timer.getElapsedTime();
     if(getOpcion()==0)
     {
@@ -60,10 +57,9 @@ void Zombie::update()
         case NACIMIENTO:
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 6;
-            _xtexture = _xtexture*75;
-            //std::cout<<_xtexture<<std::endl;
-            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,385,75,90));
-            _sprite_zombie.move(0.9,0);
+            _xtexture = _xtexture*76,5;//75
+            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,385,76.5,77));//x,385,75,90
+            _sprite_zombie.move(0.7,0);
             _estado=ESTADOS::QUIETO;
             break;
         case QUIETO:
@@ -92,7 +88,6 @@ void Zombie::update()
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
             _xtexture = _xtexture*55.28;//58
-            //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,209,55.28,73));//_sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,58,94.75));
             _sprite_zombie.move(4,0);
             zombieIzquierda = false;
@@ -103,9 +98,8 @@ void Zombie::update()
         case CAMINANDO_IZQ: //desplazamiento a la izquierda y animacion
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
-            _xtexture = _xtexture*55.71;//56.6
-            //std::cout<<_xtexture<<std::endl;
-            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,311,55.71,76));//_sprite_zombie.setTextureRect(sf::IntRect(_xtexture,284.25,56.55,94.75));
+            _xtexture = _xtexture*56.5;//55.71
+            _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,311,56.5,76));//_sprite_zombie.setTextureRect(sf::IntRect(_xtexture,284.25,56.55,94.75));
             _sprite_zombie.move(-4,0);
             zombieIzquierda = true;
             _estado=ESTADOS::QUIETO_IZQ;
@@ -115,53 +109,21 @@ void Zombie::update()
 
             if(zombieIzquierda==false)
             {
-                /*_xtexture = (int)_sprite_zombie.getPosition().x/10 % 6;
-                _xtexture = _xtexture*75;
-                //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,385,75,90));
-                _sprite_zombie.move(1,0);
-                _estado=ESTADOS::QUIETO;
-                */
-                _sprite_zombie.setTextureRect(sf::IntRect(113.2,88,56.55,94.75));
+                _sprite_zombie.setTextureRect(sf::IntRect(113.2,88,54.5,94.75));//56.55
             }
             else
             {
-                _sprite_zombie.setTextureRect(sf::IntRect(113.2,0,56.55,94.75));
+                _sprite_zombie.setTextureRect(sf::IntRect(113.2,0,55.5,94.75));//56.55
             }
 
             break;
         case MURIENDO:
-
-            /*
-            if(zombieIzquierda==false)
-            {
-                _xtexture = (int)_sprite_zombie.getPosition().x % 5;
-                _xtexture = _xtexture*92;
-                //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,558,92,80));
-                _sprite_zombie.move(0.05,0);
-                zombieIzquierda = false;
-                //_animationTimer.restart();
-                _estado=ESTADOS::NACIMIENTO;
-            }
-            else
-            {
-                _xtexture = (int)_sprite_zombie.getPosition().x % 5;
-                _xtexture = _xtexture*92;
-                //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,478,92,80));
-                _sprite_zombie.move(0.05,0);
-                zombieIzquierda = true;
-                //_animationTimer.restart();
-                _estado=ESTADOS::NACIMIENTO;
-            }*/
 
             break;
         case CAMINANDO_DER_SALTANDO:
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
             _xtexture = _xtexture*56.55;
-            //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,88,56.55,94.75));
             _sprite_zombie.move(4,0);
             _jump_force -= 3.2;
@@ -174,7 +136,6 @@ void Zombie::update()
 
             _xtexture = (int)_sprite_zombie.getPosition().x/10 % 7;
             _xtexture = _xtexture*56.55;
-            //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,0,56.55,94.75));
             _sprite_zombie.move(-4,0);
             _jump_force -= 3.2;
@@ -186,11 +147,9 @@ void Zombie::update()
         case DISPARANDO:
             if(!yaDisparo)
             {
-                //if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
                 if(_time_shoot.asSeconds() >= 2 )
                 {
                     Sound_6.audioON();
-                    //_time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                     settimeshoot(_time_shoot);
                     float positionX = _sprite_zombie.getPosition().x;
                     float positionY = _sprite_zombie.getPosition().y;
@@ -201,11 +160,9 @@ void Zombie::update()
                         _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, zombieIzquierda);
                         _gestor_disparos.agregarDisparo(_disparo);
                         _spawn_shoot_timer.restart();
-                        // _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                         settimeshoot(_time_shoot);
                         _xtexture = (int)_sprite_zombie.getPosition().x % 7;
                         _xtexture = _xtexture*57.14;
-                        //std::cout<<_xtexture<<std::endl;
                         _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,107,57.14,82));
                         _sprite_zombie.move(-4,0);
                         zombieIzquierda = true;
@@ -214,20 +171,13 @@ void Zombie::update()
                     }
                     else
                     {
-
                         positionX +=30;
-                        //positionY -=30;
-
-
-
                         _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                         _gestor_disparos.agregarDisparo(_disparo);
                         _spawn_shoot_timer.restart();
-                        //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                         settimeshoot(_time_shoot);
                         _xtexture = (int)_sprite_zombie.getPosition().x % 7;
                         _xtexture = _xtexture*57.14;
-                        //std::cout<<_xtexture<<std::endl;
                         _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,107,57.14,82));
                         _sprite_zombie.move(4,0);
                         zombieIzquierda = false;
@@ -249,7 +199,6 @@ void Zombie::update()
             switch (_estado)
             {
             case NACIMIENTO:
-
                 _sprite_zombie.setTextureRect(sf::IntRect(0,494,90.66,121));
                 break;
             case QUIETO:
@@ -282,7 +231,6 @@ void Zombie::update()
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 9;
                 _xtexture = _xtexture*72;
-                //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,11,72,93));
                 _sprite_zombie.move(3,0);
                 zombieIzquierda = false;
@@ -294,7 +242,6 @@ void Zombie::update()
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 9;
                 _xtexture = _xtexture*72;
-                //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,129,72,93));
                 _sprite_zombie.move(-3,0);
                 zombieIzquierda = true;
@@ -305,51 +252,22 @@ void Zombie::update()
 
                 if(zombieIzquierda==false)
                 {
-                    /*_xtexture = (int)_sprite_zombie.getPosition().x/10 % 6;
-                    _xtexture = _xtexture*75;
-                    //std::cout<<_xtexture<<std::endl;
-                    _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,385,75,90));
-                    _sprite_zombie.move(1,0);
-                    _estado=ESTADOS::QUIETO;
-                    */
                     _sprite_zombie.setTextureRect(sf::IntRect(459,494,80,102));
                 }
                 else
                 {
-                    _sprite_zombie.setTextureRect(sf::IntRect(473,494,80,102));
+                    _sprite_zombie.setTextureRect(sf::IntRect(473,617,80,102));
                 }
 
                 break;
             case MURIENDO:
-                /*
-                if(zombieIzquierda==false)
-                {
-                    _xtexture = (int)_sprite_zombie.getPosition().x % 9;
-                    _xtexture = _xtexture*105.77;
-                    //std::cout<<_xtexture<<std::endl;
-                    _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,245,105.77,102));
-                    _sprite_zombie.move(0.05,0);
-                    zombieIzquierda = false;
-                    //_animationTimer.restart();
-                    _estado=ESTADOS::NACIMIENTO;
-                }
-                else
-                {
-                    _xtexture = (int)_sprite_zombie.getPosition().x % 9;
-                    _xtexture = _xtexture*100;
-                    //std::cout<<_xtexture<<std::endl;
-                    _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,371,100,102));
-                    _sprite_zombie.move(0.05,0);
-                    zombieIzquierda = true;
-                    _estado=ESTADOS::NACIMIENTO;
-                }*/
+
 
                 break;
             case CAMINANDO_DER_SALTANDO:
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 15;
                 _xtexture = _xtexture*91.8;
-                //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,498,91.8,96));
                 _sprite_zombie.move(4,0);
                 _jump_force -= 3.2;
@@ -362,7 +280,6 @@ void Zombie::update()
 
                 _xtexture = (int)_sprite_zombie.getPosition().x/10 % 15;
                 _xtexture = _xtexture*91.8;
-                //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,623,91.8,96));
                 _sprite_zombie.move(-4,0);
                 _jump_force -= 3.2;
@@ -374,11 +291,9 @@ void Zombie::update()
             case DISPARANDO:
                 if(!yaDisparo)
                 {
-                    //if(_spawn_shoot_timer.getElapsedTime().asSeconds() >= 2 )
                     if(_time_shoot.asSeconds() >= 2 )
                     {
                         Sound_6.audioON();
-                        //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                         settimeshoot(_time_shoot);
                         float positionX = _sprite_zombie.getPosition().x;
                         float positionY = _sprite_zombie.getPosition().y;
@@ -389,11 +304,9 @@ void Zombie::update()
                             _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, zombieIzquierda);
                             _gestor_disparos.agregarDisparo(_disparo);
                             _spawn_shoot_timer.restart();
-                            //  _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                             settimeshoot(_time_shoot);
                             _xtexture = (int)_sprite_zombie.getPosition().x % 4;
                             _xtexture = _xtexture*95.25;
-                            //std::cout<<_xtexture<<std::endl;
                             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,752,95.25,97));
                             _sprite_zombie.move(-4,0);
                             zombieIzquierda = true;
@@ -402,20 +315,13 @@ void Zombie::update()
                         }
                         else
                         {
-
                             positionX +=30;
-                            //positionY -=30;
-
-
-
                             _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                             _gestor_disparos.agregarDisparo(_disparo);
                             _spawn_shoot_timer.restart();
-                            // _time_shoot=_spawn_shoot_timer.getElapsedTime().asSeconds();
                             settimeshoot(_time_shoot);
                             _xtexture = (int)_sprite_zombie.getPosition().x % 4;
                             _xtexture = _xtexture*95.25;
-                            //std::cout<<_xtexture<<std::endl;
                             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,872,95.25,97));
                             _sprite_zombie.move(4,0);
                             zombieIzquierda = false;
@@ -547,8 +453,9 @@ void Zombie::update()
                     _sprite_zombie.move(0, -_jump_force);
                     zombieIzquierda = true;
                     break;
+                case MURIENDO:
 
-
+                    break;
                 case DISPARANDO:
                     if(!yaDisparo)
                     {
@@ -574,10 +481,6 @@ void Zombie::update()
                             {
 
                                 positionX +=30;
-                                //positionY -=30;
-
-
-
                                 _disparo = new Disparo(TIPO::BRAIN, {positionX,positionY }, false);
                                 _gestor_disparos.agregarDisparo(_disparo);
                                 _spawn_shoot_timer.restart();
@@ -602,34 +505,27 @@ void Zombie::update_muriendo()
     _jump_force -= 1.8;
 
 
-    initVariables();
-    initTexture();
-    initAnimation();
-    // updateAnimation();
-
-    /*if(getOpcion()==0)
+    if(getOpcion()==0)
     {
         if(zombieIzquierda==false)
         {
-            _xtexture = (int)_sprite_zombie.getPosition().x % 5;
+            _xtexture = (int)_sprite_zombie.getPosition().x/12 % 5;
             _xtexture = _xtexture*92;
-            //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,558,92,80));
-            _sprite_zombie.move(0.05,-_jump_force);
+            _sprite_zombie.move(0.7,0);
             zombieIzquierda = false;
-            //_animationTimer.restart();
-            _estado=ESTADOS::NACIMIENTO;
+            _estado=ESTADOS::QUIETO;
+
+
         }
         else
         {
-            _xtexture = (int)_sprite_zombie.getPosition().x % 5;
+            _xtexture = (int)_sprite_zombie.getPosition().x/12 % 5;
             _xtexture = _xtexture*92;
-            //std::cout<<_xtexture<<std::endl;
             _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,478,92,80));
-            _sprite_zombie.move(0.05,-_jump_force);
+            _sprite_zombie.move(0.7,0);
             zombieIzquierda = true;
-            //_animationTimer.restart();
-            _estado=ESTADOS::NACIMIENTO;
+            _estado=ESTADOS::QUIETO_IZQ;
         }
     }
     else
@@ -638,35 +534,38 @@ void Zombie::update_muriendo()
         {
             if(zombieIzquierda==false)
             {
-                _xtexture = (int)_sprite_zombie.getPosition().x % 9;
-                _xtexture = _xtexture*105.77;
-                //std::cout<<_xtexture<<std::endl;
-                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,245,105.77,102));
-                _sprite_zombie.move(0.05,-_jump_force);
+                _xtexture = (int)_sprite_zombie.getPosition().x/15 % 9;
+                _xtexture = _xtexture*100;//105.77
+                _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,245,100,102));
+                _sprite_zombie.move(0.7,0);
                 zombieIzquierda = false;
-                //_animationTimer.restart();
                 _estado=ESTADOS::NACIMIENTO;
             }
             else
             {
-                _xtexture = (int)_sprite_zombie.getPosition().x % 9;
+                _xtexture = (int)_sprite_zombie.getPosition().x/15 % 9;
                 _xtexture = _xtexture*100;
-                //std::cout<<_xtexture<<std::endl;
                 _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,371,100,102));
-                _sprite_zombie.move(0.05,-_jump_force);
+                _sprite_zombie.move(0.7,0);
                 zombieIzquierda = true;
                 _estado=ESTADOS::NACIMIENTO;
             }
         }
         else
         {
+
             if(getOpcion()==2)
             {
-
+                _sprite_zombie.setTextureRect(sf::IntRect(816, 216, 630, 675));
+                _sprite_zombie.setScale(0.15, 0.15);
+                _jump_force -= 3.2;
+                _sprite_zombie.move(0,-_jump_force);
+                _estado=ESTADOS::NACIMIENTO;
             }
         }
 
-    }*/
+    }
+
 }
 
 void Zombie::mobility()
@@ -710,13 +609,8 @@ void Zombie::mobility()
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)&& !isZPressed)
         {
-
-            //std::cout<<"CEREBRO"<<std::endl;
             isZPressed = true;
             _estado = ESTADOS::DISPARANDO;
-
-
-
         }
         else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
         {
@@ -765,11 +659,6 @@ void Zombie::suelo(float x, float y)
         _jump_force=0;
         _sprite_zombie.setPosition(x,y);
     }
-
-    /*_estado=ESTADOS::QUIETO;
-    _jump_force=0;
-     _sprite_zombie.setPosition(x,y);*/
-    //_sprite_zombie.setPosition(_sprite_zombie.getPosition().x,485);
 }
 
 float Zombie::getjump_force()
@@ -792,126 +681,3 @@ void Zombie::settimeshoot(sf::Time time)
     _time_shoot=time;
 
 }
-void Zombie::initAnimation()
-{
-    _animationTimer.restart();
-}
-/*
-void Zombie::updateAnimation()
-{
-///cada 0.2 seg cambio la animacion
-
-    if(_animationTimer.getElapsedTime().asSeconds() >= 0.3)
-    {
-        _current_frame.left += _width_texture;
-        if(_current_frame.left >=_end_of_frames_sheet)
-        {
-            _current_frame.left=_first_frame_of_sheet.left;
-        }
-       // _animationTimer.restart();
-       initAnimation();
-        _sprite_zombie.setTextureRect(_current_frame);
-
-    }
-}*/
-
-void Zombie::initTexture()
-{
-    if(getOpcion()==0)
-    {
-        if(zombieIzquierda==false)
-        {
-            _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
-            _sprite_zombie.setTextureRect(_current_frame);
-        }
-        else
-        {
-
-            _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
-            _sprite_zombie.setTextureRect(_current_frame);
-        }
-    }
-    else
-    {
-        if(getOpcion()==1)
-        {
-            if(zombieIzquierda==false)
-            {
-                /*
-                                _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
-                                _plant_sprite.setTextureRect(_current_frame);
-                                _plant_sprite.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                // _plant_sprite.setOrigin(_width_texture/2, _plant_sprite.getGlobalBounds().height/11);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                _plant_sprite.setScale(0.11,0.11); //0.11
-                */
-            }
-            else
-            {
-                /*
-                                _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
-                                _plant_sprite.setTextureRect(_current_frame);
-                                _plant_sprite.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                // _plant_sprite.setOrigin(_width_texture/2, _plant_sprite.getGlobalBounds().height/11);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                _plant_sprite.setScale(0.11,0.11); //0.11
-                  */
-            }
-        }
-        else
-        {
-            if(getOpcion()==2)
-            {
-                /*
-                                _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
-                                _plant_sprite.setTextureRect(_current_frame);
-                                _plant_sprite.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                // _plant_sprite.setOrigin(_width_texture/2, _plant_sprite.getGlobalBounds().height/11);   //desplazo el origen al medio del sprite para que al rotar quede ok
-                                _plant_sprite.setScale(0.11,0.11); //0.11
-                */
-            }
-        }
-
-    }
-}
-void Zombie::initVariables()
-{
-    if(getOpcion()==0)
-    {
-        if(zombieIzquierda==false)
-        {
-            _width_texture=92;
-            _height_texture=73;
-            _end_of_frames_sheet=460;
-            _first_frame_of_sheet=sf::IntRect(0,560,_width_texture,_height_texture);
-        }
-        else
-        {
-            _width_texture=92;
-            _height_texture=69;
-            _end_of_frames_sheet=460;
-            _first_frame_of_sheet=sf::IntRect(0,483,_width_texture,_height_texture);
-        }
-    }
-    else
-    {
-        if(getOpcion()==1)
-        {
-            if(zombieIzquierda==false)
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-        else
-        {
-            if(getOpcion()==2)
-            {
-
-            }
-        }
-
-    }
-}
-

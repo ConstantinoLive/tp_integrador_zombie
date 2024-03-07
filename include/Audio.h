@@ -25,7 +25,6 @@ class Audio
         sf::SoundBuffer buffer5;
         sf::SoundBuffer buffer6;
         sf::SoundBuffer buffer7;
-        //sf::SoundBuffer buffer8;
         sf::Sound _muerte_zombie;
         sf::Sound _muerte_planta;
         sf::Sound _audio_prize;
@@ -33,8 +32,6 @@ class Audio
         sf::Sound _disparo_zombie;
         sf::Sound _disparo_planta;
         sf::Music _audio_menu;
-        //sf::Sound _audio_menu;
-
 
 
 };

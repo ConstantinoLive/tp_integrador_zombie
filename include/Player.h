@@ -6,7 +6,7 @@
 #include <string>
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+//#include <SFML/Audio.hpp>
 
 #include "Partida.h"
 
@@ -21,10 +21,8 @@ public:
 	Player();
 	Player(int puntaje, std::string nombre);
 	Player(int puntaje, char nombreP);
-	//sets()
 	void setPuntaje(int puntaje);
 	void setNombre(std::string nombre);
-		//gets()
 	int getPuntaje();
 
 	std::string getNombre();

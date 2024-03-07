@@ -46,7 +46,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(106,173,_width_texture,_height_texture);
             _end_of_frames_sheet=186;
             _damage_shoot=3;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::FIRE;
             break;
@@ -56,7 +55,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(320,75,_width_texture,_height_texture);
             _end_of_frames_sheet=380;
             _damage_shoot=1;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::GREEN;
             break;
@@ -66,7 +64,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(20,137,_width_texture,_height_texture);
             _end_of_frames_sheet=59;
             _damage_shoot=2;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::ICE;
             break;
@@ -76,7 +73,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(86,136,_width_texture,_height_texture);
             _end_of_frames_sheet=171;
             _damage_shoot=5;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::SUPER_GREEN;
             break;
@@ -86,7 +82,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(357,224,_width_texture,_height_texture);
             _end_of_frames_sheet=477;
             _damage_shoot=1;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::BRAIN;
             break;
@@ -96,7 +91,6 @@ void Disparo::initVariables()
             _first_frame_of_sheet=sf::IntRect(320,75,_width_texture,_height_texture);
             _end_of_frames_sheet=380;
             _damage_shoot=1;
-           // _speed={0.f,0.f};
             _shoot_sprite.setPosition(_start_position.x,_start_position.y);
             esTipo = TIPO::GREEN;
             break;
@@ -126,16 +120,6 @@ int Disparo::getDamage() const
 {
     return _damage_shoot;
 }
-/*
-void Disparo::escala(float esc)
-{
-    //to do
-}
-
-void Disparo::movement(float x, float y)
-{
-    //to do
-}*/
 
 void Disparo::updateMovement()
 {

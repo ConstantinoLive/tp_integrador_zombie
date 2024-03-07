@@ -4,7 +4,7 @@
 #include <cstring>
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+//#include <SFML/Audio.hpp>
 
 #include "Player.h"
 
@@ -21,20 +21,15 @@ class Partida
         int getPuntos();// const;
         void setPuntos(int puntaje);
         int contarPartidas();
-        void mostrarPlayer(/*sf::RenderWindow& window)*/);
-        //void cargarRanking(Partida partida[10]);
-        //Partida _ranking[10];
+        void mostrarPlayer();
 
     protected:
 
     private:
         char _nombre[10];
         int _puntos;
-        //std::string jugadores[10];
 
 
-
-        //Player *player;
 };
 
 

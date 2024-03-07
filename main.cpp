@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-//#include "MENU_PRINCIPAL.h"
-//#include "Funciones.h"
+
 #include <iostream>
 #include<cstdlib>       //para rand y srand
 #include <ctime>        //para time
@@ -12,8 +11,6 @@
 #include "Audio.h"
 
 
-//using namespace std;
-
 int main()
 {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));  //inicio semilla para rand
@@ -22,6 +19,7 @@ int main()
     Juego2 zombies_vs_plantas;
 
     Sound_3c.audioON();
+
     zombies_vs_plantas.run();
     return 0;
 }

@@ -23,7 +23,7 @@ class Juego2
         virtual ~Juego2();
 
 
-        void run();
+        int run();
 
         TIPO_MENU menuPpal(sf::RenderWindow& window);
         TIPO_MENU ranking(sf::RenderWindow& window);
@@ -60,7 +60,6 @@ class Juego2
         Menu* _menu_winner;
 
         Player* _player;
-        //Partida* _partida;
 
 
 };

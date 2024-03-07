@@ -30,7 +30,6 @@ public:
     void draw(sf::RenderWindow& window);
     void cmd();
     void check_collision_platform();
-    //void updatePlants();
 
     void updateShoot(sf::RenderTarget& window);
     void updatePrize();
@@ -69,9 +68,7 @@ public:
         {1100,80},
         {1150,80},
         //14
-        //{200,210},
         {360,210},
-        //{410,210},
         {700,210},
         {710,210},
         {730,210},
@@ -80,7 +77,6 @@ public:
         {1100,210},
         {1120,210},
         //10
-        //{260,340},
         {280,340},
         {300,340},
         {530,340},
@@ -109,7 +105,6 @@ protected:
 private:
     Gestor_disparos _shoot_manager;
     Zombie* Z1;
-    //Seleccion_de_zombie selec_zom;
     int numeroZombie;
     EnergyBar _energy_bar;
     Disparo* disparoZombie;
@@ -124,10 +119,8 @@ private:
 
     TIPO tipoDisparo;
 
-    //std::vector<Planta*> _array_plantas;
     Gestor_plantas _plant_manager;
     sf::Clock _plant_spawn_timer;
-
 
     Prize* _prize=nullptr;
     sf::Clock _prize_timer;

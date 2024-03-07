@@ -35,8 +35,6 @@ class Disparo : public Colisionable, public sf::Drawable
         void updateMovement();
         void updateAnimation();
         bool checkWindowBounds(sf::RenderTarget& target);
-        //void checkZombieCollision();
-        //void checkCollision();
         void update();
         int getTipoPlanta();
         int getTipoZombie();
@@ -52,7 +50,6 @@ class Disparo : public Colisionable, public sf::Drawable
         sf::Sprite _shoot_sprite;
         sf::IntRect _current_frame;
         sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo
-        //float _frame;                         //es un multiplicador que me permite pasar de cuadro a cuadro para la animacion
         TIPO _type;
         int _width_texture;
         int _height_texture;

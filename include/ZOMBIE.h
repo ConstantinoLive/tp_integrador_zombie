@@ -1,8 +1,6 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
-#include <iostream>
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
@@ -15,7 +13,7 @@
 
 
 
-class Zombie: public Colisionable//: public sf::Drawable
+class Zombie: public Colisionable
 {
 public:
     Zombie(int opc, Gestor_disparos& gestor);
@@ -24,7 +22,6 @@ public:
         NACIMIENTO,
         QUIETO,
         QUIETO_IZQ,
-        IZQ,
         CAMINANDO_DER,
         CAMINANDO_IZQ,
         SALTANDO,
@@ -48,31 +45,13 @@ public:
     bool isZPressed = false;
     bool yaDisparo = false;
     bool zombieIzquierda;
-   // sf::Vector2f getPositionPrev();
-    void initAnimation();
-    void updateAnimation();
-    void initTexture();
-    void initVariables();
     void update_muriendo();
     float gettimeshoot();
     void settimeshoot(sf::Time);
-   /* void setvida(int v)
-    {
-        _vida=-v;
-    }*/
-    int getvida()
-    {
-        return _vida;
-    }
-    void setOpcion(int opc)
-    {
-        _opcion=opc;
 
-    }
-    int getOpcion()
-    {
-        return _opcion;
-    }
+    int getvida(){return _vida;}
+    void setOpcion(int opc){_opcion=opc;}
+    int getOpcion(){return _opcion;}
 
 protected:
     Gestor_disparos& _gestor_disparos;
@@ -97,15 +76,6 @@ private:
     int _vida=3;
     int _energia = 100;
     int _opcion;
-    //float _time_shoot;
-
-    sf::IntRect _current_frame;
-    sf::IntRect _first_frame_of_sheet;
-    int _end_of_frames_sheet;
-    int _width_texture;
-    int _height_texture;
-
-
 };
 
 #endif // ZOMBIE_H

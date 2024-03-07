@@ -97,7 +97,6 @@ Game_play::Game_play(Player& player, int numZombie,sf::RenderWindow& window) : S
     /*****************vidas**************************/
 
     _cantvidas.setFont(_fontPuntaje);
-    //_cantvidas.setString(std::to_string(vidas));
     _cantvidas.setColor(sf::Color::Red);
     _cantvidas.setPosition(940,740);
 
@@ -368,43 +367,6 @@ void Game_play::update(sf::RenderTarget& window)
                 }
 
             }
-            //else
-            /*if(getEnemigos_eliminados()<21&& Z1->getvida()<1)
-            {
-                vidas=Z1->getvida();
-                Partida partida(puntaje, _namePlayer);
-
-                FILE *pPartida = fopen("Partidas.dat", "ab");
-                if(pPartida == nullptr)
-                {
-                    std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
-                }
-                fwrite(&partida, sizeof(Partida), 1, pPartida);
-                fclose(pPartida);
-                std::cout<< "Archivo creado correctamente"<<std::endl;
-                _game_over=true;
-
-            }
-            else{
-            //std::cout<<"enemi"<< getEnemigos_eliminados();
-            ///WIN CONDITION
-            if(getEnemigos_eliminados()> 20&&Z1->getvida()>=1)
-            {
-                //std::cout<<"enemigos"<< getEnemigos_eliminados();
-                puntaje+=3000;
-                Partida partida(puntaje, _namePlayer);
-                FILE *pPartida = fopen("Partidas.dat", "ab");
-                if(pPartida == nullptr)
-                {
-                    std::cout<< "No se pudo abrir/crear archivo"<< std::endl;
-
-                }
-                fwrite(&partida, sizeof(Partida), 1, pPartida);
-                fclose(pPartida);
-                std::cout<< "Archivo creado correctamente"<<std::endl;
-                _winner= true;
-            }
-            }*/
 
             //////////////////////////
 
@@ -460,17 +422,11 @@ void Game_play::update(sf::RenderTarget& window)
             _textPuntaje.setString(std::to_string(puntaje));
             _cantvidas.setString(std::to_string(vidas));
 
-            if(Z1->getDraw().getPosition().y>490) //485 Suelo... limite de caida
+            if(Z1->getDraw().getPosition().y>498) //485 Suelo... limite de caida
             {
-                Z1->suelo(Z1->getDraw().getPosition().x,490);
+                Z1->suelo(Z1->getDraw().getPosition().x,498);
             }
-            ///VER SI ESTE FOR ES NECESARIO, NO HAY UPDATE
-            /*
-            for(PLATAFORMA& Plat_1: Plats)      //Recorro las plataformas ya creadas y no hago copias
-            {
-                Plat_1.update();
-            }
-            */
+
             check_collision_platform();
         }
     }

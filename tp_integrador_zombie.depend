@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1709388706 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\main.cpp
+1709763112 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<iostream>
@@ -435,21 +435,21 @@
 
 1694389186 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\colision.h
 
-1709389084 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\disparo.cpp
+1709611250 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\disparo.cpp
 	"Disparo.h"
 
-1709389084 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\disparo.h
+1709611250 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\disparo.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 
 1694398986 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\funciones.cpp
 
-1709500496 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
+1709611346 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\game_play.cpp
 	<iostream>
 	"Game_play.h"
 	"Partida.h"
 
-1709498760 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
+1709611248 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\game_play.h
 	<random>
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -478,18 +478,17 @@
 	"Plataforma.h"
 	"Gestor_disparos.h"
 
-1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\plataforma.cpp
+1709611250 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\plataforma.cpp
 	"Plataforma.h"
 
-1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\plataforma.h
+1709611250 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\plataforma.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 
-1709093414 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\zombie.cpp
+1709778534 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\zombie.cpp
 	"Zombie.h"
 
-1709093414 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\zombie.h
-	<iostream>
+1709790442 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\zombie.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Colisionable.h"
@@ -2369,12 +2368,11 @@
 	"MENU_PRINCIPAL.h"
 	"Seleccion_de_zombie.h"
 
-1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\player.h
+1709611250 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\player.h
 	<string.h>
 	<cstdlib>
 	<string>
 	<SFML/Graphics.hpp>
-	<SFML/Audio.hpp>
 	"Partida.h"
 
 1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\lifebar.cpp
@@ -2406,7 +2404,7 @@
 	"Colisionable.h"
 	"PLANTA.h"
 
-1700201528 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\player.cpp
+1709609890 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\player.cpp
 	<iostream>
 	"Player.h"
 
@@ -2573,11 +2571,11 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1709380744 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\audio.h
+1709523752 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\audio.h
 	<iostream>
 	<SFML/Audio.hpp>
 
-1709380744 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\audio.cpp
+1709523764 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\audio.cpp
 	"Audio.h"
 
 1699103584 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\menu_winer.h
@@ -5783,13 +5781,12 @@
 	<SFML/Audio.hpp>
 	"Audio.h"
 
-1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\partida.h
+1709611250 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\partida.h
 	<cstring>
 	<SFML/Graphics.hpp>
-	<SFML/Audio.hpp>
 	"Player.h"
 
-1709498036 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\juego2.h
+1709777124 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\juego2.h
 	<SFML/Graphics.hpp>
 	"Menu.h"
 	"Player.h"
@@ -5807,13 +5804,13 @@
 1709388494 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\menu.cpp
 	"Menu.h"
 
-1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\partida.cpp
+1709611248 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\partida.cpp
 	<iostream>
 	"Partida.h"
 
-1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ranking.cpp
+1709611250 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ranking.cpp
 	"Ranking.h"
 
-1709500496 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
+1709777124 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
 	"Juego2.h"
 
