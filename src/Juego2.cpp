@@ -19,7 +19,14 @@ Juego2::Juego2()
 
 Juego2::~Juego2()
 {
-    //dtor
+    delete _menu_ppal;
+    delete _menu_ranking;
+    delete _menu_reglamento;
+    delete _menu_creditos;
+    delete _menu_secundario;
+    delete _menu_seleccion_zombie;
+    delete _menu_game_over;
+    delete _menu_winner;
 }
 
 int Juego2::run()      ///Estructura principal de la aplicacion
@@ -708,13 +715,22 @@ void Juego2::showWinnerText(sf::RenderWindow& window)
 {
     sf::Text text;
     sf::Font font;
+    sf::Text text_P;
+    sf::Font font_P;
 
     font.loadFromFile("font/Come With Us.ttf");
+    font_P.loadFromFile("Font/TT Interphases Pro Trial Black.ttf");
 
     text=sf::Text("WINER!!!",font,150);
     text.setFillColor(sf::Color(255,255,255,80));
     text.setPosition(420,80);
+
+    text_P=sf::Text("Ganaste 3000 puntos adicionales",font_P,70);
+    text_P.setFillColor(sf::Color(255,255,255,80));
+    text_P.setPosition(50,500);
+
     window.draw(text);
+    window.draw(text_P);
 }
 
 void Juego2::showLoserText(sf::RenderWindow& window)

@@ -2,15 +2,12 @@
 
 Planta::Planta(TIPO tipo,sf::Vector2i pos,bool look,Gestor_disparos& gestor): _gestor_disparos(gestor)
 {
-    //inicializo el gestor de disparos, es una condicion necesaria al haber declarado la referencia al gestor
     _type=tipo;
     _position=pos;
     _looking_left=look;
-    //_gestor_disparos=gestor;
     initVariables();
     initTexture();
     initAnimation();
-    //initShooting();
 
 }
 
@@ -29,7 +26,7 @@ void Planta::initVariables()
     _end_of_frames_sheet=2600;
     _speed={0.f,0.f};
     _can_move=true;
-    //_looking_left=true;     //por default  arranca en izquierda por el sprite
+
     switch (_type)
     {
         case FIRE:
@@ -78,16 +75,7 @@ sf::FloatRect Planta::getBounds() const
 {
     return _plant_sprite.getGlobalBounds();
 }
-/*
-void Planta::escala(float esc)
-{
-    _plant_sprite.scale({esc,esc});
-}*/
-/*
-void Planta::movement(float x,float y)
-{
-    _plant_sprite.move(x,y);
-}*/
+
 
 bool Planta::isLookingLeft()
 {
@@ -116,30 +104,7 @@ void Planta::updateMovement()
 
         _plant_sprite.move(_speed);
     }
-    /*
-    _speed={0.f,0.f};
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
-        _speed.x = -4.f;
-        _looking_left=true;
-    }
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        _speed.x = 4.f;
-        _looking_left=false;
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        _speed.y = -4.f;
-    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        _speed.y = 4.f;
 
-
-    _plant_sprite.move(_speed);
-
-    //actualizo posicion para el shooting
-    //_position.x=_plant_sprite.getPosition().x;
-    //_position.y=_plant_sprite.getPosition().y;
-    */
 }
 
 sf::Vector2f Planta::getPosition()
@@ -164,17 +129,7 @@ void Planta::updateAnimation()
 
     }
 
-        //ahora invierto o no
-    /*
-    if(_speed.x<0.f)  //va a la izquierda?
-    {
-        _plant_sprite.setScale(0.11,0.11);
-    }
-    else if(_speed.x>0.f) //va a la derecha?
-    {
-        _plant_sprite.setScale(-0.11,0.11);
-    }
-    */
+
     if(isLookingLeft())
         _plant_sprite.setScale(0.11,0.11);
     else if(!isLookingLeft())
@@ -225,13 +180,6 @@ void Planta::initTexture()
     _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
     _plant_sprite.setTextureRect(_current_frame);
     _plant_sprite.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
-   // _plant_sprite.setOrigin(_width_texture/2, _plant_sprite.getGlobalBounds().height/11);   //desplazo el origen al medio del sprite para que al rotar quede ok
     _plant_sprite.setScale(0.11,0.11); //0.11
 }
 
-/*
-void Planta::initShooting()
-{
-    _spawn_shoot_timer.restart();
-}
-*/

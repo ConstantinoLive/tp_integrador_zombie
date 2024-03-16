@@ -61,10 +61,16 @@ void Partida::mostrarPlayer()
     if (vec == NULL)
     {
         std::cout << "No hay memoria suficiente.";
+        return;
     }
 
     FILE *p=fopen("Partidas.dat", "rb");
-    if(p==NULL) std::cout<<"no se pudo abrir"<<std::endl;
+    if(p==NULL)
+    {
+        std::cout<<"no se pudo abrir"<<std::endl;
+        delete[]vec;
+        return;
+    }
     int x =0;
 
     while(fread(&reg, sizeof(Partida), 1, p)==1)

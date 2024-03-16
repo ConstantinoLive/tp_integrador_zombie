@@ -467,10 +467,10 @@
 	"Audio.h"
 	"Player.h"
 
-1700187894 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\planta.cpp
+1709797006 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\planta.cpp
 	"Planta.h"
 
-1700187880 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\planta.h
+1709796996 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\planta.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
@@ -485,7 +485,7 @@
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 
-1709778534 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\zombie.cpp
+1709790442 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\zombie.cpp
 	"Zombie.h"
 
 1709790442 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\zombie.h
@@ -2368,7 +2368,7 @@
 	"MENU_PRINCIPAL.h"
 	"Seleccion_de_zombie.h"
 
-1709611250 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\player.h
+1709797238 d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\include\player.h
 	<string.h>
 	<cstdlib>
 	<string>
@@ -5804,13 +5804,13 @@
 1709388494 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\menu.cpp
 	"Menu.h"
 
-1709611248 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\partida.cpp
+1710474942 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\partida.cpp
 	<iostream>
 	"Partida.h"
 
-1709611250 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ranking.cpp
+1710474942 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\ranking.cpp
 	"Ranking.h"
 
-1709777124 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
+1710536748 source:d:\estudio\utn\laboratorio ii ejercicios\cursada 2\tp integrador\tp\tp_integrador_zombie\src\juego2.cpp
 	"Juego2.h"
 

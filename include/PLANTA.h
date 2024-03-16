@@ -11,15 +11,6 @@
 #include "Gestor_disparos.h"
 
 
-/*  //esto lo meto en la clase disparo directamente
-enum TIPO
-{
-    FIRE,
-    GREEN,
-    ICE,
-    SUPER_GREEN
-};
-*/
 
 #define LEFT    true
 #define RIGHT   false
@@ -31,10 +22,7 @@ public:
     virtual ~Planta();
 
     void draw(sf::RenderTarget& target,sf::RenderStates states) const override;   //reescribimos el metodo DRAW por haberlo heredado de DRAWABLE
-    //sf::Sprite& getDraw();
     sf::FloatRect getBounds() const override;                                     //reescribimos el metodo getBounds por haberlo heredado de COLISIONABLE
-   // void escala(float esc);
-   // void movement(float x,float y);
     bool isLookingLeft();               //devuelve true si la planta mira a la izquierda
     void setLookingLeft(bool look);
     void setCanMove(bool m);
@@ -52,7 +40,6 @@ protected:
     sf::IntRect _current_frame;
     sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo
     int _end_of_frames_sheet;               //me sirve para saber hasta donde va cada sprite en los distintos tipos de disparos
-    //float _frame;                           //es un multiplicador que me permite pasar de cuadro a cuadro para la animacion
 
     int _width_texture;
     int _height_texture;
@@ -68,16 +55,12 @@ protected:
 
     Gestor_disparos& _gestor_disparos;      //es una referencia al gestor disparos que gestionara todos los disparos generados por las plantas
 
-    //PLATAFORMA plataform;
-
-
-    //funciones privadas
 
 
     void initVariables();
     void initTexture();
     void initAnimation();
-    //void initShooting();
+
 
 
 };
